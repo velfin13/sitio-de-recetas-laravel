@@ -1,11 +1,14 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Fredoka+One&display=swap");
+
+//paquete de iconos
+@import "node_modules/font-awesome/scss/font-awesome.scss";
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 //estilos recetas
-@import '_recetas';
+@import "_recetas";
