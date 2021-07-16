@@ -68,7 +68,7 @@
 
                 {{-- ingredientes --}}
                 <div class="form-group mt-4">
-                    <label for="ingredientes">Preparacion</label>
+                    <label for="ingredientes">Ingredientes</label>
 
                     <input id="ingredientes" type="hidden" name="ingredientes" value="{{ old('ingredientes') }}">
                     <trix-editor class="form-control @error('ingredientes') is-invalid @enderror" input="ingredientes">
@@ -111,5 +111,5 @@
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js"
         integrity="sha512-wEfICgx3CX6pCmTy6go+PmYVKDdi4KHhKKz5Xx/boKOZOtG7+rrm2fP7RUR2o4m/EbPdwbKWnP05dvj4uzoclA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 @endsection

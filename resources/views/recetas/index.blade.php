@@ -24,7 +24,8 @@
                         <td>
                             <a href="#" class="btn btn-danger mr-1"><i class="fa fa-trash" aria-hidden="true"></i></a>
                             <a href="#" class="btn btn-dark mr-1"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            <a href="#" class="btn btn-success mr-1"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}"
+                                class="btn btn-success mr-1"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 @endforeach
