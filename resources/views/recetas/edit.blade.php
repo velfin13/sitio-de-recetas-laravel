@@ -111,7 +111,7 @@
 
                 {{-- boton submit --}}
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Agregar Receta">
+                    <input type="submit" class="btn btn-primary" value="Editar Receta">
                 </div>
             </form>
 
