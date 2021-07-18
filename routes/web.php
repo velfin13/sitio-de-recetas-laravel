@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//home de la app
+Route::get('/', 'InicioController@index')->name('inicio.index');
 
 Auth::routes();
 
@@ -35,4 +34,4 @@ Route::get('/perfiles/{perfil}/edit', 'PerfilController@edit')->name('perfiles.e
 Route::put('/perfiles/{perfil}', 'PerfilController@update')->name('perfiles.update');
 
 /* almacernar los likes de las recetas */
-Route::post('/recetas/{receta}','LikesController@update')->name('likes.update');
+Route::post('/recetas/{receta}', 'LikesController@update')->name('likes.update');
