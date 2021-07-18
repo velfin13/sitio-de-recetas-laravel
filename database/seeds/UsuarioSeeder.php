@@ -13,17 +13,13 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
-        // $user = User::create([
-        //     'name' => 'Velfin',
-        //     'email' => 'prueba@gmail.com',
-        //     'password' => Hash::make('12345678'),
-        //     'url' => 'https://velfin.com',
-        //     'created_at' => date('Y-m-d H:i:s'),
-        //     'updated_at' => date('Y-m-d H:i:s'),
-        // ]);
-
-        // $user->perfil()->create();
-
-
+        $user = User::create([
+            'name' => 'Velfin',
+            'email' => 'prueba@gmail.com',
+            'password' => Hash::make('12345678'),
+            'url' => 'https://velfin.com',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }

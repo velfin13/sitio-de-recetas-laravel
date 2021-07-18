@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('botones')
-    <a href="{{ route('recetas.create') }}" class="btn btn-primary">Crear Receta</a>
+    @include('ui.navegacion')
 @endsection
 
 @section('content')
@@ -27,13 +27,13 @@
                             {{-- <a href="{{ route('recetas.destroy', ['receta' => $receta->id]) }}"
                                 class="btn btn-danger mr-1"><i class="fa fa-trash" aria-hidden="true"></i></a> --}}
 
-                            <eliminar-receta receta-id={{ $receta->id }}></eliminar-receta>
+                            <eliminar-receta class="mt-2" receta-id={{ $receta->id }}></eliminar-receta>
 
-                            <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}" class="btn btn-dark mr-1"><i
-                                    class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}"
+                                class="btn btn-dark mr-1 mt-2"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 
                             <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}"
-                                class="btn btn-success mr-1"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                class="btn btn-success mr-1 mt-2"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -41,5 +41,9 @@
 
             </tbody>
         </table>
+        <div class="col-12 mt-4 justify-content-center d-flex">
+            {{ $recetas->links() }}
+        </div>
+
     </div>
 @endsection

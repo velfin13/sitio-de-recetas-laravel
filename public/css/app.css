@@ -13044,4 +13044,5 @@ body {
 
 trix-editor {
   min-height: 400px;
+  height: auto !important;
 }

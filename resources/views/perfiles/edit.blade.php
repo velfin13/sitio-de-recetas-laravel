@@ -8,7 +8,7 @@
 @endsection
 
 @section('botones')
-    <a href="{{ route('recetas.index') }}" class="btn btn-primary mr-2">Regresar</a>
+    <a href="{{ route('recetas.index') }}" class="btn btn-primary mr-2"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</a>
 @endsection
 
 @section('content')

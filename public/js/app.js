@@ -1965,7 +1965,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 vue__WEBPACK_IMPORTED_MODULE_3__.default.config.ignoredElements = ["trix-editor", "trix-toolbar"];
 vue__WEBPACK_IMPORTED_MODULE_3__.default.component("fecha-receta", __webpack_require__(/*! ./components/FechaReceta.vue */ "./resources/js/components/FechaReceta.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_3__.default.component("eliminar-receta", __webpack_require__(/*! ./components/EliminarReceta.vue */ "./resources/js/components/EliminarReceta.vue").default);
-console.log(vue__WEBPACK_IMPORTED_MODULE_3__.default.prototype);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

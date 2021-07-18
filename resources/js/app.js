@@ -33,7 +33,6 @@ Vue.component(
     require("./components/EliminarReceta.vue").default
 );
 
-console.log(Vue.prototype);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

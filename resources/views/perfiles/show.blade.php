@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+
         <div class="row">
             <div class="col-md-5">
                 @if ($perfil->imagen)
@@ -17,4 +18,36 @@
             </div>
         </div>
     </div>
+
+    <h2 class="text-center my-5">Recetas creada por <b>{{ $perfil->usuario->name }}</b></h2>
+    <div class="row mx-auto p-4">
+        @if (count($recetas) > 0)
+            @foreach ($recetas as $receta)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/storage/{{ $receta->imagen }}" alt="" class="card-img-top" alt="img">
+                        <div class="card-body">
+                            <h3 class="text-center">{{ $receta->titulo }}</h3>
+
+                            <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}"
+                                class="btn btn-outline-primary d-block mt-4 font-weight-bold">Ver Receta <i
+                                    class="fa fa-eye" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            @endforeach
+
+        @else
+            <p class="text-center w-100">Este usuario aún no ha creado recetas</p>
+        @endif
+    </div>
+    
+    <div class="d-flex justify-content-center">
+        {{ $recetas->links() }}
+    </div>
+
+
+
+
 @endsection
