@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <article class="contenido-receta">
+    <article class="contenido-receta bg-white shadow p-4">
         <h1 class="text-center mb-4">{{ $recetas->titulo }}</h1>
 
         {{-- imagen de la receta --}}
@@ -18,7 +18,8 @@
 
             <p>
                 <span class="font-weight-bold text-primary">Autor:</span>
-                {{ $recetas->autor->name }}
+
+                <a href="{{ route('perfiles.show', ['perfil' => $recetas->autor->id]) }}"> {{ $recetas->autor->name }}</a>
             </p>
 
             <p>

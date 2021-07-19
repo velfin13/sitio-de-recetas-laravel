@@ -74,7 +74,7 @@
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -89,6 +89,35 @@
             </div>
         </nav>
 
+
+        <nav class="navbar navbar-expand-md categorias-bg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categorias"
+                    aria-controls="categorias" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                    Categorias
+                </button>
+                <div class="collapse navbar-collapse " id="categorias">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav w-100 d-flex justify-content-between">
+                        @foreach ($categorias as $categoria)
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                                    {{ $categoria->nombre }}
+                                </a>
+
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {{-- buscador --}}
+        @yield('hero')
+
+        {{-- seccion de botones --}}
         <div class="container">
 
             <div class="py-1 mt-4 ml-5 col-12">

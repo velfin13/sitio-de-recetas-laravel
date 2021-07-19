@@ -6,6 +6,20 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
+{{-- buscador --}}
+@section('hero')
+    <div class="hero-categorias">
+        <form action="{{ route('buscar.show') }}" class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-4 texto-buscar">
+                    <p class="display-4">Busca un receta</p>
+                    <input type="search" name="buscar" class="form-control" placeholder="Buscar receta">
+                </div>
+            </div>
+        </form>
+    </div>
+@endsection
+
 @section('content')
 
     <div class="container nuevas-recetas">
@@ -54,14 +68,14 @@
                                         <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
                                     </p>
 
-                                    <p>{{count($receta->likes)}}  <i class="fa fa-heart" aria-hidden="true"></i></p>
+                                    <p>{{ count($receta->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
 
 
                                 </div>
 
                                 <a class="btn btn-outline-primary font-weight-bold d-block"
-                                    href="{{ route('recetas.show', ['receta' => $receta->id]) }}">Ver <i class="fa fa-eye"
-                                        aria-hidden="true"></i></a>
+                                    href="{{ route('recetas.show', ['receta' => $receta->id]) }}">Ver <i
+                                        class="fa fa-eye" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     @endforeach

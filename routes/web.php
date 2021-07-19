@@ -35,3 +35,8 @@ Route::put('/perfiles/{perfil}', 'PerfilController@update')->name('perfiles.upda
 
 /* almacernar los likes de las recetas */
 Route::post('/recetas/{receta}', 'LikesController@update')->name('likes.update');
+
+Route::get('/categotia/{categoriaReceta}', 'CategoriasController@show')->name('categorias.show');
+
+//buscador de recetas
+Route::get('/buscar', 'RecetaController@search')->name('buscar.show');
