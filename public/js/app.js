@@ -2046,7 +2046,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_4__.default({
 jQuery(document).ready(function () {
   jQuery(".owl-carousel").owlCarousel({
     margin: 10,
-    loop: true,
+    loop: false,
     autoplay: true,
     autoplayHoverPause: true,
     responsive: {

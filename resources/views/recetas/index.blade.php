@@ -16,17 +16,11 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach ($recetas as $receta)
                     <tr>
                         <td>{{ $receta->titulo }}</td>
                         <td>{{ $receta->categoria->nombre }}</td>
                         <td>
-
-
-                            {{-- <a href="{{ route('recetas.destroy', ['receta' => $receta->id]) }}"
-                                class="btn btn-danger mr-1"><i class="fa fa-trash" aria-hidden="true"></i></a> --}}
-
                             <eliminar-receta class="mt-2" receta-id={{ $receta->id }}></eliminar-receta>
 
                             <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}"
@@ -37,8 +31,6 @@
                         </td>
                     </tr>
                 @endforeach
-
-
             </tbody>
         </table>
         <div class="col-12 mt-4 justify-content-center d-flex">
@@ -58,7 +50,7 @@
                     </li>
                 @endforeach
             @else
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-warning" role="alert">
                     <b>Aun no le has dado me gusta a ninguna receta!</b>
                     <small>Dale me gusta y apareceran aqui!!</small>
                 </div>

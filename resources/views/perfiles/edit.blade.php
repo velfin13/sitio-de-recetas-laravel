@@ -16,7 +16,7 @@
 
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
-            <form action="{{ route('perfiles.update', ['perfil' => $perfil->id]) }}" novalidate method="POST"
+            <form action="{{ route('perfiles.update', ['perfil' => $perfil->id]) }}" method="POST"
                 enctype="multipart/form-data">
 
                 @csrf
@@ -37,7 +37,7 @@
                 {{-- Sitio web de usuario --}}
                 <div class="form-group">
                     <label for="url">Sitio web:</label>
-                    <input type="text" name="url" class="form-control @error('url') is-invalid @enderror" id="url"
+                    <input type="url" name="url" class="form-control @error('url') is-invalid @enderror" id="url"
                         placeholder="Sitio web" value="{{ $perfil->usuario->url }}">
                     @error('url')
                         <span class="invalid-feedback d-block" role="alert">

@@ -18,14 +18,16 @@ class CategoriaSeeder extends Seeder
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
+
+
         DB::table('categoria_recetas')->insert([
-            'nombre' => 'Comida Italiana',
+            'nombre' => 'Comida Argentina',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('categoria_recetas')->insert([
-            'nombre' => 'Comida Argentina',
+            'nombre' => 'Comida Manabita',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -42,16 +44,6 @@ class CategoriaSeeder extends Seeder
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('categoria_recetas')->insert([
-            'nombre' => 'Ensaladas',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
 
-        DB::table('categoria_recetas')->insert([
-            'nombre' => 'Desayunos',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
     }
 }

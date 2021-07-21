@@ -11,7 +11,14 @@
             </div>
             <div class="col-md-7 mt-5 mt-md-0">
                 <h2 class="text-center mb-2 text-primary">{{ $perfil->usuario->name }}</h2>
-                <a href="{{ $perfil->usuario->url }}">Visitar Sitio web</a>
+
+                {{-- si tiene pagina web --}}
+                @if ($perfil->usuario->url)
+
+                    <a href="{{ $perfil->usuario->url }}">Visitar Sitio web</a>
+                @endif
+
+
                 <div class="biografia">
                     {!! $perfil->biografia !!}
                 </div>
@@ -20,6 +27,7 @@
     </div>
 
     <h2 class="text-center my-5">Recetas creada por <b>{{ $perfil->usuario->name }}</b></h2>
+    
     <div class="row mx-auto p-4">
         @if (count($recetas) > 0)
             @foreach ($recetas as $receta)
@@ -39,10 +47,14 @@
             @endforeach
 
         @else
-            <p class="text-center w-100">Este usuario aún no ha creado recetas</p>
+            <div class="d-flex justify-content-center">
+                <p class="alert alert-warning"><b>Aun no has creado ninguna receta!</b>
+                    <small>Crea una y apareceran aqui!!</small>
+                </p>
+            </div>
         @endif
     </div>
-    
+
     <div class="d-flex justify-content-center">
         {{ $recetas->links() }}
     </div>
