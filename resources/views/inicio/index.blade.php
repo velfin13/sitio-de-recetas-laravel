@@ -14,6 +14,7 @@
                 <div class="col-md-4 texto-buscar">
                     <p class="display-4">Busca un receta</p>
                     <input type="search" name="buscar" class="form-control" placeholder="Buscar receta">
+                    <button class="btn btn-outline-success font-weight-bold mt-2"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
         </form>
