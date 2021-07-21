@@ -17,7 +17,7 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
             <form action="{{ route('perfiles.update', ['perfil' => $perfil->id]) }}" method="POST"
-                enctype="multipart/form-data">
+                enctype="multipart/form-data" novalidate>
 
                 @csrf
                 @method('PUT')
@@ -45,6 +45,8 @@
                         </span>
                     @enderror
                 </div>
+
+         
 
 
                 {{-- Biografia del usuario --}}

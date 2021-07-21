@@ -73,7 +73,7 @@
                                 <label for="url" class="col-md-4 col-form-label text-md-right">{{ __('Página Web') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="url" type="text" class="form-control @error('url') is-invalid @enderror"
+                                    <input id="url" type="url" class="form-control @error('url') is-invalid @enderror"
                                         name="url" value="{{ old('url') }}" required autocomplete="url" autofocus>
 
                                     @error('url')
