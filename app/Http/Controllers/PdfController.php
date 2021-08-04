@@ -18,6 +18,7 @@ class PdfController extends Controller
     {
 
 
+        // return $receta;
 
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.index', $receta);
