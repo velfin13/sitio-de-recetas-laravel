@@ -53,7 +53,7 @@
             </div>
             
             <div class="d-flex align-items-start">
-                <calificacion-button></calificacion-button>
+                <calificacion-button>ASJSJSSJ</calificacion-button>
             </div>
 
 
