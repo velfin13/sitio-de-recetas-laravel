@@ -6,8 +6,8 @@
 
 
         <div class="row">
-            <div class="col-10"></div>
-            <div class="col-2 mb-4">
+            <div class="col-8 col-sm-8 col-md-9 col-xl-10"></div>
+            <div class="col-4 col-sm-4 col-md-3 col-xl-2 mb-4">
                 <a target="_blank" href="{{ route('pdfs.index', ['receta' => $recetas->id]) }}"
                     class="btn btn-outline-success font-weight-bold">Descargar <i class="fa fa-download"
                         aria-hidden="true"></i></a>
@@ -65,7 +65,7 @@
             </div>
 
             <div class="col-12">
-                <center><iframe height="290" class="w-75 mb-5 mt-5" style="box-shadow: 7px 10px 28px -4px rgba(0,0,0,0.75);"
+                <center><iframe height="350" class="w-100 mb-5 mt-5" style="box-shadow: 7px 10px 28px -4px rgba(0,0,0,0.75);"
                         src="https://www.youtube.com/embed/R9s0c29_D4Q" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe></center>
