@@ -4,6 +4,16 @@
     <article class="contenido-receta bg-white shadow p-4">
         <h1 class="text-center mb-4">{{ Str::title($recetas->titulo) }}</h1>
 
+
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2 mb-4">
+                <a target="_blank" href="{{ route('pdfs.index', ['receta' => $recetas->id]) }}"
+                    class="btn btn-outline-success font-weight-bold">Descargar <i class="fa fa-download"
+                        aria-hidden="true"></i></a>
+            </div>
+        </div>
+
         {{-- imagen de la receta --}}
         <div class="imagen-receta row">
             <div class="col-12">

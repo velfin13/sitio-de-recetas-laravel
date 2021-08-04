@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,6 @@ Route::get('/categotia/{categoriaReceta}', 'CategoriasController@show')->name('c
 
 //buscador de recetas
 Route::get('/buscar', 'RecetaController@search')->name('buscar.show');
+
+//generando pdf
+Route::get('/recetas-pdf/{receta}', 'PdfController@index')->name('pdfs.index');
