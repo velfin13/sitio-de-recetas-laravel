@@ -8,7 +8,8 @@
 @endsection
 
 @section('botones')
-    <a href="{{ route('recetas.index') }}" class="btn btn-primary mr-2"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</a>
+    <a href="{{ route('recetas.index') }}" class="btn btn-primary mr-2"><i class="fa fa-arrow-left"
+            aria-hidden="true"></i> Regresar</a>
 @endsection
 
 @section('content')
@@ -46,7 +47,7 @@
                     @enderror
                 </div>
 
-         
+
 
 
                 {{-- Biografia del usuario --}}
@@ -71,8 +72,10 @@
 
                     @if ($perfil->imagen)
                         <div class="mt-4">
-                            <p>Tu imagen actual:</p>
-                            <img src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 300px;border: 35px">
+                            <p class="text-center">Tu imagen actual:</p>
+                            <center><img src="/storage/{{ $perfil->imagen }}" alt="img"
+                                    style="width: 200px;border-radius: 35px;box-shadow: 7px 10px 28px -4px rgba(0,0,0,0.75);">
+                            </center>
                         </div>
                         <br>
                     @endif

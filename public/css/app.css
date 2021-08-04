@@ -13064,8 +13064,16 @@ trix-editor {
 }
 
 .receta-meta p {
-  font-size: 12px;
+  font-size: 25px;
   font-weight: bold;
+}
+
+.enlace-autor {
+  color: #222;
+}
+.enlace-autor:hover {
+  text-decoration: none;
+  color: #222;
 }
 
 .navbar-light .navbar-nav .nav-link {

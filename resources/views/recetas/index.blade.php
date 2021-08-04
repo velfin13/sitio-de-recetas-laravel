@@ -37,7 +37,7 @@
             {{ $recetas->links() }}
         </div>
 
-        <h2 class="text-center my-5">Recetas que te gustan</h2>
+        <h2 class="text-center my-4">Recetas que te gustan</h2>
         <div class="col-md-10 mx-auto p-3">
 
             @if (count(Auth::user()->meGusta) > 0)
