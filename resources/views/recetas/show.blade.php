@@ -2,11 +2,14 @@
 
 @section('content')
     <article class="contenido-receta bg-white shadow p-4">
-        <h1 class="text-center mb-4">{{ $recetas->titulo }}</h1>
+        <h1 class="text-center mb-4">{{ Str::title($recetas->titulo) }}</h1>
 
         {{-- imagen de la receta --}}
-        <div class="imagen-receta">
-            <img src="/storage/{{ $recetas->imagen }}" alt="img" class="w-100">
+        <div class="imagen-receta col">
+            <div class="col-12">
+                <center><img src="/storage/{{ $recetas->imagen }}" alt="img" class="w-75 mb-4"
+                        style="border-radius: 40px;box-shadow: 7px 10px 28px -4px rgba(0,0,0,0.75);"></center>
+            </div>
         </div>
 
         {{-- autor y categoria ingredientes preparacion fecha --}}
@@ -19,7 +22,8 @@
             <p>
                 <span class="font-weight-bold text-primary">Autor:</span>
 
-                <a href="{{ route('perfiles.show', ['perfil' => $recetas->autor->id]) }}"> {{ $recetas->autor->name }}</a>
+                <a href="{{ route('perfiles.show', ['perfil' => $recetas->autor->id]) }}">
+                    {{ $recetas->autor->name }}</a>
             </p>
 
             <p>
