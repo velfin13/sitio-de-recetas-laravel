@@ -6,13 +6,18 @@
 
 import Vue from "vue";
 import Swal from "sweetalert2";
+import Raters from 'vue-rate-it';
+
+
 import "sweetalert2/dist/sweetalert2.min.css";
 import axios from "axios";
+window.Vue = require("vue");
 import "owl.carousel";
+
 
 require("./bootstrap");
 
-window.Vue = require("vue");
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,13 +32,22 @@ window.Vue = require("vue");
 
 Vue.config.ignoredElements = ["trix-editor", "trix-toolbar"];
 
+
 Vue.component("fecha-receta", require("./components/FechaReceta.vue").default);
+Vue.component("like-button", require("./components/LikeButton.vue").default);
+Vue.component("calificacion-button", require("./components/Calificacion.vue").default);
 Vue.component(
     "eliminar-receta",
     require("./components/EliminarReceta.vue").default
 );
 
-Vue.component("like-button", require("./components/LikeButton.vue").default);
+
+Vue.component('star-rating', Raters.StarRating);
+
+
+
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -47,6 +47,15 @@
                 <like-button likes="{{ $likes }}" like="{{ $like }}" receta-id="{{ $recetas->id }}">
                 </like-button>
             </div>
+            
+            <div class="d-flex align-items-start">
+                <calificacion-button></calificacion-button>
+            </div>
+
+
+
+
+
 
 
 

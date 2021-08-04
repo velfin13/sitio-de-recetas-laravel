@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
+use App\Rating;
+use App\Http\Resources\Rating as RatingResource;
+
 
 class RecetaController extends Controller
 {
@@ -120,6 +123,8 @@ class RecetaController extends Controller
             ->with('likes', $likes);
     }
 
+    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -197,6 +202,18 @@ class RecetaController extends Controller
         return redirect()->action('RecetaController@index');
     }
 
+
+    public function setrating(Request $request){
+        return new RatingResource(Rating::create([
+            'receta_id' => $request->get('recetas'),
+            'user_id' => $request->get('user'),
+            'rating' => $request->get('rating')
+        ]));
+    }
+
+    public function getrating($id){
+        return RatingResource::collection(Rating::all()->where('receta_id', $id));
+    }
 
     public function search(Request $request)
     {

@@ -28,6 +28,9 @@
         "font-awesome": "^4.7.0",
         "moment": "^2.29.1",
         "owl.carousel": "^2.3.4",
+        "vue-dynamic-star-rating": "^1.0.8",
+        "vue-rate-it": "^2.1.0",
+        "vue-star-rating": "^2.1.0",
         "vue-sweetalert2": "^5.0.2"
     }
 }
