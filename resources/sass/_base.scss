@@ -1,4 +1,6 @@
+html,
 body {
     font-family: $parrafos-font-family;
-    background-color: $body-bg !important;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
 }
