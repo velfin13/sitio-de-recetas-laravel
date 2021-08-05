@@ -23,11 +23,8 @@
 @endsection
 
 @section('content')
-<<<<<<< HEAD
 
     {{-- ultimas recetas --}}
-=======
->>>>>>> 80ea4fb064221a46487feb237810d593701be947
     <div class="container nuevas-recetas">
         <h2 class="titulo-categoria text-uppercase mt-5 mb-4">Últimas recetas</h2>
 
