@@ -56,25 +56,41 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+
+
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @if (!Auth::user()->perfil->imagen)
+                                        <span
+                                            class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                    @else
+                                        <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
+                                            src="{{ '/storage/' . Auth::user()->perfil->imagen }}">
+
+                                    @endif
+
+
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                                    <a class="dropdown-item"
+                                        href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        {{ __('Perfil') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('recetas.index') }}">
+                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
                                         {{ __('Ver Recetas') }}
                                     </a>
 
-                                    <a class="dropdown-item"
-                                        href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}">
-                                        {{ __('Ver perfil') }}
-                                    </a>
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                                                                 document.getElementById('logout-form').submit();">
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
+                                        data-target="#logoutModal" onclick="event.preventDefault();
+                                                                    document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
                                         {{ __('Logout') }}
                                     </a>
 
