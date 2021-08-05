@@ -66,9 +66,9 @@ class RecetaController extends Controller
         $data = request()->validate([
             'titulo' => 'required|min:3',
             'categoria' => 'required',
-            'preparacion' => 'required',
+            'preparacion' => 'required|min:8',
             'url' => 'nullable|url',
-            'ingredientes' => 'required',
+            'ingredientes' => 'required|min:8',
             'imagen' => 'required|image|mimes:jpeg,jpg,svg,png',
         ]);
 
@@ -82,22 +82,28 @@ class RecetaController extends Controller
 
 
         /* corregir url  del video*/
-        $check_url = explode("/", $data['url']);
+        if ($request['url']) {
 
-        if ($check_url[2] == "www.youtube.com") {
-            $parametro = explode("?", $check_url[3]);
+            $check_url = explode("/", $data['url']);
 
-            if ($parametro[0] == "watch") {
-                $nuevo_parametro = explode("=", $parametro[1]);
+            if ($check_url[2] == "www.youtube.com") {
+                $parametro = explode("?", $check_url[3]);
 
-                $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+                if ($parametro[0] == "watch") {
+                    $nuevo_parametro = explode("=", $parametro[1]);
+
+                    $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+                }
+            } else if ($check_url[2] == "youtu.be") {
+                $parametro = $check_url[3];
+                $url_corregida = "https://www.youtube.com/embed/" . $parametro;
+            } else {
+                $url_corregida = $data["url"];
             }
-        } else if ($check_url[2] == "youtu.be") {
-            $parametro = $check_url[3];
-            $url_corregida = "https://www.youtube.com/embed/" . $parametro;
         } else {
-            $url_corregida = $data["url"];
+            $url_corregida = null;
         }
+
 
 
         /* insertando receta a la base de datos (sin modelo) */
@@ -180,29 +186,33 @@ class RecetaController extends Controller
         $data = request()->validate([
             'titulo' => 'required|min:3',
             'categoria' => 'required',
-            'preparacion' => 'required',
+            'preparacion' => 'required|min:8',
             'url' => 'nullable|url',
-            'ingredientes' => 'required',
+            'ingredientes' => 'required|min:8',
             'imagen' => 'image|mimes:jpeg,jpg,svg,png',
         ]);
 
-
         /* corregir url  del video*/
-        $check_url = explode("/", $data['url']);
+        if ($request['url']) {
 
-        if ($check_url[2] == "www.youtube.com") {
-            $parametro = explode("?", $check_url[3]);
+            $check_url = explode("/", $data['url']);
 
-            if ($parametro[0] == "watch") {
-                $nuevo_parametro = explode("=", $parametro[1]);
+            if ($check_url[2] == "www.youtube.com") {
+                $parametro = explode("?", $check_url[3]);
 
-                $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+                if ($parametro[0] == "watch") {
+                    $nuevo_parametro = explode("=", $parametro[1]);
+
+                    $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+                }
+            } else if ($check_url[2] == "youtu.be") {
+                $parametro = $check_url[3];
+                $url_corregida = "https://www.youtube.com/embed/" . $parametro;
+            } else {
+                $url_corregida = $data["url"];
             }
-        } else if ($check_url[2] == "youtu.be") {
-            $parametro = $check_url[3];
-            $url_corregida = "https://www.youtube.com/embed/" . $parametro;
         } else {
-            $url_corregida = $data["url"];
+            $url_corregida = null;
         }
 
 

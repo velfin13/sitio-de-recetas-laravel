@@ -13035,7 +13035,7 @@ body {
 }
 
 trix-editor {
-  min-height: 400px;
+  min-height: 200px;
   height: auto !important;
 }
 
