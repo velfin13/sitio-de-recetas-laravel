@@ -13153,7 +13153,9 @@ trix-editor {
 
 .hero-categorias {
   background-image: linear-gradient(to bottom, rgba(70, 70, 70, 0.4), rgba(53, 53, 53, 0.571)), url("http://img2.rtve.es/i/?w=1600&i=1529697257299.jpg");
-  height: 30rem;
+  height: 15rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   background-position: top center;
 }
