@@ -10,8 +10,7 @@
             <div class="col-8 col-sm-8 col-md-9 col-xl-10"></div>
             <div class="col-4 col-sm-4 col-md-3 col-xl-2 mb-4">
                 <a target="_blank" href="{{ route('pdfs.index', ['receta' => $recetas->id]) }}"
-                    class="btn btn-outline-success font-weight-bold">Descargar <i class="fa fa-download"
-                        aria-hidden="true"></i></a>
+                    class="btn btn-primary font-weight-bold">Descargar <i class="fa fa-download" aria-hidden="true"></i></a>
             </div>
         </div>
 
@@ -78,8 +77,6 @@
                     </div>
                 @endif
             @endif
-
-
 
             <div class="d-flex align-items-start">
                 <calificacion-button></calificacion-button>
