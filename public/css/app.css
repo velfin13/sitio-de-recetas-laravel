@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Fredoka+One&display=swap);
-@charset "UTF-8";
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -3087,9 +3086,11 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #212529;
   text-align: left;
+<<<<<<< HEAD
   background-color: #b8bcc0;
+=======
+>>>>>>> 80ea4fb064221a46487feb237810d593701be947
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
