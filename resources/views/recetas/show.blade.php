@@ -56,12 +56,12 @@
 
 
             <div class="ingredientes">
-                <h2 class="my-3 text-primary text-center font-weight-bold">INGREDIENTES:</h2>
+                <h2 class="my-4 text-primary text-center font-weight-bold">INGREDIENTES:</h2>
                 {!! $recetas->ingredientes !!}
             </div>
 
             <div class="ingredientes">
-                <h2 class="my-3 text-primary text-center font-weight-bold">PREPARACIÓN:</h2>
+                <h2 class="my-4 text-primary text-center font-weight-bold">PREPARACIÓN:</h2>
                 {!! $recetas->preparacion !!}
             </div>
 
@@ -69,9 +69,14 @@
             {{-- aqui va el video --}}
 
             @if ($recetas->url)
-                <div class="embed-responsive embed-responsive-21by9">
-                    <iframe class="embed-responsive-item" src="{{ $recetas->url }}"></iframe>
-                </div>
+                @php
+                    $dato = explode('/', $recetas->url);
+                @endphp
+                @if ($dato[2] == 'www.youtube.com')
+                    <div class="embed-responsive embed-responsive-21by9 mt-5 mb-5">
+                        <iframe class="embed-responsive-item" src="{{ $recetas->url }}"></iframe>
+                    </div>
+                @endif
             @endif
 
 

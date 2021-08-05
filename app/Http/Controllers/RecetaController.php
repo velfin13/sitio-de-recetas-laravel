@@ -6,7 +6,6 @@ use App\CategoriaReceta;
 use App\Receta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use App\Rating;
 use App\Http\Resources\Rating as RatingResource;
@@ -80,6 +79,27 @@ class RecetaController extends Controller
         $img = Image::make(public_path("storage/{$ruta_imagen}"))->fit(1000, 550);
         $img->save();
 
+
+
+        /* corregir url  del video*/
+        $check_url = explode("/", $data['url']);
+
+        if ($check_url[2] == "www.youtube.com") {
+            $parametro = explode("?", $check_url[3]);
+
+            if ($parametro[0] == "watch") {
+                $nuevo_parametro = explode("=", $parametro[1]);
+
+                $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+            }
+        } else if ($check_url[2] == "youtu.be") {
+            $parametro = $check_url[3];
+            $url_corregida = "https://www.youtube.com/embed/" . $parametro;
+        } else {
+            $url_corregida = $data["url"];
+        }
+
+
         /* insertando receta a la base de datos (sin modelo) */
         /* DB::table('recetas')->insert([
             'titulo' => $data['titulo'],
@@ -95,7 +115,7 @@ class RecetaController extends Controller
             'titulo' => $data['titulo'],
             'ingredientes' => $data['ingredientes'],
             'preparacion' => $data['preparacion'],
-            'url' => $data['url'],
+            'url' => $url_corregida,
             'imagen' => $ruta_imagen,
             'user_id' => Auth::user()->id,
             'categoria_id' => $data['categoria']
@@ -166,8 +186,28 @@ class RecetaController extends Controller
             'imagen' => 'image|mimes:jpeg,jpg,svg,png',
         ]);
 
+
+        /* corregir url  del video*/
+        $check_url = explode("/", $data['url']);
+
+        if ($check_url[2] == "www.youtube.com") {
+            $parametro = explode("?", $check_url[3]);
+
+            if ($parametro[0] == "watch") {
+                $nuevo_parametro = explode("=", $parametro[1]);
+
+                $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+            }
+        } else if ($check_url[2] == "youtu.be") {
+            $parametro = $check_url[3];
+            $url_corregida = "https://www.youtube.com/embed/" . $parametro;
+        } else {
+            $url_corregida = $data["url"];
+        }
+
+
         $receta->titulo = $data['titulo'];
-        $receta->url = $data['url'];
+        $receta->url = $url_corregida;
         $receta->categoria_id = $data['categoria'];
         $receta->ingredientes = $data['ingredientes'];
         $receta->preparacion = $data['preparacion'];

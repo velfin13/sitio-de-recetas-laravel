@@ -39,7 +39,8 @@
                 <div class="form-group">
                     <label for="url">Link del video de preparacion (Opcional)</label>
                     <input type="url" name="url" class="form-control @error('url') is-invalid @enderror" id="url"
-                        placeholder="Ejemplo https://www.youtube.com/embed/ejemplo" value="{{ old('url') }}">
+                        placeholder="Ejemplo https://www.youtube.com/ejemplo (solo enlaces de youtube)"
+                        value="{{ old('url') }}">
                     @error('url')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>
