@@ -24,6 +24,7 @@
 
 @section('content')
 
+    {{-- ultimas recetas --}}
     <div class="container nuevas-recetas">
         <h2 class="titulo-categoria text-uppercase mt-5 mb-4">Últimas recetas</h2>
 
@@ -36,6 +37,20 @@
                     <div class="card-body">
                         <h3 class="text-center">{{ Str::title($nueva->titulo) }}</h3>
                         <p>{{ Str::words(strip_tags($nueva->preparacion), 11) }}</p>
+
+                        <div class="meta-receta d-flex justify-content-between">
+                            @php
+                                $fecha = $nueva->created_at;
+                            @endphp
+
+                            <p class="text-primary fecha font-weight-bold">
+                                <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
+                            </p>
+
+                            <p>{{ count($nueva->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
+
+
+                        </div>
                         <a class="btn btn-outline-primary font-weight-bold d-block"
                             href="{{ route('recetas.show', ['receta' => $nueva->id]) }}">Ver <i class="fa fa-eye"
                                 aria-hidden="true"></i></a>

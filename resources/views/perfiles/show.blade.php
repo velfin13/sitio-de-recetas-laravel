@@ -7,27 +7,37 @@
             <div class="col-md-5">
                 @if ($perfil->imagen)
                     <img src="/storage/{{ $perfil->imagen }}" alt="img" class="w-100 rounded-circle">
+                @else
+                    <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-2.jpg"
+                        alt="img" class="w-100 rounded-circle">
                 @endif
             </div>
             <div class="col-md-7 mt-5 mt-md-0">
-                <h2 class="text-center mb-2 text-primary">{{ $perfil->usuario->name }}</h2>
+                <h2 class="text-center mb-2 text-primary font-weight-bold">{{ $perfil->usuario->name }}</h2>
 
                 {{-- si tiene pagina web --}}
                 @if ($perfil->usuario->url)
-
                     <a href="{{ $perfil->usuario->url }}">Visitar Sitio web</a>
                 @endif
 
 
                 <div class="biografia">
-                    {!! $perfil->biografia !!}
+                    @if ($perfil->biografia)
+                        {!! $perfil->biografia !!}
+                    @else
+                        <div class="d-flex justify-content-center mt-5">
+                            <p class="alert alert-warning"><b>Este usuario aun no añade una biografia!</b>
+                            </p>
+                        </div>
+                    @endif
+
                 </div>
             </div>
         </div>
     </div>
 
     <h2 class="text-center my-5">Recetas creada por <b>{{ $perfil->usuario->name }}</b></h2>
-    
+
     <div class="row mx-auto p-4">
         @if (count($recetas) > 0)
             @foreach ($recetas as $receta)
@@ -47,9 +57,8 @@
             @endforeach
 
         @else
-            <div class="d-flex justify-content-center">
-                <p class="alert alert-warning"><b>Aun no has creado ninguna receta!</b>
-                    <small>Crea una y apareceran aqui!!</small>
+            <div class="container">
+                <p class="alert alert-warning text-center"><b>Este usuario aun no ha creado ninguna receta!</b>
                 </p>
             </div>
         @endif

@@ -61,11 +61,21 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @if (!Auth::user()->perfil->imagen)
+                                        {{-- nombre usuario --}}
                                         <span
                                             class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                    @else
+                                        {{-- imagen del usuario --}}
                                         <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
-                                            src="{{ '/storage/' . Auth::user()->perfil->imagen }}">
+                                            src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-2.jpg"
+                                            alt="{{ Auth::user()->name }}">
+                                    @else
+                                        {{-- nombre usuario --}}
+                                        <span
+                                            class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                        {{-- imagen del usuario --}}
+                                        <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
+                                            src="{{ '/storage/' . Auth::user()->perfil->imagen }}"
+                                            alt="{{ Auth::user()->name }}">
 
                                     @endif
 
@@ -80,6 +90,12 @@
                                         {{ __('Perfil') }}
                                     </a>
 
+                                    <a class="dropdown-item"
+                                        href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        {{ __('Editar Perfil') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('recetas.index') }}">
                                         <i class="fa fa-cutlery" aria-hidden="true"></i>
                                         {{ __('Ver Recetas') }}
@@ -88,8 +104,9 @@
 
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
-                                        data-target="#logoutModal" onclick="event.preventDefault();
-                                                                    document.getElementById('logout-form').submit();">
+                                        data-target="#logoutModal"
+                                        onclick="event.preventDefault();
+                                                                                                document.getElementById('logout-form').submit();">
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                                         {{ __('Logout') }}
                                     </a>
