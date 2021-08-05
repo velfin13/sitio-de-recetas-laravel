@@ -2329,7 +2329,7 @@ vue__WEBPACK_IMPORTED_MODULE_5__.default.component("fecha-receta", __webpack_req
 vue__WEBPACK_IMPORTED_MODULE_5__.default.component("like-button", __webpack_require__(/*! ./components/LikeButton.vue */ "./resources/js/components/LikeButton.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_5__.default.component("calificacion-button", __webpack_require__(/*! ./components/Calificacion.vue */ "./resources/js/components/Calificacion.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_5__.default.component("eliminar-receta", __webpack_require__(/*! ./components/EliminarReceta.vue */ "./resources/js/components/EliminarReceta.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component('star-rating', (vue_rate_it__WEBPACK_IMPORTED_MODULE_1___default().StarRating));
+vue__WEBPACK_IMPORTED_MODULE_5__.default.component("star-rating", (vue_rate_it__WEBPACK_IMPORTED_MODULE_1___default().StarRating));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -54,7 +54,7 @@ class PerfilController extends Controller
         //validar
         $data = request()->validate([
             'nombre' => 'required',
-            'url' => 'required|url',
+            'url' => 'nullable|url',
             'biografia' => 'required',
             'imagen' => 'image|mimes:jpeg,jpg,svg,png',
         ]);

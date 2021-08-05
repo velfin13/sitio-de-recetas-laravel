@@ -9,7 +9,7 @@ class Receta extends Model
 {
 
     protected $fillable = [
-        'titulo', 'ingredientes', 'preparacion', 'imagen', 'user_id', 'categoria_id'
+        'titulo', 'ingredientes', 'url', 'preparacion', 'imagen', 'user_id', 'categoria_id'
     ];
 
     //obtiene la categoria de la receta via FK
@@ -27,6 +27,6 @@ class Receta extends Model
     //likes que ha recibido la receta
     public function likes()
     {
-        return $this->belongsToMany(User::class,'likes_receta');
+        return $this->belongsToMany(User::class, 'likes_receta');
     }
 }

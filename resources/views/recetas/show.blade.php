@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
     <article class="contenido-receta bg-white shadow p-4">
         <h1 class="text-center mb-4">{{ Str::title($recetas->titulo) }}</h1>
@@ -64,24 +65,20 @@
                 {!! $recetas->preparacion !!}
             </div>
 
-            <div class="col-12">
-                <center><iframe height="350" class="w-100 mb-5 mt-5" style="box-shadow: 7px 10px 28px -4px rgba(0,0,0,0.75);"
-                        src="https://www.youtube.com/embed/R9s0c29_D4Q" title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe></center>
-            </div>
+
+            {{-- aqui va el video --}}
+
+            @if ($recetas->url)
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" src="{{ $recetas->url }}"></iframe>
+                </div>
+            @endif
 
 
 
             <div class="d-flex align-items-start">
                 <calificacion-button></calificacion-button>
             </div>
-
-
-
-
-
-
 
 
         </div>

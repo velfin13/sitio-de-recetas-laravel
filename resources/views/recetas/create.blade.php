@@ -50,6 +50,19 @@
                     @enderror
                 </div>
 
+
+                {{-- url del video --}}
+                <div class="form-group">
+                    <label for="url">Link del video de preparacion (Opcional)</label>
+                    <input type="url" name="url" class="form-control @error('url') is-invalid @enderror" id="url"
+                        placeholder="Ejemplo url de youtube" value="{{ old('url') }}">
+                    @error('url')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
                 {{-- preparacion --}}
                 <div class="form-group mt-4">
                     <label for="preparacion">Preparacion</label>

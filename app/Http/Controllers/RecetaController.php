@@ -24,7 +24,7 @@ class RecetaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show','search']]);
+        $this->middleware('auth', ['except' => ['show', 'search']]);
     }
 
 
@@ -68,6 +68,7 @@ class RecetaController extends Controller
             'titulo' => 'required|min:3',
             'categoria' => 'required',
             'preparacion' => 'required',
+            'url' => 'nullable|url',
             'ingredientes' => 'required',
             'imagen' => 'required|image|mimes:jpeg,jpg,svg,png',
         ]);
@@ -94,6 +95,7 @@ class RecetaController extends Controller
             'titulo' => $data['titulo'],
             'ingredientes' => $data['ingredientes'],
             'preparacion' => $data['preparacion'],
+            'url' => $data['url'],
             'imagen' => $ruta_imagen,
             'user_id' => Auth::user()->id,
             'categoria_id' => $data['categoria']
@@ -123,7 +125,7 @@ class RecetaController extends Controller
             ->with('likes', $likes);
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -159,11 +161,13 @@ class RecetaController extends Controller
             'titulo' => 'required|min:3',
             'categoria' => 'required',
             'preparacion' => 'required',
+            'url' => 'nullable|url',
             'ingredientes' => 'required',
             'imagen' => 'image|mimes:jpeg,jpg,svg,png',
         ]);
 
         $receta->titulo = $data['titulo'];
+        $receta->url = $data['url'];
         $receta->categoria_id = $data['categoria'];
         $receta->ingredientes = $data['ingredientes'];
         $receta->preparacion = $data['preparacion'];
@@ -203,7 +207,8 @@ class RecetaController extends Controller
     }
 
 
-    public function setrating(Request $request){
+    public function setrating(Request $request)
+    {
         return new RatingResource(Rating::create([
             'receta_id' => $request->get('recetas'),
             'user_id' => $request->get('user'),
@@ -211,7 +216,8 @@ class RecetaController extends Controller
         ]));
     }
 
-    public function getrating($id){
+    public function getrating($id)
+    {
         return RatingResource::collection(Rating::all()->where('receta_id', $id));
     }
 
