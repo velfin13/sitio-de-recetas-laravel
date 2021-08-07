@@ -7,7 +7,9 @@
 @endsection
 
 @section('botones')
-    <a href="{{ route('recetas.index') }}" class="btn btn-primary mr-2"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</a>
+    <a href="{{ route('recetas.index') }}" class="btn btn-primary ml-2"><i class="fa fa-arrow-left"
+            aria-hidden="true"></i> Regresar</a>
+
 @endsection
 
 @section('content')
@@ -38,7 +40,8 @@
                     <select name="categoria" id="categoria" class="form-control @error('categoria') is-invalid @enderror">
                         <option value="">--Seleccionar--</option>
                         @foreach ($categorias as $categoria)
-                            <option {{ old('categoria') == $categoria->id ? 'selected' : '' }} value="{{ $categoria->id }}">
+                            <option {{ old('categoria') == $categoria->id ? 'selected' : '' }}
+                                value="{{ $categoria->id }}">
                                 {{ $categoria->nombre }}</option>
                         @endforeach
                     </select>
@@ -53,9 +56,9 @@
 
                 {{-- url del video --}}
                 <div class="form-group">
-                    <label for="url">Link del video de preparacion (Opcional)</label>
+                    <label for="url">Link del video de preparacion (Opcional y solo enlaces de youtube)</label>
                     <input type="url" name="url" class="form-control @error('url') is-invalid @enderror" id="url"
-                        placeholder="Ejemplo url de youtube" value="{{ old('url') }}">
+                        placeholder="Ejemplo https://www.youtube.com/ejemplo      (solo enlaces de youtube)" value="{{ old('url') }}">
                     @error('url')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>

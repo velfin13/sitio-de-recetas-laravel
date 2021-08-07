@@ -2288,16 +2288,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
-/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_rate_it__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-rate-it */ "./node_modules/vue-rate-it/dist/vue-rate-it.min.js");
-/* harmony import */ var vue_rate_it__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_rate_it__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.css */ "./node_modules/sweetalert2/dist/sweetalert2.min.css");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
-/* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(owl_carousel__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue_rate_it__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-rate-it */ "./node_modules/vue-rate-it/dist/vue-rate-it.min.js");
+/* harmony import */ var vue_rate_it__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_rate_it__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.css */ "./node_modules/sweetalert2/dist/sweetalert2.min.css");
+/* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
+/* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(owl_carousel__WEBPACK_IMPORTED_MODULE_2__);
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -2309,10 +2305,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -2323,20 +2318,19 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-
-vue__WEBPACK_IMPORTED_MODULE_5__.default.config.ignoredElements = ["trix-editor", "trix-toolbar"];
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component("fecha-receta", __webpack_require__(/*! ./components/FechaReceta.vue */ "./resources/js/components/FechaReceta.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component("like-button", __webpack_require__(/*! ./components/LikeButton.vue */ "./resources/js/components/LikeButton.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component("calificacion-button", __webpack_require__(/*! ./components/Calificacion.vue */ "./resources/js/components/Calificacion.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component("eliminar-receta", __webpack_require__(/*! ./components/EliminarReceta.vue */ "./resources/js/components/EliminarReceta.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_5__.default.component("star-rating", (vue_rate_it__WEBPACK_IMPORTED_MODULE_1___default().StarRating));
+vue__WEBPACK_IMPORTED_MODULE_3__.default.config.ignoredElements = ["trix-editor", "trix-toolbar"];
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component("fecha-receta", __webpack_require__(/*! ./components/FechaReceta.vue */ "./resources/js/components/FechaReceta.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component("like-button", __webpack_require__(/*! ./components/LikeButton.vue */ "./resources/js/components/LikeButton.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component("calificacion-button", __webpack_require__(/*! ./components/Calificacion.vue */ "./resources/js/components/Calificacion.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component("eliminar-receta", __webpack_require__(/*! ./components/EliminarReceta.vue */ "./resources/js/components/EliminarReceta.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_3__.default.component("star-rating", (vue_rate_it__WEBPACK_IMPORTED_MODULE_0___default().StarRating));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_5__.default({
+var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: "#app"
 });
 /* carrucekl con owl */

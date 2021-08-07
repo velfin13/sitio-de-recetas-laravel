@@ -1,5 +1,5 @@
 trix-editor {
-    min-height: 400px;
+    min-height: 200px;
     height: auto !important;
 }
 
@@ -29,14 +29,13 @@ trix-editor {
     font-weight: bold;
 }
 
-.enlace-autor{
+.enlace-autor {
     color: #222;
-    &:hover{
+    &:hover {
         text-decoration: none;
         color: #222;
     }
 }
-
 
 .navbar-light {
     .navbar-nav {
@@ -82,3 +81,59 @@ trix-editor {
     align-items: stretch;
 }
 
+<<<<<<< HEAD
+=======
+.categorias-bg {
+    background-color: #fff;
+    .nav-link {
+        color: #222 !important;
+        display: inline-block;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+        &:before {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: $blue;
+            transform: translateX(-100%);
+        }
+        &:hover:before {
+            transform: translateX(0);
+        }
+    }
+}
+
+.hero-categorias {
+    background-image: linear-gradient(
+            to bottom,
+            rgba(70, 70, 70, 0.4),
+            rgba(53, 53, 53, 0.571)
+        ),
+        url("http://img2.rtve.es/i/?w=1600&i=1529697257299.jpg");
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+    .texto-buscar {
+        p {
+            font-family: $font-family-sans-serif;
+            font-size: 2.4rem;
+            color: #fff;
+        }
+    }
+}
+>>>>>>> 3ff141c9e3bd0a0a1ef80d11559aa86b1cbad202
