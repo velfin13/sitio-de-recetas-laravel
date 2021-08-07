@@ -22,7 +22,7 @@ trix-editor {
     background-color: #ed4646 !important;
 }
 .fecha {
-    color: $blue !important;
+    color: $primary !important;
 }
 .receta-meta p {
     font-size: 25px;
@@ -54,7 +54,7 @@ trix-editor {
     font-family: "Cabin", sans-serif;
     color: #333;
     font-size: 1.8rem;
-    border-bottom: 3px solid $blue !important;
+    border-bottom: 3px solid $primary !important;
     display: inline-block;
     padding-bottom: 0.5rem;
     padding-right: 2rem;
@@ -105,7 +105,7 @@ trix-editor {
             bottom: 0;
             width: 100%;
             height: 4px;
-            background: $blue;
+            background: $primary;
             transform: translateX(-100%);
         }
         &:hover:before {
