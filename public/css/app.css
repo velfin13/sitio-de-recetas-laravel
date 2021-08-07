@@ -13061,7 +13061,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: #45BF55;
+  background: #45BF55 !important;
   transform: translateX(-100%);
 }
 .categorias-bg .nav-link:hover:before {
@@ -13107,7 +13107,7 @@ trix-editor {
 }
 
 .fecha {
-  color: #45BF55 !important;
+  color: #45BF55 !important !important;
 }
 
 .receta-meta p {
@@ -13135,7 +13135,7 @@ trix-editor {
   font-family: "Cabin", sans-serif;
   color: #333;
   font-size: 1.8rem;
-  border-bottom: 3px solid #45BF55 !important;
+  border-bottom: 3px solid #45BF55 !important !important;
   display: inline-block;
   padding-bottom: 0.5rem;
   padding-right: 2rem;
@@ -13190,7 +13190,7 @@ trix-editor {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: #45BF55;
+  background: #45BF55 !important;
   transform: translateX(-100%);
 }
 .categorias-bg .nav-link:hover:before {
