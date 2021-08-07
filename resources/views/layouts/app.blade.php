@@ -56,14 +56,16 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-
-
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @if (!Auth::user()->perfil->imagen)
                                         <span
                                             class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                        <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
+                                            src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-2.jpg">
                                     @else
+                                        <span
+                                            class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                         <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
                                             src="{{ '/storage/' . Auth::user()->perfil->imagen }}">
 
@@ -96,7 +98,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
                                         data-target="#logoutModal"
                                         onclick="event.preventDefault();
-                                                                                document.getElementById('logout-form').submit();">
+                                                                                                document.getElementById('logout-form').submit();">
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                                         {{ __('Logout') }}
                                     </a>
