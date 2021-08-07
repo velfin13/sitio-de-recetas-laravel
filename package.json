@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "axios": "^0.21.1",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^5.1.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.25",
@@ -25,9 +25,11 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "bootstrap-scss": "^5.0.2",
         "font-awesome": "^4.7.0",
         "moment": "^2.29.1",
         "owl.carousel": "^2.3.4",
+        "remove": "^0.1.5",
         "vue-dynamic-star-rating": "^1.0.8",
         "vue-rate-it": "^2.1.0",
         "vue-star-rating": "^2.1.0",
