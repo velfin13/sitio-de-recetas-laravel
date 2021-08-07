@@ -57,11 +57,15 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8e7fb0524b3d60943726838590f5a5eba26a4e43
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @if (!Auth::user()->perfil->imagen)
                                 <span class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 @else
                                 <img class="img-profile rounded-circle" style="height: 40px;width: 40px;" src="{{ '/storage/' . Auth::user()->perfil->imagen }}">
+<<<<<<< HEAD
 =======
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -82,6 +86,8 @@
                                             src="{{ '/storage/' . Auth::user()->perfil->imagen }}"
                                             alt="{{ Auth::user()->name }}">
 >>>>>>> 3ff141c9e3bd0a0a1ef80d11559aa86b1cbad202
+=======
+>>>>>>> 8e7fb0524b3d60943726838590f5a5eba26a4e43
 
                                 @endif
 
@@ -96,6 +102,9 @@
                                 </a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8e7fb0524b3d60943726838590f5a5eba26a4e43
                                 <a class="dropdown-item" href="{{ route('recetas.index') }}">
                                     <i class="fa fa-cutlery" aria-hidden="true"></i>
                                     {{ __('Ver Recetas') }}
@@ -114,6 +123,7 @@
                                 </form>
                             </div>
                         </li>
+<<<<<<< HEAD
 =======
                                     <a class="dropdown-item"
                                         href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
@@ -142,6 +152,8 @@
                                 </div>
                             </li>
 >>>>>>> 3ff141c9e3bd0a0a1ef80d11559aa86b1cbad202
+=======
+>>>>>>> 8e7fb0524b3d60943726838590f5a5eba26a4e43
                         @endguest
                     </ul>
                 </div>
