@@ -56,13 +56,6 @@
                         <li class="nav-item dropdown">
 
 
-<<<<<<< HEAD
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                @if (!Auth::user()->perfil->imagen)
-                                <span class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                @else
-                                <img class="img-profile rounded-circle" style="height: 40px;width: 40px;" src="{{ '/storage/' . Auth::user()->perfil->imagen }}">
-=======
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     @if (!Auth::user()->perfil->imagen)
@@ -81,7 +74,6 @@
                                         <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
                                             src="{{ '/storage/' . Auth::user()->perfil->imagen }}"
                                             alt="{{ Auth::user()->name }}">
->>>>>>> 3ff141c9e3bd0a0a1ef80d11559aa86b1cbad202
 
                                 @endif
 
