@@ -16,7 +16,7 @@
           <div class="col-md-6"></div>
         </div>
 
-        <br>
+        <br />
         <div class="row">
           <div class="col-md-6">
             <button @click="setRating()" class="btn btn-primary">
@@ -28,17 +28,20 @@
         <h3 class="heading">Reseñas</h3>
         <div class="review-rating">
           <div class="left-review">
-            <div class="review-title">3.5</div>
+            <div class="review-title">{{ totalrate }}</div>
             <div class="review-star">
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star-half-0"></span>
-              <span class="fa fa-star-0"></span>
+              <star-rating
+                :inline="true"
+                :read-only="true"
+                :show-rating="false"
+                v-model="totalrate"
+                :increment="0.1"
+                :star-size="20"
+                active-color="#000000"
+              ></star-rating>
             </div>
             <div class="review-people">
-              <i class="fa fa-user"></i> 8,75556 total
+              <i class="fa fa-user"></i>{{ totaluser }}
             </div>
           </div>
           <div class="right-review">
@@ -46,7 +49,7 @@
               <div class="left-bar">5</div>
               <div class="right-bar">
                 <div class="bar-container">
-                  <div class="bar-5" style="width: 80%"></div>
+                  <div class="bar-5" style="width: 0%"></div>
                 </div>
               </div>
             </div>
@@ -54,7 +57,7 @@
               <div class="left-bar">4</div>
               <div class="right-bar">
                 <div class="bar-container">
-                  <div class="bar-4" style="width: 21%"></div>
+                  <div class="bar-4" style="width: 0%"></div>
                 </div>
               </div>
             </div>
@@ -62,7 +65,7 @@
               <div class="left-bar">3</div>
               <div class="right-bar">
                 <div class="bar-container">
-                  <div class="bar-3" style="width: 50%"></div>
+                  <div class="bar-3" style="width: 0%"></div>
                 </div>
               </div>
             </div>
@@ -70,7 +73,7 @@
               <div class="left-bar">2</div>
               <div class="right-bar">
                 <div class="bar-container">
-                  <div class="bar-2" style="width: 4%"></div>
+                  <div class="bar-2" style="width: 0%"></div>
                 </div>
               </div>
             </div>
@@ -78,7 +81,7 @@
               <div class="left-bar">1</div>
               <div class="right-bar">
                 <div class="bar-container">
-                  <div class="bar-1" style="width: 30%"></div>
+                  <div class="bar-1" style="width: 0%"></div>
                 </div>
               </div>
             </div>
@@ -198,29 +201,44 @@
 
 <script>
 export default {
+  data() {
+    return {
+      totaluser: 0,
+      totalrate: 0,
+      rating: 0,
+    };
+  },
+
+  created(){
+this.getRating();
+  },
+
   methods: {
     setRating() {
       var pathArray = location.pathname.split("/");
       var uid = pathArray[2];
       fetch("/api/rating/new", {
         method: "post",
-        body: JSON.stringify({ product: uid, user: "5", rating: this.rating }),
+        body: JSON.stringify({ receta: uid, user: 2, rating: this.rating }),
         headers: {
-          "Content-Type": "application/json",
+          "content-type": "application/json",
         },
       })
-        .then((res) => res.json())
+        .then(function (res) {
+          return res.json();
+        })
+
         .then((data) => {
-          swal("Thank you!", "Terima kasih telah memberi rating", "success");
+          swal("Gracias!", "Gracias por calificar", "success");
         })
         .catch((err) => {
-          swal("Failed", "Anda gagal memberikan pernilaian", "error");
+          swal("Fallido", "Opps..Ocurrió un error inesperado", "error");
         });
     },
     getRating() {
       var pathArray = location.pathname.split("/");
-      var uid = pathArray[2];
-      fetch(`/api/rating/${uid}`)
+      var pid = pathArray[2];
+      fetch(`/api/rating/${pid}`)
         .then((res) => res.json())
         .then((res) => {
           var mydata = res.data;

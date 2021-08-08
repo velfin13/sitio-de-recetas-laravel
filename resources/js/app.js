@@ -6,12 +6,15 @@
 
 import Vue from "vue";
 import Raters from "vue-rate-it";
-
 import "sweetalert2/dist/sweetalert2.min.css";
 import "owl.carousel";
+import Swal from 'sweetalert'
+
 
 require("./bootstrap");
 window.Vue = require("vue");
+window.$ = require('jquery');
+
 
 /**
  * The following block of code may be used to automatically register your
