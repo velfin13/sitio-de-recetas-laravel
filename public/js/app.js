@@ -2063,6 +2063,7 @@ __webpack_require__.r(__webpack_exports__);
     this.getRating();
   },
   methods: {
+    data: function data() {},
     setRating: function setRating() {
       var _this = this;
 
@@ -2082,7 +2083,25 @@ __webpack_require__.r(__webpack_exports__);
           });
 
           if (existe) {
-            swal("No puedes calificar!!", "Ya has calificado antes", "warning");
+            fetch("/api/rating/new", {
+              method: "put",
+              body: JSON.stringify({
+                receta: _this.idReceta,
+                user: _this.idUser,
+                rating: _this.rating
+              }),
+              headers: {
+                "content-type": "application/json"
+              }
+            }).then(function (res) {
+              return res.json();
+            }).then(function (data) {
+              swal("Gracias!", "Calificacion Actualizada", "success");
+
+              _this.getRating();
+            })["catch"](function (err) {
+              swal("Error", "Opps..Ocurrió un error inesperado", "error");
+            });
             return;
           } else {
             fetch("/api/rating/new", {
@@ -2099,6 +2118,8 @@ __webpack_require__.r(__webpack_exports__);
               return res.json();
             }).then(function (data) {
               swal("Gracias!", "Gracias por calificar", "success");
+
+              _this.getRating();
             })["catch"](function (err) {
               swal("Error", "Opps..Ocurrió un error inesperado", "error");
             });
@@ -2109,6 +2130,7 @@ __webpack_require__.r(__webpack_exports__);
     getRating: function getRating() {
       var _this2 = this;
 
+      this.actualiza();
       fetch("/api/rating/".concat(this.idReceta, "}")).then(function (res) {
         return res.json();
       }).then(function (res) {
@@ -2157,6 +2179,27 @@ __webpack_require__.r(__webpack_exports__);
         $(".bar-1").css("width", bar1 + "%");
       })["catch"](function (err) {
         console.log(err);
+      });
+    },
+
+    /* verifica si el usuario ya ha calificado antes */
+    actualiza: function actualiza() {
+      var _this3 = this;
+
+      var existe = {};
+      var data = axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/rating/".concat(this.idReceta, "}")).then(function (res) {
+        var datos = res.data.data;
+        datos.forEach(function (element) {
+          if (element.user_id === parseInt(_this3.idUser, 10)) {
+            existe = element;
+          }
+        });
+
+        if (existe) {
+          console.log(existe);
+          _this3.rating = existe.rating;
+          return;
+        }
       });
     }
   }

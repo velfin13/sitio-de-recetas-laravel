@@ -216,6 +216,7 @@ export default {
     },
 
     methods: {
+        data: () => {},
         setRating() {
             if (this.idUser === "null") {
                 swal(
@@ -240,11 +241,36 @@ export default {
                         });
 
                         if (existe) {
-                            swal(
-                                `No puedes calificar!!`,
-                                "Ya has calificado antes",
-                                "warning"
-                            );
+                            fetch("/api/rating/new", {
+                                method: "put",
+                                body: JSON.stringify({
+                                    receta: this.idReceta,
+                                    user: this.idUser,
+                                    rating: this.rating
+                                }),
+                                headers: {
+                                    "content-type": "application/json"
+                                }
+                            })
+                                .then(function(res) {
+                                    return res.json();
+                                })
+
+                                .then(data => {
+                                    swal(
+                                        "Gracias!",
+                                        "Calificacion Actualizada",
+                                        "success"
+                                    );
+                                    this.getRating();
+                                })
+                                .catch(err => {
+                                    swal(
+                                        `Error`,
+                                        "Opps..Ocurrió un error inesperado",
+                                        "error"
+                                    );
+                                });
                             return;
                         } else {
                             fetch("/api/rating/new", {
@@ -268,6 +294,7 @@ export default {
                                         "Gracias por calificar",
                                         "success"
                                     );
+                                    this.getRating();
                                 })
                                 .catch(err => {
                                     swal(
@@ -281,6 +308,7 @@ export default {
             }
         },
         getRating() {
+            this.actualiza();
             fetch(`/api/rating/${this.idReceta}}`)
                 .then(res => res.json())
                 .then(res => {
@@ -323,6 +351,25 @@ export default {
                 .catch(err => {
                     console.log(err);
                 });
+        },
+        /* verifica si el usuario ya ha calificado antes */
+        actualiza() {
+            var existe = {};
+            var data = axios.get(`/api/rating/${this.idReceta}}`).then(res => {
+                var datos = res.data.data;
+
+                datos.forEach(element => {
+                    if (element.user_id === parseInt(this.idUser, 10)) {
+                        existe = element;
+                    }
+                });
+
+                if (existe) {
+                    console.log(existe);
+                    this.rating = existe.rating;
+                    return;
+                }
+            });
         }
     }
 };

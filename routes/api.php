@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/rating/new', 'CalificacionController@setrating')->name('setrating');
+Route::put('/rating/new', 'CalificacionController@updateRating')->name('updaterating');
 Route::get('/rating/{id}', 'CalificacionController@getrating')->name('getrating');
