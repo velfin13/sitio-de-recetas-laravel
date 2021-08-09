@@ -62,7 +62,7 @@
                                         <span
                                             class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                         <img class="img-profile rounded-circle" style="height: 40px;width: 40px;"
-                                            src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-2.jpg">
+                                            src="{{ asset('images/noImage.jpg') }}">
                                     @else
                                         <span
                                             class="mr-2 d-none d-inline text-gray-600 small">{{ Auth::user()->name }}</span>

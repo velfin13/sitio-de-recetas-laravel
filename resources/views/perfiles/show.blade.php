@@ -8,8 +8,7 @@
                 @if ($perfil->imagen)
                     <img src="/storage/{{ $perfil->imagen }}" alt="img" class="w-100 rounded-circle">
                 @else
-                    <img src="https://icon-library.com/images/no-profile-picture-icon/no-profile-picture-icon-2.jpg"
-                        alt="img" class="w-100 rounded-circle">
+                    <img src="{{ asset('images/noImage.jpg') }}" alt="img" class="w-100 rounded-circle">
                 @endif
             </div>
             <div class="col-md-7 mt-5 mt-md-0">
