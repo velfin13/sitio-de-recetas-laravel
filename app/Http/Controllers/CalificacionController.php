@@ -17,9 +17,7 @@ class CalificacionController extends Controller
     }
 
     public function getrating($id){
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-$out->writeln("Hello from Terminal");
-$out->writeln($id);
+       
 
         return RatingResource::collection(Rating::all()->where('receta_id', $id));
     }

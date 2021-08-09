@@ -78,8 +78,15 @@
                 @endif
             @endif
 
+
+
             <div class="d-flex align-items-start">
-                <calificacion-button></calificacion-button>
+                @auth
+                    <calificacion-button id-user={{ Auth::user()->id }} id-receta={{ $recetas->id }}></calificacion-button>
+                @else
+                    <calificacion-button id-user={{ "null" }} id-receta={{ $recetas->id }}></calificacion-button>
+
+                @endauth
             </div>
 
 
