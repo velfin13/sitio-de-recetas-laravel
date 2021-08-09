@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Receta;
+use App\Rating;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Http\Resources\Rating as RatingResource;
 
 class PdfController extends Controller
 {
@@ -16,14 +18,13 @@ class PdfController extends Controller
      */
     public function index(Request $request, Receta $receta)
     {
-
-
         // return $receta;
 
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.index', $receta);
         return $pdf->stream();
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -18,5 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/rating/new', 'LikeButton@setrating')->name('setrating');
-Route::get('/rating/{id}', 'LikeButton@getrating')->name('getrating');
+Route::post('/rating/new', 'CalificacionController@setrating')->name('setrating');
+Route::put('/rating/new', 'CalificacionController@updateRating')->name('updaterating');
+Route::get('/rating/{id}', 'CalificacionController@getrating')->name('getrating');
