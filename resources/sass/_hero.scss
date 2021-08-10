@@ -4,8 +4,8 @@
     .nav-link {
         color: #222 !important;
         display: inline-block;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
         overflow: hidden;
         position: relative;
         text-decoration: none;
@@ -43,6 +43,8 @@
     height: 30rem;
     background-size: cover;
     background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     .texto-buscar {
         p {
@@ -51,4 +53,31 @@
             color: #fff;
         }
     }
+}
+
+.hero-info {
+    padding: 60px 0 60px;
+}
+
+.hero-info .hero-info__title {
+    font-weight: 800;
+    font-size: 3rem;
+    color: white;
+}
+
+.hero-info .hero-info__info {
+    color: #f5f5f5;
+}
+
+.hero-search {
+    padding: 50px 0 50px;
+}
+
+.hero-search .btn {
+    background-color: white;
+    pointer-events: none;
+}
+
+.hero-search .form-control:focus {
+    box-shadow: none;
 }
