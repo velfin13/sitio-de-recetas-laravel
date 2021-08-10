@@ -15,7 +15,7 @@
     <center>
         <form class="hero-search form-group" action="{{ route('buscar.show') }}">
             <div class="input-group col-md-4">
-                <input class="form-control py-2 border-right-0 border" type="search" value="search" id="example-search-input" placeholder="Encuentra tu receta ideal ">
+                <input class="form-control py-2 border-right-0 border" name="buscar" type="search" placeholder="Encuentra tu receta ideal ">
                 <span class="input-group-append">
                     <button class="btn btn-outline-secondary border-left-0 border" type="button">
                         <i class="fa fa-search"></i>
