@@ -2448,6 +2448,8 @@ jQuery(document).ready(function () {
     }
   });
 });
+/* datatable */
+
 $(document).ready(function () {
   $("#example").DataTable({
     responsive: true,
