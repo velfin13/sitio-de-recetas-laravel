@@ -87621,7 +87621,7 @@ var render = function() {
         _c("div", { staticClass: "review-rating" }, [
           _c("div", { staticClass: "left-review" }, [
             _c("div", { staticClass: "review-title" }, [
-              _vm._v(_vm._s(_vm.totalrate))
+              _vm._v(_vm._s(_vm.totalrate ? _vm.totalrate : 0))
             ]),
             _vm._v(" "),
             _c(

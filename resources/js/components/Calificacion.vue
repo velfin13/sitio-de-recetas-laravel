@@ -28,7 +28,7 @@
                 <h3 class="heading">Reseñas</h3>
                 <div class="review-rating">
                     <div class="left-review">
-                        <div class="review-title">{{ totalrate }}</div>
+                        <div class="review-title">{{ totalrate ? totalrate : 0 }}</div>
                         <div class="review-star">
                             <star-rating
                                 :inline="true"
