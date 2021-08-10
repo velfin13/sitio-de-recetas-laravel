@@ -12,7 +12,7 @@
 
 @section('content')
     <h2 class="text-center">Editar receta: <b>{{ $receta->titulo }}</b></h2>
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center mt-2">
 
         <div class="col-md-8">
 

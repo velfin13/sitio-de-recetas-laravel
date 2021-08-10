@@ -13,11 +13,11 @@
     </div>
 
     <center>
-        <form class="hero-search form-group" action="{{ route('buscar.show') }}">
+        <form class="hero-search form-group" action="{{ route('buscar.show') }}" method="POST">
             <div class="input-group col-md-4">
                 <input class="form-control py-2 border-right-0 border" name="buscar" type="search" placeholder="Encuentra tu receta ideal ">
                 <span class="input-group-append">
-                    <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                    <button class="btn btn-outline-secondary border-left-0 border" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
                 </span>

@@ -149,7 +149,7 @@
                 @yield('botones')
             </div>
 
-            <main class="py-4 mt-1 col-12">
+            <main class="py-1 col-12">
                 @yield('content')
             </main>
         </div>

@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-    <h2 class="text-center mb-5">Administra tus recetas</h2>
+    <h2 class="text-center mb-4">Administra tus recetas</h2>
     <div class="col-md-10 mx-auto bg-white p-3">
         <table class="table table-bordered table-striped table-hover text-center" id="example">
             <thead class="bg-primary text-light">

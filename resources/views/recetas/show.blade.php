@@ -18,7 +18,7 @@
         <div class="imagen-receta row">
             <div class="col-12">
                 <center><img src="/storage/{{ $recetas->imagen }}" alt="img" class="w-75 mb-4"
-                        style="border-radius: 40px;box-shadow: 7px 10px 28px -4px rgba(0,0,0,0.75);"></center>
+                        style="border-radius: 40px;box-shadow: 3px 9px 25px 1px rgba(6,6,5,0.36);"></center>
             </div>
         </div>
 
