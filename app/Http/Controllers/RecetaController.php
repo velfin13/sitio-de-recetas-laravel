@@ -32,7 +32,7 @@ class RecetaController extends Controller
         $usuario = auth()->user();
 
 
-        $recetas = Receta::where('user_id', $usuario->id)->paginate(4);
+        $recetas = Receta::all()->where('user_id', $usuario->id);
 
 
         return view('recetas.index')->with('recetas', $recetas);
@@ -257,7 +257,7 @@ class RecetaController extends Controller
 
 
 
-    
+
 
     public function search(Request $request)
     {

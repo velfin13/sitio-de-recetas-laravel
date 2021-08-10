@@ -365,7 +365,6 @@ export default {
                 });
 
                 if (existe) {
-                    console.log(existe);
                     this.rating = existe.rating;
                     return;
                 }

@@ -4,10 +4,17 @@
     @include('ui.navegacion')
 @endsection
 
+@section('styles')
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.25/af-2.3.7/b-1.7.1/r-2.2.9/datatables.min.css" />
+
+
+@endsection
+
 @section('content')
     <h2 class="text-center mb-5">Administra tus recetas</h2>
     <div class="col-md-10 mx-auto bg-white p-3">
-        <table class="table table-bordered table-striped table-hover text-center">
+        <table class="table table-bordered table-striped table-hover text-center" id="example">
             <thead class="bg-primary text-light">
                 <tr>
                     <th scole="col">Titulo</th>
@@ -33,9 +40,8 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="col-12 mt-4 justify-content-center d-flex">
-            {{ $recetas->links() }}
-        </div>
+        <br>
+        <hr>
 
         <h2 class="text-center my-4">Recetas que te gustan</h2>
         <div class="col-md-10 mx-auto p-3">
