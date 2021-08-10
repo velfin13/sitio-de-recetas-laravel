@@ -7,7 +7,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
                         <a href="{{ route('inicio.index') }}">
-                            <img src="{{ asset('images/logo.png') }}" class="brand_logo" alt="Logo">
+                            <img src="{{ asset('images/logo2.png') }}" class="brand_logo" alt="Logo">
                         </a>
                     </div>
                 </div>
