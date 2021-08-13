@@ -13,7 +13,7 @@
     </div>
 
     <center>
-        <form class="hero-search form-group" action="{{ route('buscar.show') }}" method="POST">
+        <form class="hero-search form-group" action="{{ route('buscar.show') }}" method="GET">
             <div class="input-group col-md-4">
                 <input class="form-control py-2 border-right-0 border" name="buscar" type="search" placeholder="Encuentra tu receta ideal ">
                 <span class="input-group-append">
