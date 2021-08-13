@@ -42,6 +42,11 @@ Vue.component(
     require("./components/EliminarReceta.vue").default
 );
 
+Vue.component(
+    "comentario-receta",
+    require("./components/Comentarios.vue").default
+);
+
 Vue.component("star-rating", Raters.StarRating);
 
 /**

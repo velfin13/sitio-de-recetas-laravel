@@ -62,6 +62,12 @@ class User extends Authenticatable
     //recetas que el usuario le ha dado me gusta
     public function meGusta()
     {
-        return $this->belongsToMany(Receta::class,'likes_receta');
+        return $this->belongsToMany(Receta::class, 'likes_receta');
+    }
+
+    //recetas que el usuario comento
+    public function comento()
+    {
+        return $this->belongsToMany(Receta::class, 'comment_receta');
     }
 }
