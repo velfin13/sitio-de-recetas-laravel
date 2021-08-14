@@ -10,7 +10,7 @@
             </td>
             {{-- center side --}}
             <td>
-                <p data-id="{{ 'user_'.Auth::user()->id }}">Mensajes Guardados <span>Tú</span></p>
+                <p data-id="{{ 'user_'.Auth::user()->id }}">Mensajes Guardados<span>Tú</span></p>
                 <span>Guardar mensajes en secreto</span>
             </td>
         </tr>
@@ -39,7 +39,7 @@
             {{-- Last Message user indicator --}}
             {!!
                 $lastMessage->from_id == Auth::user()->id 
-                ? '<span class="lastMessageIndicator">You :</span>'
+                ? '<span class="lastMessageIndicator">Tú :</span>'
                 : ''
             !!}
             {{-- Last message body --}}
