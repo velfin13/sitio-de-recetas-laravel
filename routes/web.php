@@ -60,6 +60,7 @@ Route::get('/recetas-pdf/{receta}', 'PdfController@index')->name('pdfs.index');
 
 /* comentarios de recetas */
 Route::post('/comment', 'CommentController@store')->name('comment.store');
+Route::get('/comment/{user}', 'CommentController@getPerfil')->name('comment.getPerfil');
 Route::delete('/comment/{comment}', 'CommentController@destroy')->name('comment.destroy');
 
 

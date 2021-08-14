@@ -127,8 +127,7 @@
                             <hr>
                             <div class="row">
                                 <div class="media">
-                                    <img src="http://pm1.narvii.com/6891/2952708408bd0f14b8e9678b3be71463e5c4b3bfr1-1181-1175v2_uhq.jpg"
-                                        width="64" height="64" alt="" />
+                                    <foto-perfil id-user={{ $item->user_id }}></foto-perfil>
                                     <div class="media-body">
                                         <p class="user">
                                             <a href="{{ route('perfiles.show', ['perfil' => $item->user_id]) }}">

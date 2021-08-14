@@ -48,6 +48,11 @@ Vue.component(
 );
 
 Vue.component(
+    "foto-perfil",
+    require("./components/GetPerfilUser.vue").default
+);
+
+Vue.component(
     "comentario-nombre",
     require("./components/NombrePerfil.vue").default
 );

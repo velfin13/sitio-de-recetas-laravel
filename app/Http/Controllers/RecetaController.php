@@ -142,7 +142,7 @@ class RecetaController extends Controller
     {
 
         
-        $comentarios =  Receta::find(1)->comentario()->orderBy('created_at','desc')->paginate(5);
+        $comentarios =  Receta::find($receta->id)->comentario()->orderBy('created_at','desc')->paginate(5);
 
         //obtener si el usuario actual esta autenticado y le gusta la receta
         $like = (auth()->user()) ? auth()->user()->meGusta->contains($receta->id) : false;
