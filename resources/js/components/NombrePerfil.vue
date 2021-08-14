@@ -9,11 +9,15 @@ export default {
             usuario: ""
         };
     },
-    mounted() {
-        console.log("fecha", this.usuario);
+    created() {
+        this.getUser();
     },
     methods: {
-        getUser() {}
+        getUser() {
+            fetch(`/user-comentario/${this.idUser}`)
+                .then(res => res.json())
+                .then(res => (this.usuario = res.name));
+        }
     }
 };
 </script>

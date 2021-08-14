@@ -2383,11 +2383,19 @@ __webpack_require__.r(__webpack_exports__);
       usuario: ""
     };
   },
-  mounted: function mounted() {
-    console.log("fecha", this.usuario);
+  created: function created() {
+    this.getUser();
   },
   methods: {
-    getUser: function getUser() {}
+    getUser: function getUser() {
+      var _this = this;
+
+      fetch("/user-comentario/".concat(this.idUser)).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        return _this.usuario = res.name;
+      });
+    }
   }
 });
 
