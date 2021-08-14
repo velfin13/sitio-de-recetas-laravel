@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\CategoriaReceta;
+use App\Comment;
 use App\Receta;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -138,6 +140,10 @@ class RecetaController extends Controller
      */
     public function show(Receta $receta)
     {
+
+        
+        $comentarios =  Receta::find(1)->comentario()->orderBy('created_at','desc')->paginate(5);
+
         //obtener si el usuario actual esta autenticado y le gusta la receta
         $like = (auth()->user()) ? auth()->user()->meGusta->contains($receta->id) : false;
 
@@ -147,7 +153,8 @@ class RecetaController extends Controller
         return view('recetas.show')
             ->with('recetas', $receta)
             ->with('like', $like)
-            ->with('likes', $likes);
+            ->with('likes', $likes)
+            ->with('comentarios', $comentarios);
     }
 
 

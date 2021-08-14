@@ -43,8 +43,8 @@ Vue.component(
 );
 
 Vue.component(
-    "comentario-receta",
-    require("./components/Comentarios.vue").default
+    "comentario-nombre",
+    require("./components/NombrePerfil.vue").default
 );
 
 Vue.component("star-rating", Raters.StarRating);

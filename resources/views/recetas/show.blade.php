@@ -99,9 +99,21 @@
                             <form action="{{ route('comment.store') }}"
                                 class="form-comments d-flex justify-content-end flex-wrap" method="POST">
                                 @csrf
-                                <input type="hidden" value="{{ Auth::user()->id }}" name="idUser">
-                                <input type="hidden" value="{{ $recetas->id }}" name="idReceta">
-                                <textarea name="comentario" placeholder="Ingresa tu comentario"></textarea>
+                                {{-- comentario --}}
+                                @error('comentario')
+                                    <span class="invalid-feedback d-block" role="alert">
+                                        <div class="alert alert-danger text-center" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                    </span>
+                                @enderror
+                                <textarea type="text" value="{{ old('comentario') }}" name="comentario"
+                                    class="@error('comentario') is-invalid @enderror"
+                                    placeholder="Ingresa tu comentario"></textarea>
+
+                                <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                                <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
+
                                 <button type="submit" class="btn btn-primary">Comentar <i class="fa fa-paper-plane"
                                         aria-hidden="true"></i></button>
                             </form>
@@ -111,15 +123,61 @@
                             </div>
 
                         @endauth
+                        @foreach ($comentarios as $item)
+                            {{-- <div class="row">
+                                <div class="media">
+                                    <img src="http://pm1.narvii.com/6891/2952708408bd0f14b8e9678b3be71463e5c4b3bfr1-1181-1175v2_uhq.jpg"
+                                        width="64" height="64" alt="">
 
-                        <div class="row">
-                            <div class="media">
-                                <img src="http://news.toyark.com/wp-content/uploads/sites/4/2017/11/SHF-SSG-Goku-14.jpg"
-                                    width="64" height="64" alt="img">
-                                <comentario-receta></comentario-receta>
+                                    <div class="media-body">
+                                        <p class="user">
+                                            <a href="{{ route('perfiles.show', ['perfil' => $item->user_id]) }}">
+                                                <comentario-nombre></comentario-nombre>
+                                                @php
+                                                    $fecha = $item->created_at;
+                                                @endphp
+                                                <span>
+                                                    <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
+                                                </span>
+
+                                            </a>
+                                        </p>
+
+                                        <p class="comment">
+                                            {{ $item->comentario }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <hr>
+                            <div class="row">
+                                <div class="media">
+                                    <img src="http://pm1.narvii.com/6891/2952708408bd0f14b8e9678b3be71463e5c4b3bfr1-1181-1175v2_uhq.jpg"
+                                        width="64" height="64" alt="" />
+                                    <div class="media-body">
+                                        <p class="user">
+                                            <a href="{{ route('perfiles.show', ['perfil' => $item->user_id]) }}">
+                                                <comentario-nombre id-user={{ $item->user_id }}></comentario-nombre>
+                                            </a>
+                                            @php
+                                                $fecha = $item->created_at;
+                                            @endphp
+                                            <span>
+                                                <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
+                                            </span>
+                                        </p>
+                                        <p class="comment">
+                                            {{ $item->comentario }}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
+                        @endforeach
+                        <div class="d-flex justify-content-center">
+                            {{ $comentarios->links() }}
                         </div>
                     </div>
+
                 </div>
             </div>
 

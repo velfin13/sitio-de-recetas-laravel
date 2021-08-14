@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentRecetaPivotTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCommentRecetaPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('comment_receta', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->text('comentario');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('receta_id')->constrained();
+            $table->text("comentario");
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCommentRecetaPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comment_receta');
+        Schema::dropIfExists('comments');
     }
 }

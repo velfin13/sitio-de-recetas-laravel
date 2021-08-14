@@ -30,9 +30,9 @@ class Receta extends Model
         return $this->belongsToMany(User::class, 'likes_receta');
     }
 
-    //comentarios que ha recibido la receta
-    public function comment()
+    //obtener infromacion del comentario via FK
+    public function comentario()
     {
-        return $this->belongsToMany(User::class, 'comment_receta');
+        return $this->hasMany(Comment::class, 'receta_id');
     }
 }

@@ -65,9 +65,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Receta::class, 'likes_receta');
     }
 
-    //recetas que el usuario comento
+    //obtener infromacion del comentario via FK
     public function comento()
     {
-        return $this->belongsToMany(Receta::class, 'comment_receta');
+        return $this->hasMany(Comment::class, 'user_id');
     }
 }
