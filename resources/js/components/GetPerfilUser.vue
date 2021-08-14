@@ -32,7 +32,6 @@ export default {
             fetch(`/comment/${this.idUser}`)
                 .then(res => res.json())
                 .then(res => {
-                    console.log(res);
                     if (res.imagen === null) {
                         this.photo = null;
                     } else {

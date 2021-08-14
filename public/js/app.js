@@ -2407,8 +2407,6 @@ __webpack_require__.r(__webpack_exports__);
       fetch("/comment/".concat(this.idUser)).then(function (res) {
         return res.json();
       }).then(function (res) {
-        console.log(res);
-
         if (res.imagen === null) {
           _this.photo = null;
         } else {
