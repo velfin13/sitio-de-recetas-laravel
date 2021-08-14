@@ -82,6 +82,11 @@
                                         {{ __('Perfil') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="/chatify">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                        {{ __('Chat') }}
+                                    </a>
+
                                     <a class="dropdown-item"
                                         href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -98,7 +103,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
                                         data-target="#logoutModal"
                                         onclick="event.preventDefault();
-                                                                                                document.getElementById('logout-form').submit();">
+                                                                                                        document.getElementById('logout-form').submit();">
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                                         {{ __('Logout') }}
                                     </a>

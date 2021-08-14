@@ -17,7 +17,8 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^2.4",
-        "laraveles/spanish": "^1.5"
+        "laraveles/spanish": "^1.5",
+        "munafio/chatify": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
