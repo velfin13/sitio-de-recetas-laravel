@@ -43,6 +43,11 @@ Vue.component(
 );
 
 Vue.component(
+    "eliminar-comentario",
+    require("./components/EliminarComReceta.vue").default
+);
+
+Vue.component(
     "comentario-nombre",
     require("./components/NombrePerfil.vue").default
 );

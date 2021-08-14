@@ -15,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+
 //home de la app
 Route::get('/', 'InicioController@index')->name('inicio.index');
-
-Auth::routes();
 
 
 /* rutas recetas */
@@ -53,13 +54,14 @@ Route::get('/categotia/{categoriaReceta}', 'CategoriasController@show')->name('c
 Route::get('/buscar', 'RecetaController@search')->name('buscar.show');
 
 
-
 //generando pdf
 Route::get('/recetas-pdf/{receta}', 'PdfController@index')->name('pdfs.index');
 
 
-/* almacenar los comentarios de usuarios */
+/* comentarios de recetas */
 Route::post('/comment', 'CommentController@store')->name('comment.store');
+Route::delete('/comment/{comment}', 'CommentController@destroy')->name('comment.destroy');
+
 
 //obtener usuario
 Route::get('/user-comentario/{user}', 'CommentController@show')->name('comentario.show');

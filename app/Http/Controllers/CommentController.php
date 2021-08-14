@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Receta;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -99,6 +100,6 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        return $comment->delete();
     }
 }
