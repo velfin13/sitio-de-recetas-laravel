@@ -2,15 +2,29 @@
 
 
 @section('content')
+
     <article class="contenido-receta bg-white shadow p-4">
-        <h1 class="text-center mb-4">{{ Str::title($recetas->titulo) }}</h1>
+
 
 
         <div class="row">
-            <div class="col-8 col-sm-8 col-md-9 col-xl-10"></div>
-            <div class="col-4 col-sm-4 col-md-3 col-xl-2 mb-4">
-                <a target="_blank" href="{{ route('pdfs.index', ['receta' => $recetas->id]) }}"
-                    class="btn btn-primary font-weight-bold">Descargar <i class="fa fa-download" aria-hidden="true"></i></a>
+            <div class="col-8 col-sm-9 col-md-10 col-xl-10 mb-5">
+                <h1 class="text-center mb-4">{{ Str::title($recetas->titulo) }}</h1>
+            </div>
+            <div class="col-4 col-sm-3 col-md-2 col-xl-2 mb-4">
+                {{-- test --}}
+                <div class="dropdown">
+                    <a target="_blank" href="{{ route('pdfs.index', ['receta' => $recetas->id]) }}"
+                        class="btn btn-primary font-weight-bold"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Reportar como inusual</a>
+                        <a class="dropdown-item" href="#">Reportar como ofensivo</a>
+                    </div>
+                </div>
             </div>
         </div>
 
