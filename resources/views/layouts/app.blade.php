@@ -25,7 +25,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm">
+        <nav class="navbar navbar-expand-sm navbar-light bg-primary shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ route('inicio.index') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -103,7 +103,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal"
                                         data-target="#logoutModal"
                                         onclick="event.preventDefault();
-                                                                                                        document.getElementById('logout-form').submit();">
+                                                                                                            document.getElementById('logout-form').submit();">
                                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                                         {{ __('Logout') }}
                                     </a>
