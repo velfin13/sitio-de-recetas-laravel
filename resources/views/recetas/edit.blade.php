@@ -67,6 +67,22 @@
                     @enderror
                 </div>
 
+                {{-- ingredientes --}}
+                <div class="form-group mt-4">
+                    <label for="ingredientes">Ingredientes</label>
+
+                    <input id="ingredientes" type="hidden" value="<ol><li></li></ol>" name="ingredientes"
+                        value="{{ $receta->ingredientes }}">
+                    <trix-editor class="form-control @error('ingredientes') is-invalid @enderror" input="ingredientes">
+                    </trix-editor>
+
+                    @error('ingredientes')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
                 {{-- preparacion --}}
                 <div class="form-group mt-4">
                     <label for="preparacion">Preparacion</label>
@@ -82,21 +98,6 @@
                     @enderror
                 </div>
 
-
-                {{-- ingredientes --}}
-                <div class="form-group mt-4">
-                    <label for="ingredientes">Ingredientes</label>
-
-                    <input id="ingredientes" type="hidden" name="ingredientes" value="{{ $receta->ingredientes }}">
-                    <trix-editor class="form-control @error('ingredientes') is-invalid @enderror" input="ingredientes">
-                    </trix-editor>
-
-                    @error('ingredientes')
-                        <span class="invalid-feedback d-block" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
 
 
                 {{-- campo de imagen --}}

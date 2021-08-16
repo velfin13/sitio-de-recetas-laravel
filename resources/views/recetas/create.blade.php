@@ -58,8 +58,24 @@
                 <div class="form-group">
                     <label for="url">Link del video de preparacion (Opcional y solo enlaces de youtube)</label>
                     <input type="url" name="url" class="form-control @error('url') is-invalid @enderror" id="url"
-                        placeholder="Ejemplo https://www.youtube.com/ejemplo      (solo enlaces de youtube)" value="{{ old('url') }}">
+                        placeholder="Ejemplo https://www.youtube.com/ejemplo      (solo enlaces de youtube)"
+                        value="{{ old('url') }}">
                     @error('url')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                {{-- ingredientes --}}
+                <div class="form-group mt-4">
+                    <label for="ingredientes">Ingredientes</label>
+
+                    <input id="ingredientes" value="<ol><li></li></ol>" type="hidden" name="ingredientes" value="{{ old('ingredientes') }}">
+                    <trix-editor class="form-control @error('ingredientes') is-invalid @enderror" input="ingredientes">
+                    </trix-editor>
+
+                    @error('ingredientes')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -75,22 +91,6 @@
                     </trix-editor>
 
                     @error('preparacion')
-                        <span class="invalid-feedback d-block" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-
-                {{-- ingredientes --}}
-                <div class="form-group mt-4">
-                    <label for="ingredientes">Ingredientes</label>
-
-                    <input id="ingredientes" type="hidden" name="ingredientes" value="{{ old('ingredientes') }}">
-                    <trix-editor class="form-control @error('ingredientes') is-invalid @enderror" input="ingredientes">
-                    </trix-editor>
-
-                    @error('ingredientes')
                         <span class="invalid-feedback d-block" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
