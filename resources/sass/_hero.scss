@@ -40,7 +40,8 @@
             rgba(70, 70, 70, 0.4),
             rgba(53, 53, 53, 0.571)),
         url("http://images.pexels.com/photos/5644944/pexels-photo-5644944.jpeg");
-    height: 30rem;
+    background-size: 22rem;
+    height: 22rem;
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -70,7 +71,7 @@
 }
 
 .hero-search {
-    padding: 50px 0 50px;
+    padding: 0px 0 10px;
 }
 
 .hero-search .btn {
