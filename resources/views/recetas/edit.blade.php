@@ -71,7 +71,7 @@
                 <div class="form-group mt-4">
                     <label for="ingredientes">Ingredientes</label>
 
-                    <input id="ingredientes" type="hidden" value="<ol><li></li></ol>" name="ingredientes"
+                    <input id="ingredientes" type="hidden" value="{{ $receta->ingredientes }}" name="ingredientes"
                         value="{{ $receta->ingredientes }}">
                     <trix-editor class="form-control @error('ingredientes') is-invalid @enderror" input="ingredientes">
                     </trix-editor>
