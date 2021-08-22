@@ -1,0 +1,25 @@
+// =======================
+// =========FONTS=========
+// =======================
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Fredoka+One&display=swap");
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+//VARIABLES AND UTILITIES
+@import "variables";
+@import "utilities";
+
+// =======================
+// =====BOOTSTRAP=========
+// =======================
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//COMPONENTS
+@import "comment";
+@import "base";
+@import "hero";
+@import "recetas";
+@import "like";
+@import "login";
+@import "register";
+@import "navbar";
+@import "sidebar";
