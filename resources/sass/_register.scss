@@ -3,16 +3,46 @@
     width: 300px;
     margin-top: auto;
     margin-bottom: auto;
-    background: $primary;
+    background: #F5F7F9;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+// NEW STYLES
+.user_card_register .login {
+    margin-left: 5px;
+}
+
+.user_card_register .login :hover {
+    text-decoration: underline;
+}
+
+.user_card_register .login {
+    margin-top: 10px;
+}
+
+.user_card_register .forgot_password :hover{
+    text-decoration: underline;
+}
+
+.user_card_register input {
+    background-color: white;
+    border: none !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: white !important;
+        border: none !important;
+    }
 }

@@ -6,76 +6,123 @@ html {
     height: 100%;
     background: $body-bg !important;
 }
+
 .user_card {
     height: 400px;
     width: 300px;
     margin-top: auto;
     margin-bottom: auto;
-    background: $primary;
+    // background: #F5F7F9;
+    background: #F5F7F9;
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+
+    a {
+        text-decoration: none;
+    }
 }
+
 .brand_logo_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     height: 170px;
     width: 170px;
     top: -75px;
     border-radius: 50%;
-    background: $body-bg;
+    background: white;
     padding: 10px;
     text-align: center;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
+
 .brand_logo {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     border: 2px solid white;
 }
+
 .form_container {
     margin-top: 100px;
 }
+
 .login_btn {
     width: 100%;
-    background: #0e0e0f !important;
-    color: white !important;
+    background: white !important;
+    color: black;
+    font-weight: bold;
+    border: 1px #E1E1E1 solid;
+
+    &:hover {
+        background-color: $primary !important;
+        color: white;
+    }
 }
-.login_btn:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-}
+
 
 .enlaces_auth,
 .btn-link {
-    color: $body-bg;
-    
-    a: {
-        color: $body-bg !important;
+    color: black;
+
+    a {
+        color: black !important;
     }
 }
 
 .login_container {
     padding: 0 2rem;
 }
+
 .input-group-text {
     background: #0e0e0f !important;
     color: white !important;
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
 }
+
 .input_user,
 .input_pass:focus {
     box-shadow: none !important;
     outline: 0px !important;
 }
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #c0392b !important;
+}
+
+// NEW STYLES
+.user_card .register {
+    margin: 5px;
+}
+
+.user_card .register :hover {
+    text-decoration: underline;
+}
+
+.user_card .remember {
+    margin-top: 10px;
+}
+
+.user_card .forgot_password :hover{
+    text-decoration: underline;
+}
+
+.user_card input {
+    background-color: white;
+    border: none !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: white !important;
+        border: none !important;
+    }
 }

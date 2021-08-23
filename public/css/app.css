@@ -14680,27 +14680,33 @@ html {
   width: 300px;
   margin-top: auto;
   margin-bottom: auto;
-  background: #FDD661;
+  background: #F5F7F9;
   position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+.user_card a {
+  text-decoration: none;
 }
 
 .brand_logo_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   height: 170px;
   width: 170px;
   top: -75px;
   border-radius: 50%;
-  background: #F5F7F9;
+  background: white;
   padding: 10px;
   text-align: center;
+  font-size: 3.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .brand_logo {
@@ -14716,19 +14722,23 @@ html {
 
 .login_btn {
   width: 100%;
-  background: #0e0e0f !important;
-  color: white !important;
+  background: white !important;
+  color: black;
+  font-weight: bold;
+  border: 1px #E1E1E1 solid;
 }
-
-.login_btn:focus {
-  box-shadow: none !important;
-  outline: 0px !important;
+.login_btn:hover {
+  background-color: #FDD661 !important;
+  color: white;
 }
 
 .enlaces_auth,
 .btn-link {
-  color: #F5F7F9;
-  a-color: #F5F7F9 !important;
+  color: black;
+}
+.enlaces_auth a,
+.btn-link a {
+  color: black !important;
 }
 
 .login_container {
@@ -14752,21 +14762,72 @@ html {
   background-color: #c0392b !important;
 }
 
+.user_card .register {
+  margin: 5px;
+}
+
+.user_card .register :hover {
+  text-decoration: underline;
+}
+
+.user_card .remember {
+  margin-top: 10px;
+}
+
+.user_card .forgot_password :hover {
+  text-decoration: underline;
+}
+
+.user_card input {
+  background-color: white;
+  border: none !important;
+}
+.user_card input:hover, .user_card input:active, .user_card input:focus {
+  background-color: white !important;
+  border: none !important;
+}
+
 .user_card_register {
   height: 500px;
   width: 300px;
   margin-top: auto;
   margin-bottom: auto;
-  background: #FDD661;
+  background: #F5F7F9;
   position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
+}
+.user_card_register a {
+  text-decoration: none;
+}
+
+.user_card_register .login {
+  margin-left: 5px;
+}
+
+.user_card_register .login :hover {
+  text-decoration: underline;
+}
+
+.user_card_register .login {
+  margin-top: 10px;
+}
+
+.user_card_register .forgot_password :hover {
+  text-decoration: underline;
+}
+
+.user_card_register input {
+  background-color: white;
+  border: none !important;
+}
+.user_card_register input:hover, .user_card_register input:active, .user_card_register input:focus {
+  background-color: white !important;
+  border: none !important;
 }
 
 .navbar {
