@@ -1,23 +1,23 @@
 <template>
-    <small>{{ usuario }}</small>
+  <small>{{ usuario }}</small>
 </template>
 <script>
 export default {
-    props: ["idUser"],
-    data() {
-        return {
-            usuario: ""
-        };
+  props: ["idUser"],
+  data() {
+    return {
+      usuario: "",
+    };
+  },
+  created() {
+    this.getUser();
+  },
+  methods: {
+    getUser() {
+      fetch(`/user-comentario/${this.idUser}`)
+        .then((res) => res.json())
+        .then((res) => (this.usuario = res.name));
     },
-    created() {
-        this.getUser();
-    },
-    methods: {
-        getUser() {
-            fetch(`/user-comentario/${this.idUser}`)
-                .then(res => res.json())
-                .then(res => (this.usuario = res.name));
-        }
-    }
+  },
 };
 </script>

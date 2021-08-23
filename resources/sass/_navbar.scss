@@ -1,4 +1,9 @@
 // NAVBAR APP
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .navbar .container-fluid {
     justify-content: start !important;
 
@@ -34,6 +39,12 @@
     background-color: white;
 }
 
+.navbar .navbar-brand {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
 .navbar .user {
     display: flex;
     align-items: center;
@@ -59,4 +70,18 @@
 .navbar-categories {
     background-color: #F5F7F9;
     ;
+}
+
+// LOGIN BUTTON
+.navbar .login-button {
+    border: 1px #E8E8E8 solid;
+    font-weight: bold;
+    padding: 10px 40px 10px;
+    background-color: white;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: $primary;
+        color: white;
+    }
 }

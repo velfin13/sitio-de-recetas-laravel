@@ -1,0 +1,24 @@
+// LOGIN BANNER
+.login-banner {
+    // background-color: $primary;
+    background-color: #F3F3F3;
+    padding: 10px;
+    // margin-bottom: 10px;
+
+}
+
+.login-banner .login-banner__message {
+    color: black;
+    text-align: center;
+}
+
+.login-banner .login-banner__message .action {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.login-banner .login-banner__message .action:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
