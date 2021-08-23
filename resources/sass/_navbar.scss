@@ -1,7 +1,32 @@
-.navbar {
-    // justify-content: flex-start !important;
-    //  min-width: 100vw;
-    // width: 85vw;
+// NAVBAR APP
+.navbar .container-fluid {
+    justify-content: start !important;
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        width: 100vw !important;
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        // width: 100vw !important;
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        // width: 100vw !important;
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        // width: 100vw !important;
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        //  width: 100vw !important;
+    }
+
 }
 
 .navbar .nav-search {
@@ -28,4 +53,10 @@
 
 #sidebarCollapse {
     margin-right: 1rem;
+}
+
+// NAVBAR CATEGORIES
+.navbar-categories {
+    background-color: #F5F7F9;
+    ;
 }

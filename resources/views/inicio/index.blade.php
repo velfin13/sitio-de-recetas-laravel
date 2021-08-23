@@ -28,9 +28,8 @@
 @endsection
 
 @section('content')
-
 {{-- ultimas recetas --}}
-<div class="container nuevas-recetas">
+<div class="nuevas-recetas">
     <h2 class="titulo-categoria text-uppercase mt-5 mb-4">Últimas recetas</h2>
 
     {{-- carrucel --}}
@@ -65,7 +64,7 @@
 
 
 @foreach ($recetas as $key => $group)
-<div class="container">
+<div>
     <h2 class="titulo-categoria text-uppercase mt-5 mb-4">{{ str_replace('-', ' ', $key) }}</h2>
 
     {{-- carrucel --}}

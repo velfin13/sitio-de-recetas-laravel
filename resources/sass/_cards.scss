@@ -1,0 +1,28 @@
+// CATEGORY CARDS
+.category-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 35px;
+    text-align: center;
+
+    &:hover {
+        background-color: $primary;
+    }
+}
+
+.category-card i {
+    font-size: 35px;
+}
+
+.category-card .category-card__title {
+    font-size: 16px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+}

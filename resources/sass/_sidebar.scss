@@ -156,10 +156,28 @@
 
 // MENU ITEM
 .menu-item {
-    margin-top: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
 .menu-item i {
-    margin-right: 10px;
     font-size: 20px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 20px;
 }
+
+.menu-item a {
+    color: black;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    cursor: pointer;
+}
+
+.menu-item:hover i {
+    color: black;
+    background-color: $primary;
+    
+}
+
+

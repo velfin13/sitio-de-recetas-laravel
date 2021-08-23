@@ -29,7 +29,7 @@
                 </section>
 
                 <section class="custom-menu__list">
-                    <div class="menu-item"><i class="fas fa-home"></i><a>Inicio</a></div>
+                    <div class="menu-item"><i class="fas fa-home"></i><a href="/">Inicio</a></div>
                     <div class="menu-item"><i class="far fa-user-circle"></i><a>Perfil</a></div>
                 </section>
 
@@ -57,34 +57,13 @@
                         </button>
                     </div>
 
-                    <form class="form-group col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
-                        <input class="form-control form-control-lg nav-search" type="search" placeholder="Buscar" aria-label="Search">
+                    <form class="form-group col-9 col-sm-9 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0" action="{{ route('buscar.show') }}" method="GET">
+                        <input class="form-control form-control-lg nav-search" type="search" name="buscar" placeholder="Buscar" aria-label="Search">
                     </form>
-
-                    <!-- TOGLER MENU -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="nav navbar-nav">
-                            <li style="color: black;"><a href="#">Link</a></li>
-                            <li style="color: black;"><a href="#">Link</a></li>
-                            <li style="color: black;"><a href="#">Link</a></li>
-                            <li style="color: black;"><a href="#">Link</a></li>
-                            <li style="color: black;"><a href="#">Link</a></li>
-                        </div>
-                    </div>
 
                     <!-- USER PROFILE -->
                     <!-- d-none d-lg-block -->
-                    <ul class="nav navbar-nav navbar-right ">
-                        <!-- <div class="search">
-                            <button type="button" id="sidebarCollapse" class="btn btn-light">
-                                <i class="fas fa-search"></i>
-                                <span class="sr-only">Toggle Menu</span>
-                            </button>
-                        </div> -->
+                    <ul class="nav navbar-nav d-none d-lg-block">
                         <div class="user">
                             <div class="user__avatar">
                                 <img class="rounded-circle" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
@@ -98,10 +77,28 @@
                 </div>
             </nav>
 
-            <!-- PAGE CONTENT -->
+            <!-- PAGE CONTENT-->
             <div id="page-content" class="container-fluid" style="padding: 20px 20px 20px;">
-                <h2 class="mb-4">Sidebar #02</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <!-- CATEGORY NAVBAR -->
+                <nav class="navbar navbar-expand-md navbar-categories">
+                    @foreach ($categorias as $categoria)
+                    <!-- <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                                {{ $categoria->nombre }}
+                            </a>
+                        </li> -->
+                    <a href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                        <div class="category-card">
+                            <i class="fas fa-utensils"></i>
+                            <br>
+                            <span class="category-card__title">{{ $categoria->nombre }}</span>
+                        </div>
+                    </a>
+                    @endforeach
+                </nav>
+
+                <!-- CONTENT INJECTION -->
+                @yield("content")
             </div>
         </div>
     </div>
