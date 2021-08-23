@@ -34,23 +34,39 @@
         <nav id="sidebar">
             <div class="custom-menu">
                 <section class="custom-menu__title">
-                    <h5><b>Dishes 🥡</b></h5>
+                    <h5><b>Dashboard</b></h5>
                 </section>
 
-                <section class="custom-menu__list">
-                    <div class="menu-item"><i class="fas fa-home"></i><a href="/">Inicio</a></div>
-                    <div class="menu-item"><i class="far fa-user-circle"></i><a>Perfil</a></div>
-                    <div class="menu-item"><i class="fas fa-concierge-bell"></i><a>Recetas</a></div>
-                </section>
+                @guest
+                    <section class="custom-menu__list">
+                        <div class="menu-item"><a href="{{ route('login') }}"><i class="fa fa-sign-in"
+                                    aria-hidden="true"></i>
+                                Login</a></div>
+                        <div class="menu-item"><a href="{{ route('register') }}"><i class="fa fa-sign-out"
+                                    aria-hidden="true"></i>
+                                Register</a></div>
+                    </section>
+                @else
+                    <section class="custom-menu__list">
+                        <div class="menu-item"><a href="{{ route('inicio.index') }}"><i class="fas fa-home"></i>
+                                Inicio</a></div>
+                        <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i
+                                    class="far fa-user-circle"></i> Perfil</a></div>
+                        <div class="menu-item"><a href="{{ route('recetas.index') }}"><i
+                                    class="fas fa-concierge-bell"></i> Recetas</a></div>
+                    </section>
 
-                <section class="custom-menu__list" style="margin-top:50px;">
-                    <span>Aplicaciones</span>
-                    <div class="menu-item"><i class="far fa-comment-dots"></i><a>Chat</a></div>
-                </section>
+                    <section class="custom-menu__list" style="margin-top:50px;">
+                        <span>Aplicaciones</span>
+                        <div class="menu-item"><a href="{{ route('chatify') }}"><i class="far fa-comment-dots"></i>
+                                Chat</a></div>
+                    </section>
+
+                @endguest
             </div>
 
             <div class="sidebar__bottom">
-                <h5><b>Club Card</b></h5>
+                <h5><b>Sitio Receta</b></h5>
             </div>
         </nav>
 
@@ -105,7 +121,11 @@
                 </div>
 
                 <!-- CONTENT INJECTION -->
-                @yield("content")
+                <div class="py-1 mt-4 ml-5 col-12">
+                    @yield('botones')
+                    @yield("content")
+                </div>
+
             </div>
         </div>
     </div>
