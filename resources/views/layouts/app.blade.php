@@ -14,7 +14,7 @@
 
     <!-- PLUGINS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css') }}">
 
 
     <!-- APP JS and CSS -->
@@ -24,7 +24,8 @@
     <!-- SCRIPTS PLUGINS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    <script src="{{ asset('plugins/owl-carousel/dist/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('plugins/owl-carousel/dist/owl.carousel.min.js') }}"></script>
+    @yield('styles')
 </head>
 
 <body>
@@ -66,22 +67,25 @@
                         </button>
                     </div>
 
-                    <form class="form-group col-9 col-sm-9 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0" action="{{ route('buscar.show') }}" method="GET">
-                        <input class="form-control form-control-lg nav-search" type="search" name="buscar" placeholder="Buscar" aria-label="Search">
+                    <form class="form-group col-9 col-sm-9 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0"
+                        action="{{ route('buscar.show') }}" method="GET">
+                        <input class="form-control form-control-lg nav-search" type="search" name="buscar"
+                            placeholder="Buscar" aria-label="Search">
                     </form>
 
                     <!-- USER PROFILE -->
                     <!-- d-none d-lg-block -->
                     <ul class="nav navbar-nav d-none d-lg-block">
-                        <div class="user">
-                            <div class="user__avatar">
-                                <img class="rounded-circle" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" data-holder-rendered="true">
-                            </div>
-                            <div class="user__details">
-                                <span>Joseph García</span>
-                                <span>Recetas: <b>0</b></span>
-                            </div>
-                        </div>
+                        @guest
+                        @else
+                            @if (!Auth::user()->perfil->imagen)
+                                <user-recetas user-image={{ asset('images/noImage.jpg') }}
+                                    user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                            @else
+                                <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }}
+                                    user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                            @endif
+                        @endguest
                     </ul>
                 </div>
             </nav>
@@ -92,9 +96,11 @@
 
                 <div class="owl-carousel owl-theme categories-carousel">
                     @foreach ($categorias as $categoria)
-                    <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
-                        <i class="fas fa-concierge-bell"></i><br><span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
-                    </a>
+                        <a class="category-card"
+                            href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                            <i class="fas fa-concierge-bell"></i><br><span
+                                class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
+                        </a>
                     @endforeach
                 </div>
 
@@ -103,6 +109,7 @@
             </div>
         </div>
     </div>
+    @yield('script')
 </body>
 
 </html>

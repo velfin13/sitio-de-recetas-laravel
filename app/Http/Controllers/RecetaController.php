@@ -24,7 +24,7 @@ class RecetaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show', 'search']]);
+        $this->middleware('auth', ['except' => ['show', 'search','countRecetas']]);
     }
 
 
@@ -141,8 +141,8 @@ class RecetaController extends Controller
     public function show(Receta $receta)
     {
 
-        
-        $comentarios =  Receta::find($receta->id)->comentario()->orderBy('created_at','desc')->paginate(5);
+
+        $comentarios =  Receta::find($receta->id)->comentario()->orderBy('created_at', 'desc')->paginate(5);
 
         //obtener si el usuario actual esta autenticado y le gusta la receta
         $like = (auth()->user()) ? auth()->user()->meGusta->contains($receta->id) : false;
@@ -274,5 +274,10 @@ class RecetaController extends Controller
         $recetas->appends(['buscar' => $busqueda]);
 
         return view('busquedas.show', compact('recetas', 'busqueda'));
+    }
+
+    public function countRecetas(User $user)
+    {
+        return count($user->recetas);
     }
 }

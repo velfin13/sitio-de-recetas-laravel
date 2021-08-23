@@ -66,3 +66,7 @@ Route::delete('/comment/{comment}', 'CommentController@destroy')->name('comment.
 
 //obtener usuario
 Route::get('/user-comentario/{user}', 'CommentController@show')->name('comentario.show');
+
+
+//obtener recetas que el usuario ha creado
+Route::get('/recetas-count/{user}', 'RecetaController@countRecetas')->name('countRecetas.get');

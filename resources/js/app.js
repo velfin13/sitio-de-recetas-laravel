@@ -47,15 +47,14 @@ Vue.component(
     require("./components/EliminarComReceta.vue").default
 );
 
-Vue.component(
-    "foto-perfil",
-    require("./components/GetPerfilUser.vue").default
-);
+Vue.component("foto-perfil", require("./components/GetPerfilUser.vue").default);
 
 Vue.component(
     "comentario-nombre",
     require("./components/NombrePerfil.vue").default
 );
+
+Vue.component("user-recetas", require("./components/CountRecetas.vue").default);
 
 Vue.component("star-rating", Raters.StarRating);
 
@@ -70,8 +69,8 @@ const app = new Vue({
 });
 
 // owl carousel
-document.addEventListener('DOMContentLoaded', function () {
-    $('.categories-carousel').owlCarousel({
+document.addEventListener("DOMContentLoaded", function() {
+    $(".categories-carousel").owlCarousel({
         rtl: true,
         loop: true,
         margin: 100,
@@ -88,9 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 items: 6
             }
         }
-    })
+    });
 
-    $('.lastest-recipes-carousel').owlCarousel({
+    $(".lastest-recipes-carousel").owlCarousel({
         rtl: false,
         loop: false,
         margin: 25,
@@ -108,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 items: 5
             }
         }
-    })
+    });
 
-    $('.owl-carousel').owlCarousel({
+    $(".owl-carousel").owlCarousel({
         rtl: false,
         loop: false,
         margin: 100,
@@ -126,11 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 items: 5
             }
         }
-    })
+    });
 });
 
 /* datatable */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function() {
     $("#example").DataTable({
         responsive: true,
         autoWidth: false,
@@ -158,18 +157,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // sidebar
-document.addEventListener('DOMContentLoaded', function () {
-    var fullHeight = function () {
-
-        $('.js-fullheight').css('height', $(window).height());
-        $(window).resize(function () {
-            $('.js-fullheight').css('height', $(window).height());
+document.addEventListener("DOMContentLoaded", function() {
+    var fullHeight = function() {
+        $(".js-fullheight").css("height", $(window).height());
+        $(window).resize(function() {
+            $(".js-fullheight").css("height", $(window).height());
         });
-
     };
     fullHeight();
 
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
+    $("#sidebarCollapse").on("click", function() {
+        $("#sidebar").toggleClass("active");
     });
 });
