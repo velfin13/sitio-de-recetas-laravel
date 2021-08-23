@@ -5814,13 +5814,6 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#sidebarCollapse').on('click', function () {
     $('#sidebar').toggleClass('active');
   });
-}); // splide
-
-document.addEventListener('DOMContentLoaded', function () {// new Splide('.splide', {
-  //     type: 'loop',
-  //     perPage: 3,
-  //     focus: 'center',
-  // }).mount();
 });
 
 /***/ }),

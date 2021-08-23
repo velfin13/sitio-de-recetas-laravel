@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
         rtl: false,
         loop: false,
         margin: 25,
-        autoHeight:true,
-        autoWidth:true,
+        autoHeight: true,
+        autoWidth: true,
         nav: true,
         responsive: {
             0: {
@@ -172,13 +172,4 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
     });
-});
-
-// splide
-document.addEventListener('DOMContentLoaded', function () {
-    // new Splide('.splide', {
-    //     type: 'loop',
-    //     perPage: 3,
-    //     focus: 'center',
-    // }).mount();
 });
