@@ -12,11 +12,19 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('fonts/vendor/font-awesome/css/all.min.css') }}" rel="stylesheet">
 
-    @yield('styles')
+    <!-- PLUGINS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css')}}">
+
 
     <!-- APP JS and CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- SCRIPTS PLUGINS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script src="{{ asset('plugins/owl-carousel/dist/owl.carousel.min.js')}}"></script>
 </head>
 
 <body>
@@ -31,6 +39,7 @@
                 <section class="custom-menu__list">
                     <div class="menu-item"><i class="fas fa-home"></i><a href="/">Inicio</a></div>
                     <div class="menu-item"><i class="far fa-user-circle"></i><a>Perfil</a></div>
+                    <div class="menu-item"><i class="fas fa-concierge-bell"></i><a>Recetas</a></div>
                 </section>
 
                 <section class="custom-menu__list" style="margin-top:50px;">
@@ -79,31 +88,21 @@
 
             <!-- PAGE CONTENT-->
             <div id="page-content" class="container-fluid" style="padding: 20px 20px 20px;">
-                <!-- CATEGORY NAVBAR -->
-                <nav class="navbar navbar-expand-md navbar-categories">
+
+
+                <div class="owl-carousel owl-theme categories-carousel">
                     @foreach ($categorias as $categoria)
-                    <!-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
-                                {{ $categoria->nombre }}
-                            </a>
-                        </li> -->
-                    <a href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
-                        <div class="category-card">
-                            <i class="fas fa-utensils"></i>
-                            <br>
-                            <span class="category-card__title">{{ $categoria->nombre }}</span>
-                        </div>
+                    <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                        <i class="fas fa-concierge-bell"></i><br><span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
                     </a>
                     @endforeach
-                </nav>
+                </div>
 
                 <!-- CONTENT INJECTION -->
                 @yield("content")
             </div>
         </div>
     </div>
-    <!-- SCRIPTS -->
-    @yield('script')
 </body>
 
 </html>

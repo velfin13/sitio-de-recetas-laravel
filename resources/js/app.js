@@ -69,30 +69,68 @@ const app = new Vue({
     el: "#app"
 });
 
-/* carrucekl con owl */
-
-jQuery(document).ready(function() {
-    jQuery(".owl-carousel").owlCarousel({
-        margin: 10,
-        loop: false,
-        autoplay: true,
-        autoplayHoverPause: true,
+// owl carousel
+document.addEventListener('DOMContentLoaded', function () {
+    $('.categories-carousel').owlCarousel({
+        rtl: true,
+        loop: true,
+        margin: 100,
+        center: true,
+        nav: true,
         responsive: {
             0: {
                 items: 1
             },
             600: {
-                items: 2
-            },
-            950: {
                 items: 3
+            },
+            1000: {
+                items: 6
             }
         }
-    });
+    })
+
+    $('.lastest-recipes-carousel').owlCarousel({
+        rtl: false,
+        loop: false,
+        margin: 25,
+        autoHeight:true,
+        autoWidth:true,
+        nav: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })
+
+    $('.owl-carousel').owlCarousel({
+        rtl: false,
+        loop: false,
+        margin: 100,
+        nav: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })
 });
 
 /* datatable */
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function () {
     $("#example").DataTable({
         responsive: true,
         autoWidth: false,
@@ -119,17 +157,28 @@ $(document).ready(function() {
     });
 });
 
+// sidebar
+document.addEventListener('DOMContentLoaded', function () {
+    var fullHeight = function () {
 
-var fullHeight = function() {
-
-    $('.js-fullheight').css('height', $(window).height());
-    $(window).resize(function(){
         $('.js-fullheight').css('height', $(window).height());
+        $(window).resize(function () {
+            $('.js-fullheight').css('height', $(window).height());
+        });
+
+    };
+    fullHeight();
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
     });
+});
 
-};
-fullHeight();
-
-$('#sidebarCollapse').on('click', function () {
-  $('#sidebar').toggleClass('active');
+// splide
+document.addEventListener('DOMContentLoaded', function () {
+    // new Splide('.splide', {
+    //     type: 'loop',
+    //     perPage: 3,
+    //     focus: 'center',
+    // }).mount();
 });

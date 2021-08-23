@@ -14445,30 +14445,52 @@ body {
 }
 
 .category-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100px;
-  height: 150px;
-  margin: 10px;
   background-color: white;
-  color: black;
-  border-radius: 35px;
+  display: flex;
+  border-radius: 5px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 150px;
+  text-decoration: none;
 }
 .category-card:hover {
   background-color: #FDD661;
+  color: white;
+}
+.category-card:hover i,
+.category-card:hover .category-card__title {
+  color: white !important;
 }
 
 .category-card i {
+  color: #FDD661;
   font-size: 35px;
 }
 
 .category-card .category-card__title {
+  color: black;
   font-size: 16px;
   font-weight: bold;
   text-overflow: ellipsis;
+}
+
+.latest-recipe-card {
+  display: flex;
+  margin-right: 20px;
+  width: 300px;
+  height: 100px;
+}
+
+.latest-recipe-card .latest-recipe-card__image {
+  width: 180px;
+}
+
+.latest-recipe-card .latest-recipe-card__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 trix-editor {
@@ -14943,7 +14965,10 @@ html {
 }
 
 .menu-item {
-  margin-bottom: 8px;
+  width: 100px;
+  text-align: start;
+  margin-top: 9px;
+  margin-left: 28% !important;
 }
 
 .menu-item i {

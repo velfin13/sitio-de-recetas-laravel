@@ -5663,7 +5663,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.css */ "./node_modules/sweetalert2/dist/sweetalert2.min.css");
 /* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
 /* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(owl_carousel__WEBPACK_IMPORTED_MODULE_2__);
-/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -5716,31 +5715,67 @@ vue__WEBPACK_IMPORTED_MODULE_3__.default.component("star-rating", (vue_rate_it__
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: "#app"
-});
-/* carrucekl con owl */
+}); // owl carousel
 
-jQuery(document).ready(function () {
-  jQuery(".owl-carousel").owlCarousel({
-    margin: 10,
-    loop: false,
-    autoplay: true,
-    autoplayHoverPause: true,
+document.addEventListener('DOMContentLoaded', function () {
+  $('.categories-carousel').owlCarousel({
+    rtl: true,
+    loop: true,
+    margin: 100,
+    center: true,
+    nav: true,
     responsive: {
       0: {
         items: 1
       },
       600: {
+        items: 3
+      },
+      1000: {
+        items: 6
+      }
+    }
+  });
+  $('.lastest-recipes-carousel').owlCarousel({
+    rtl: false,
+    loop: false,
+    margin: 25,
+    autoHeight: true,
+    autoWidth: true,
+    nav: true,
+    responsive: {
+      0: {
         items: 2
       },
-      950: {
+      600: {
         items: 3
+      },
+      1000: {
+        items: 5
+      }
+    }
+  });
+  $('.owl-carousel').owlCarousel({
+    rtl: false,
+    loop: false,
+    margin: 100,
+    nav: true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 5
       }
     }
   });
 });
 /* datatable */
 
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
   $("#example").DataTable({
     responsive: true,
     autoWidth: false,
@@ -5765,18 +5800,27 @@ $(document).ready(function () {
       }
     }
   });
-});
+}); // sidebar
 
-var fullHeight = function fullHeight() {
-  $('.js-fullheight').css('height', $(window).height());
-  $(window).resize(function () {
+document.addEventListener('DOMContentLoaded', function () {
+  var fullHeight = function fullHeight() {
     $('.js-fullheight').css('height', $(window).height());
-  });
-};
+    $(window).resize(function () {
+      $('.js-fullheight').css('height', $(window).height());
+    });
+  };
 
-fullHeight();
-$('#sidebarCollapse').on('click', function () {
-  $('#sidebar').toggleClass('active');
+  fullHeight();
+  $('#sidebarCollapse').on('click', function () {
+    $('#sidebar').toggleClass('active');
+  });
+}); // splide
+
+document.addEventListener('DOMContentLoaded', function () {// new Splide('.splide', {
+  //     type: 'loop',
+  //     perPage: 3,
+  //     focus: 'center',
+  // }).mount();
 });
 
 /***/ }),

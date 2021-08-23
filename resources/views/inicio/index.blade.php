@@ -28,76 +28,87 @@
 @endsection
 
 @section('content')
-{{-- ultimas recetas --}}
-<div class="nuevas-recetas">
-    <h2 class="titulo-categoria text-uppercase mt-5 mb-4">Últimas recetas</h2>
+<div class="dishes">
+    <!-- ULTIMAS RECETAS -->
+    <div class="latest-recipes">
+        <h2 class="titulo-categoria text-uppercase mt-5 mb-4">Últimas recetas</h2>
 
-    {{-- carrucel --}}
-    <div class="owl-carousel owl-theme">
-        @foreach ($nuevas as $nueva)
+        <!-- CAROUSEL ULTIMAS RECETAS -->
+        <div class="owl-carousel owl-theme lastest-recipes-carousel">
+            @foreach ($nuevas as $nueva)
 
-        <div class="card">
-            <img src="/storage/{{ $nueva->imagen }}" alt="img" class="card-img-top img-fluid">
-            <div class="card-body">
-                <h3 class="text-center">{{ Str::title($nueva->titulo) }}</h3>
-                <p>{{ Str::words(strip_tags($nueva->preparacion), 11) }}</p>
-
-                <div class="meta-receta d-flex justify-content-between">
-                    @php
-                    $fecha = $nueva->created_at;
-                    @endphp
-
-                    <p class="text-primary fecha font-weight-bold">
-                        <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
-                    </p>
-
-                    <p>{{ count($nueva->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
-
-
+            <div class="latest-recipe-card">
+                <div class="latest-recipe-card__image">
+                    <img src="/storage/{{ $nueva->imagen }}" alt="img">
                 </div>
-                <a class="btn btn-outline-primary font-weight-bold d-block" href="{{ route('recetas.show', ['receta' => $nueva->id]) }}">Ver <i class="fa fa-eye" aria-hidden="true"></i></a>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</div>
-
-
-@foreach ($recetas as $key => $group)
-<div>
-    <h2 class="titulo-categoria text-uppercase mt-5 mb-4">{{ str_replace('-', ' ', $key) }}</h2>
-
-    {{-- carrucel --}}
-    <div class="owl-carousel owl-theme">
-        @foreach ($group as $recetas)
-        @foreach ($recetas as $receta)
-        <div class="card shadow">
-            <img src="/storage/{{ $receta->imagen }}" alt="img" class="card-img-top img-fluid">
-            <div class="card-body">
-                <h3 class="text-center">{{ Str::title($receta->titulo) }}</h3>
-                <p>{{ Str::words(strip_tags($receta->preparacion), 11) }}</p>
-
-                <div class="meta-receta d-flex justify-content-between">
-                    @php
-                    $fecha = $receta->created_at;
-                    @endphp
-
-                    <p class="text-primary fecha font-weight-bold">
-                        <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
-                    </p>
-
-                    <p>{{ count($receta->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
-
-
+                <div class="latest-recipe-card__info">
+                    <span class="latest-recipe-card__info-title">{{ Str::title($nueva->titulo) }}</span>
                 </div>
-
-                <a class="btn btn-outline-primary font-weight-bold d-block" href="{{ route('recetas.show', ['receta' => $receta->id]) }}">Ver <i class="fa fa-eye" aria-hidden="true"></i></a>
             </div>
-        </div>
-        @endforeach
+            <!-- <div class="card">
+                <img src="/storage/{{ $nueva->imagen }}" alt="img" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="text-center">{{ Str::title($nueva->titulo) }}</h3>
+                    <p>{{ Str::words(strip_tags($nueva->preparacion), 11) }}</p>
 
-        @endforeach
+                    <div class="meta-receta d-flex justify-content-between">
+                        @php
+                        $fecha = $nueva->created_at;
+                        @endphp
+
+                        <p class="text-primary fecha font-weight-bold">
+                            <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
+                        </p>
+
+                        <p>{{ count($nueva->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
+
+
+                    </div>
+                    <a class="btn btn-outline-primary font-weight-bold d-block" href="{{ route('recetas.show', ['receta' => $nueva->id]) }}">Ver <i class="fa fa-eye" aria-hidden="true"></i></a>
+                </div>
+            </div> -->
+            @endforeach
+        </div>
     </div>
+
+    <hr style="margin-top:80px; color:#CACACA">
+
+    @foreach ($recetas as $key => $group)
+    <div class="recipes-per-categorie">
+        <h2 class="titulo-categoria text-uppercase mt-5 mb-4">{{ str_replace('-', ' ', $key) }}</h2>
+
+        {{-- carrucel --}}
+        <div class="owl-carousel owl-theme">
+            @foreach ($group as $recetas)
+            @foreach ($recetas as $receta)
+            <div class="card shadow">
+                <img src="/storage/{{ $receta->imagen }}" alt="img" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="text-center">{{ Str::title($receta->titulo) }}</h3>
+                    <p>{{ Str::words(strip_tags($receta->preparacion), 11) }}</p>
+
+                    <div class="meta-receta d-flex justify-content-between">
+                        @php
+                        $fecha = $receta->created_at;
+                        @endphp
+
+                        <p class="text-primary fecha font-weight-bold">
+                            <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
+                        </p>
+
+                        <p>{{ count($receta->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
+
+
+                    </div>
+
+                    <a class="btn btn-outline-primary font-weight-bold d-block" href="{{ route('recetas.show', ['receta' => $receta->id]) }}">Ver <i class="fa fa-eye" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            @endforeach
+
+            @endforeach
+        </div>
+    </div>
+    @endforeach
 </div>
-@endforeach
 @endsection
