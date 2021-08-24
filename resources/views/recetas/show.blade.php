@@ -1,12 +1,8 @@
 @extends('layouts.app')
 
-
 @section('content')
 
     <article class="contenido-receta bg-white shadow p-4">
-
-
-
         <div class="row">
             <div class="col-8 col-sm-9 col-md-10 col-xl-10 mb-5">
                 <h1 class="text-center mb-4">{{ Str::title($recetas->titulo) }}</h1>
