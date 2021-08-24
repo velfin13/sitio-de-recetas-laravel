@@ -17,6 +17,7 @@ class CreateRecetasTable extends Migration
         Schema::create('categoria_recetas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('icono');
             $table->timestamps();
         });
 

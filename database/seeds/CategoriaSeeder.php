@@ -13,37 +13,39 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         DB::table('categoria_recetas')->insert([
-            'nombre' => 'Comida Mexicana',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-
-
-        DB::table('categoria_recetas')->insert([
-            'nombre' => 'Comida Argentina',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-        DB::table('categoria_recetas')->insert([
-            'nombre' => 'Comida Manabita',
+            'nombre' => 'Comida Española',
+            'icono' => '<i class="fas fa-concierge-bell"></i>',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('categoria_recetas')->insert([
             'nombre' => 'Postres',
+            'icono' => '<i class="fas fa-ice-cream"></i>',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
         DB::table('categoria_recetas')->insert([
-            'nombre' => 'Cortes de carnes',
+            'nombre' => 'Comida Mexicana',
+            'icono' => '<i class="fas fa-concierge-bell"></i>',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
 
+        DB::table('categoria_recetas')->insert([
+            'nombre' => 'Cortes de carne',
+            'icono' => '<i class="fas fa-drumstick-bite"></i>',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('categoria_recetas')->insert([
+            'nombre' => 'Comida Manabita',
+            'icono' => '<i class="fas fa-concierge-bell"></i>',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
     }
 }
