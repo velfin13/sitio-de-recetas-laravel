@@ -51,12 +51,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    aling-items: flex-end;
     justify-content: flex-end;
 
     .latest-recipe-card .latest-recipe-card__image {
-        // width: 250px;
-        // height: 140px;
+        background-color: none;
     }
 }
 

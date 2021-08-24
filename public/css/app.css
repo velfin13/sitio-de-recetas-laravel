@@ -14491,9 +14491,12 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  aling-items: flex-end;
   justify-content: flex-end;
 }
+.latest-recipe-card .latest-recipe-card .latest-recipe-card__image {
+  background-color: none;
+}
+
 .recipe-card {
   background-color: white;
   width: 200px;
