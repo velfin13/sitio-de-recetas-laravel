@@ -13,7 +13,6 @@
     <link href="{{ asset('fonts/vendor/font-awesome/css/all.min.css') }}" rel="stylesheet">
 
     <!-- PLUGINS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css') }}">
 
 
@@ -23,7 +22,6 @@
 
     <!-- SCRIPTS PLUGINS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="{{ asset('plugins/owl-carousel/dist/owl.carousel.min.js') }}"></script>
     @yield('styles')
 </head>
@@ -118,6 +116,7 @@
             <div id="page-content" class="container-fluid" style="padding: 20px 20px 20px;">
 
                 <!-- CATEGORY SLIDER -->
+                @if(!str_contains(Request::url(), "/recetas") && !str_contains(Request::url(), "/perfiles"))
                 <div class="owl-carousel owl-theme categories-carousel">
                     @foreach ($categorias as $categoria)
                     <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
@@ -125,6 +124,21 @@
                     </a>
                     @endforeach
                 </div>
+
+                <!-- <div id="splide-category-horizontal" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            @foreach ($categorias as $categoria)
+                            <div class="splide__slide">
+                            <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                                <i class="fas fa-concierge-bell"></i><br><span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
+                            </a>
+                            </div>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div> -->
+                @endif
 
                 <!-- CONTENT INJECTION -->
                 <div class="py-1 mt-4 ml-5 col-12">
@@ -135,6 +149,7 @@
             </div>
         </div>
     </div>
+
     @yield('script')
 </body>
 

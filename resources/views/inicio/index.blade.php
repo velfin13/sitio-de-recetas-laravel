@@ -2,6 +2,8 @@
 
 @section('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 @endsection
 
 {{-- buscador --}}
@@ -28,15 +30,15 @@
 @endsection
 
 @section('content')
-<div class="dishes">
+<div class="container-fluid">
     <!-- ULTIMAS RECETAS -->
-    <div class="latest-recipes">
-        <h2 class="titulo-categoria text-uppercase mt-5 mb-4">Últimas recetas</h2>
+    <section class="latest-recipes">
+        <h2 class="subtitle"><b>🧐 Últimas Recetas</b></h2>
+        <hr class="divider">
 
         <!-- CAROUSEL ULTIMAS RECETAS -->
-        <div class="owl-carousel owl-theme lastest-recipes-carousel">
+        <!-- <div class="owl-carousel owl-theme lastest-recipes-carousel">
             @foreach ($nuevas as $nueva)
-
             <div class="latest-recipe-card">
                 <div class="latest-recipe-card__image">
                     <img src="/storage/{{ $nueva->imagen }}" alt="img">
@@ -45,70 +47,78 @@
                     <span class="latest-recipe-card__info-title">{{ Str::title($nueva->titulo) }}</span>
                 </div>
             </div>
-            <!-- <div class="card">
-                <img src="/storage/{{ $nueva->imagen }}" alt="img" class="card-img-top img-fluid">
-                <div class="card-body">
-                    <h3 class="text-center">{{ Str::title($nueva->titulo) }}</h3>
-                    <p>{{ Str::words(strip_tags($nueva->preparacion), 11) }}</p>
-
-                    <div class="meta-receta d-flex justify-content-between">
-                        @php
-                        $fecha = $nueva->created_at;
-                        @endphp
-
-                        <p class="text-primary fecha font-weight-bold">
-                            <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
-                        </p>
-
-                        <p>{{ count($nueva->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
-
-
-                    </div>
-                    <a class="btn btn-outline-primary font-weight-bold d-block" href="{{ route('recetas.show', ['receta' => $nueva->id]) }}">Ver <i class="fa fa-eye" aria-hidden="true"></i></a>
-                </div>
-            </div> -->
             @endforeach
-        </div>
-    </div>
+        </div> -->
 
-    <hr style="margin-top:80px; color:#CACACA">
-
-    @foreach ($recetas as $key => $group)
-    <div class="recipes-per-categorie">
-        <h2 class="titulo-categoria text-uppercase mt-5 mb-4">{{ str_replace('-', ' ', $key) }}</h2>
-
-        {{-- carrucel --}}
-        <div class="owl-carousel owl-theme">
-            @foreach ($group as $recetas)
-            @foreach ($recetas as $receta)
-            <div class="card shadow">
-                <img src="/storage/{{ $receta->imagen }}" alt="img" class="card-img-top img-fluid">
-                <div class="card-body">
-                    <h3 class="text-center">{{ Str::title($receta->titulo) }}</h3>
-                    <p>{{ Str::words(strip_tags($receta->preparacion), 11) }}</p>
-
-                    <div class="meta-receta d-flex justify-content-between">
-                        @php
-                        $fecha = $receta->created_at;
-                        @endphp
-
-                        <p class="text-primary fecha font-weight-bold">
-                            <fecha-receta fecha="{{ $fecha }}"></fecha-receta>
-                        </p>
-
-                        <p>{{ count($receta->likes) }} <i class="fa fa-heart" aria-hidden="true"></i></p>
-
-
-                    </div>
-
-                    <a class="btn btn-outline-primary font-weight-bold d-block" href="{{ route('recetas.show', ['receta' => $receta->id]) }}">Ver <i class="fa fa-eye" aria-hidden="true"></i></a>
-                </div>
+        <!-- CAROUSEL ULTIMAS RECETAS -->
+        <div id="splide-latest-recipes-horizontal" class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    @foreach ($nuevas as $nueva)
+                    <li class="splide__slide">
+                        <a href="{{ route('recetas.show', ['receta' => $nueva->id]) }}" style="text-decoration: none; color:black">
+                            <div class="card" style="width: 200px; height: 150px;">
+                                <img style="height: 100px;" class="card-img-top" src="/storage/{{ $nueva->imagen }}" alt="Card image cap">
+                                <div class="card-body" style="padding-bottom: 40px;">
+                                    <h5 class="card-title" style="text-align: center;"><b>{{Str::title($nueva->titulo)}}</b></h5>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
             </div>
-            @endforeach
-
-            @endforeach
         </div>
-    </div>
-    @endforeach
+    </section>
+
+    <br>
+    <br>
+
+    <section class="all-categories-section">
+        <h2 class="subtitle"><b>😱 Todas nuestras recetas</b></h2>
+        <hr class="divider" style="margin-top:10px;">
+        <!-- SPLIDE HORIZONTAL -->
+        <div id="splide-horizontal" class="splide splide-horizontal">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    @foreach ($recetas as $key => $group)
+                    <div class="splide__slide">
+                        <div class="title-wrapper">
+                            <h6 class="title-wrapper__text">{{ str_replace('-', ' ', $key) }}</h6>
+                        </div>
+                        <!-- SPLIDE VERTICAL -->
+                        <div id="splide-vertical-{{$loop->index}}" class="splide splide-vertical">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    @foreach ($group as $recetas)
+                                    @foreach ($recetas as $receta)
+                                    <div class="splide__slide" style="margin: 15px 0px 15px;">
+                                        <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}" style="text-decoration: none; color:black">
+                                            <div class="card" style="width: 200px; min-height: 250px;">
+                                                <img class="card-img-top" src="/storage/{{ $receta->imagen }}" alt="Card image cap">
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><b>{{ Str::title($receta->titulo) }}</b></h5>
+                                                    <p class="card-text">{{ Str::words(strip_tags($receta->preparacion), 11) }}.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END SPLIDE VERTICAL -->
+                    </div>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <!-- END SPLIDE HORIZONTAL -->
+    </section>
+
 </div>
+@endsection
+
+@section('scripts')
 @endsection

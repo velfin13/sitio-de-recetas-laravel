@@ -1,0 +1,8 @@
+// ALL CATEGORIES CAROUSEL
+.all-categories-carousel {
+    transform: rotate3d(0, 0, 1, 90deg);
+}
+
+.all-categories-carousel .item {
+    transform: rotate3d(0, 0, 1, -90deg);
+}

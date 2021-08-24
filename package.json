@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@splidejs/splide": "^2.4.21",
+        "@splidejs/vue-splide": "^0.3.5",
         "bootstrap": "^5.1.0",
         "datatables.net-autofill-bs4": "^2.3.9",
         "datatables.net-bs4": "^3.2.2",

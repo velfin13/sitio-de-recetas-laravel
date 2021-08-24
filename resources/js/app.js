@@ -8,13 +8,14 @@ import Vue from "vue";
 import Raters from "vue-rate-it";
 import "sweetalert2/dist/sweetalert2.min.css";
 import "owl.carousel";
-require("./bootstrap");
 
+require("./bootstrap");
 require("datatables.net-autofill-bs4");
 require("datatables.net-bs4");
 require("datatables.net-autofill-bs4");
 require("datatables.net-buttons-bs4");
 require("datatables.net-responsive-bs4");
+
 window.Vue = require("vue");
 window.$ = require("jquery");
 
@@ -33,29 +34,13 @@ Vue.config.ignoredElements = ["trix-editor", "trix-toolbar"];
 
 Vue.component("fecha-receta", require("./components/FechaReceta.vue").default);
 Vue.component("like-button", require("./components/LikeButton.vue").default);
-Vue.component(
-    "calificacion-button",
-    require("./components/Calificacion.vue").default
-);
-Vue.component(
-    "eliminar-receta",
-    require("./components/EliminarReceta.vue").default
-);
-
-Vue.component(
-    "eliminar-comentario",
-    require("./components/EliminarComReceta.vue").default
-);
-
+Vue.component("calificacion-button", require("./components/Calificacion.vue").default);
+Vue.component("eliminar-receta", require("./components/EliminarReceta.vue").default);
+Vue.component("eliminar-comentario", require("./components/EliminarComReceta.vue").default);
 Vue.component("foto-perfil", require("./components/GetPerfilUser.vue").default);
-
-Vue.component(
-    "comentario-nombre",
-    require("./components/NombrePerfil.vue").default
-);
-
+Vue.component("comentario-nombre", require("./components/NombrePerfil.vue").default);
 Vue.component("user-recetas", require("./components/CountRecetas.vue").default);
-
+Vue.component("all-categories", require("./components/AllCategories.vue").default);
 Vue.component("star-rating", Raters.StarRating);
 
 /**
@@ -64,12 +49,133 @@ Vue.component("star-rating", Raters.StarRating);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import VueSplide from '@splidejs/vue-splide';
+Vue.use(VueSplide);
+
 const app = new Vue({
     el: "#app"
 });
 
+// splide
+document.addEventListener("DOMContentLoaded", function () {
+    for (let index = 0; index <= 1000; index++) {
+        let selector = `#splide-vertical-${index}`;
+
+        if ($(selector).length) {
+            new Splide(selector, {
+                type: "loop",
+                autoplay: true,
+                interval: (index % 2 == 0) ? 3000 : 2000,
+                direction: 'ttb',
+                pagination: false,
+                keyboard: false,
+                arrows: false,
+                height: "200px;",
+                autoHeight: true,
+                lazyLoad: "nearby",
+                breakpoints: {
+                    0: {
+                        perPage: 2,
+                    },
+                    600: {
+                        perPage: 2,
+                    },
+                    1000: {
+                        perPage: 2,
+                    },
+                    2000: {
+                        perPage: 2,
+                    }
+                }
+            }).mount();
+        }
+    }
+
+    new Splide('#splide-horizontal', {
+        lazyLoad: "nearby",
+        direction: "ltr",
+        autoplay: true,
+        interval: 4000,
+        resetProgress: true,
+        pagination: false,
+        height: '20rem',
+        trimSpace: true,
+        throttle: 0,
+        perPage: 5,
+        breakpoints: {
+            0: {
+                perPage: 1,
+            },
+            600: {
+                perPage: 1.5,
+            },
+            1000: {
+                perPage: 2,
+            },
+            2000: {
+                perPage: 4,
+            }
+        }
+    }).mount();
+
+    if ($("#splide-category-horizontal").length) {
+        new Splide('#splide-category-horizontal', {
+            type: "loop",
+            direction: "ltr",
+            autoplay: true,
+            interval: 4000,
+            resetProgress: true,
+            perPage: 5,
+            pagination: false,
+            autoHeight: true,
+            trimSpace: true,
+            throttle: 0,
+            height: '5rem',
+            breakpoints: {
+                0: {
+                    perPage: 1.5,
+                },
+                600: {
+                    perPage: 2,
+                },
+                1000: {
+                    perPage: 2,
+                }
+            }
+        }).mount();
+    }
+
+    if ($("#splide-latest-recipes-horizontal").length) {
+        new Splide('#splide-latest-recipes-horizontal', {
+            type: "loop",
+            direction: "rtl",
+            autoplay: true,
+            interval: 4500,
+            perPage: 8,
+            cover: true,
+            heightRatio: 0.5,
+            height: '10rem',
+            pagination: false,
+            breakpoints: {
+                0: {
+                    perPage: 1,
+                },
+                600: {
+                    perPage: 1.5,
+                },
+                1000: {
+                    perPage: 4,
+                },
+                2000: {
+                    perPage: 4,
+                }
+            }
+        }).mount();
+    }
+});
+
 // owl carousel
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     $(".categories-carousel").owlCarousel({
         rtl: true,
         loop: true,
@@ -78,13 +184,13 @@ document.addEventListener("DOMContentLoaded", function() {
         nav: true,
         responsive: {
             0: {
-                items: 1
+                items: 1.5
             },
             600: {
                 items: 3
             },
             1000: {
-                items: 6
+                items: 3.5
             }
         }
     });
@@ -104,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 items: 3
             },
             1000: {
-                items: 5
+                items: 3
             }
         }
     });
@@ -122,14 +228,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 items: 3
             },
             1000: {
-                items: 5
+                items: 3
+            },
+            2000: {
+                perPage: 3,
             }
         }
     });
+
+    // $(".all-categories-carousel").owlCarousel({
+    //     items: 1,
+    //     loop: false,
+    //     nav: false,
+    //     margin: 0
+    // });
+
+    // $('.all-categories-carousel').data('.all-categories-carousel').difference = function (first, second) {
+    //     return {
+    //         x: first.x - second.x + (first.y - second.y),
+    //         y: first.y - second.y
+    //     };
+    // };
 });
 
 /* datatable */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     $("#example").DataTable({
         responsive: true,
         autoWidth: false,
@@ -157,16 +280,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // sidebar
-document.addEventListener("DOMContentLoaded", function() {
-    var fullHeight = function() {
+document.addEventListener("DOMContentLoaded", function () {
+    var fullHeight = function () {
         $(".js-fullheight").css("height", $(window).height());
-        $(window).resize(function() {
+        $(window).resize(function () {
             $(".js-fullheight").css("height", $(window).height());
         });
     };
     fullHeight();
 
-    $("#sidebarCollapse").on("click", function() {
+    $("#sidebarCollapse").on("click", function () {
         $("#sidebar").toggleClass("active");
     });
 });

@@ -14479,18 +14479,51 @@ body {
 
 .latest-recipe-card {
   display: flex;
-  margin-right: 20px;
-  width: 300px;
-  height: 100px;
+  width: 250px;
+  height: 140px;
+  margin: 20px;
+  background-size: 250px 140px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  aling-items: flex-end;
+  justify-content: flex-end;
 }
-
-.latest-recipe-card .latest-recipe-card__image {
-  width: 180px;
+.recipe-card {
+  background-color: white;
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.latest-recipe-card .latest-recipe-card__image img {
+.recipe-card .recipe-card__image {
+  max-width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+.recipe-card .recipe-card__image img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.recipe-card .recipe-card__thumbnail {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+}
+.recipe-card .recipe-card__thumbnail img {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 trix-editor {
@@ -14562,20 +14595,6 @@ trix-editor {
 
 .owl-carousel .owl-stage {
   display: flex;
-}
-
-.card {
-  display: flex;
-  flex: 1 0 auto;
-  height: 100%;
-}
-
-.card-body {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
 }
 
 .categorias-bg {
@@ -14828,6 +14847,44 @@ html {
 .user_card_register input:hover, .user_card_register input:active, .user_card_register input:focus {
   background-color: white !important;
   border: none !important;
+}
+
+.my-profile {
+  padding-bottom: 20px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
+  background-color: white;
+}
+
+.my-profile .my-profile__avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  color: black;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.my-profile .my-profile__avatar .my-profile__avatar-image {
+  color: black;
+}
+
+.my-profile .my-profile__avatar .my-profile__avatar-name {
+  color: black;
+  padding: 10px;
+}
+.my-profile .my-profile__avatar .my-profile__avatar-name h5, .my-profile .my-profile__avatar .my-profile__avatar-name .h5 {
+  font-weight: bold;
+}
+
+.my-profile .my-profile__bio {
+  color: black;
 }
 
 .navbar {
@@ -15109,4 +15166,45 @@ html {
 .menu-item:hover i {
   color: black;
   background-color: #FDD661;
+}
+
+.divider {
+  color: #A9A9A9;
+}
+
+.all-categories-carousel {
+  transform: rotate3d(0, 0, 1, 90deg);
+}
+
+.all-categories-carousel .item {
+  transform: rotate3d(0, 0, 1, -90deg);
+}
+
+.all-categories-wrapper {
+  height: 300px;
+  width: 300px;
+}
+
+.all-categories-section {
+  background-color: none;
+}
+
+.all-categories-section .title-wrapper {
+  height: 50px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-categories-section .title-wrapper .title-wrapper__text {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.all-categories-section .splide-vertical .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
