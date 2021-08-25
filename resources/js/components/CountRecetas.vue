@@ -1,51 +1,29 @@
 <template>
   <div class="user">
     <div class="user__avatar">
-      <img
+      <!-- <img
         class="rounded-circle"
         alt="100x100"
         :src="Image"
         data-holder-rendered="true"
-      />
+      /> -->
+      <figure
+        class="rounded-circle"
+        alt="100x100"
+        data-holder-rendered="true"
+      >
+        <i class="fas fa-user-circle"></i>
+      </figure>
     </div>
     <div class="user__details">
-      <span><b>{{ Name }}</b></span>
+      <span
+        ><b>{{ Name }}</b></span
+      >
       <span
         >Recetas: <b>{{ count }}</b></span
       >
     </div>
   </div>
-  <!-- <div class="dropdown">
-    <a
-      class="user"
-      href="#"
-      role="button"
-      id="dropdownMenuLink"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      <div class="user__avatar dropdown-toggle">
-        <img
-          class="rounded-circle"
-          alt="100x100"
-          :src="Image"
-          data-holder-rendered="true"
-        />
-      </div>
-      <div class="user__details">
-        <span>{{ Name }}</span>
-        <span
-          >Recetas: <b>{{ count }}</b></span
-        >
-      </div>
-    </a>
-
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-  </div> -->
 </template>
 
 <script>

@@ -1,7 +1,10 @@
 // NAVBAR APP
 .navbar {
+    background-color: #F5F7F9;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 10px;
 }
 
 .navbar .container-fluid {
@@ -50,16 +53,49 @@
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+
+    .user__details,.user__avatar {
+        height: 60px;
+    }
 }
 
 .navbar .user .user__details {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    padding-bottom: 20px;
 }
 
-.navbar .user .user__avatar img {
-    width: 3.5rem;
-    padding: 8px;
+.navbar .user .user__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    img,
+    figure {
+        margin-top: 10px;
+        align-self: center;
+        width: 3.5rem;
+        font-size: 45px;
+        padding: 8px;
+        color: #DEDEDE;
+    }
+}
+
+.navbar .login-button {
+    border: 1px #E8E8E8 solid;
+    font-weight: bold;
+    padding: 10px 40px 10px;
+    background-color: white;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: $primary;
+        color: white;
+    }
 }
 
 #sidebarCollapse {
@@ -70,18 +106,4 @@
 .navbar-categories {
     background-color: #F5F7F9;
     ;
-}
-
-// LOGIN BUTTON
-.navbar .login-button {
-    border: 1px #E8E8E8 solid;
-    font-weight: bold;
-    padding: 10px 40px 10px;
-    background-color: white;
-    border-radius: 5px;
-
-    &:hover{
-        background-color: $primary;
-        color: white;
-    }
 }

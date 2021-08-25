@@ -8,6 +8,7 @@
       alt="profile"
       v-if="photo === null"
     />
+
     <!-- si el usuario tiene imagen de perfil -->
     <img
       :src="photo"

@@ -67,16 +67,12 @@
             <!-- STICKY BANNER LOGIN AND REGISTER -->
             @guest
             <div class="container-fluid login-banner sticky-top">
-                <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y compartir
-                    recetas por favor create una cuenta <a class="action" href="{{ route('register') }}"><b>aquí</b></a>
-                    o
-                    tal caso de disponer una cuenta <a class="action" href="{{ route('login') }}"><b>inicie
-                            sesión</b></a> </h5>
+                <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y compartir recetas por favor create una cuenta <a class="action" href="{{ route('register') }}"><b>aquí</b></a> o tal caso de disponer una cuenta <a class="action" href="{{ route('login') }}"><b>inicie sesión</b></a></h5>
             </div>
             @endguest
 
             <!-- NAVBAR-TOP NAVIGATION -->
-            <nav class="navbar navbar-expanded" style="background-color: #F5F7F9;">
+            <nav class="navbar navbar-expanded">
                 <div class="container-fluid">
                     <!-- NAVBAR HEADER OR BRAND -->
                     <div class="navbar-header">
@@ -118,7 +114,7 @@
             </nav>
 
             <!-- PAGE CONTENT-->
-            <div id="page-content" class="container-fluid" style="padding: 20px 20px 20px;">
+            <div id="page-content" class="container-fluid">
                 <!-- CATEGORY SLIDER -->
                 @if (!str_contains(Request::url(), '/recetas') && !str_contains(Request::url(), '/perfiles'))
                 <div class="owl-carousel owl-theme categories-carousel" style="height: 100px;">
