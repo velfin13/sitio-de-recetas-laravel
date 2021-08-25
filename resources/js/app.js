@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
     new Splide('#splide-horizontal', {
         lazyLoad: "nearby",
         direction: "ltr",
-        autoplay: true,
-        interval: 4000,
+        // autoplay: true,
+        // interval: 4000,
         resetProgress: true,
         pagination: false,
-        height: '20rem',
+        height: '25rem',
         trimSpace: true,
         throttle: 0,
         perPage: 5,
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     perPage: 4,
                 },
                 2000: {
-                    perPage: 4,
+                    perPage: 6,
                 }
             }
         }).mount();
@@ -179,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".categories-carousel").owlCarousel({
         rtl: true,
         loop: true,
-        margin: 100,
         center: true,
         nav: true,
         responsive: {
@@ -190,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 items: 3
             },
             1000: {
-                items: 3.5
+                items: 8
             }
         }
     });

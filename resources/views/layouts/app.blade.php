@@ -30,39 +30,35 @@
     <div id="app" class="wrapper">
         <!-- SIDEBAR ONLY IF IS AUTH-->
         @auth
-            <nav id="sidebar">
-                <div class="custom-menu">
-                    <section class="custom-menu__title">
-                        <h5><b>Dishes 🥡</b></h5>
-                    </section>
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <section class="custom-menu__title">
+                    <h5><b>Dishes 🥡</b></h5>
+                </section>
 
-                    <section class="custom-menu__list">
-                        <div class="menu-item"><a href="{{ route('inicio.index') }}"><i class="fas fa-home"></i>Inicio</a>
-                        </div>
-                        <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i
-                                    class="far fa-user-circle"></i> Perfil</a></div>
-                        <div class="menu-item"><a href="{{ route('recetas.index') }}"><i
-                                    class="fas fa-concierge-bell"></i> Recetas</a></div>
-                    </section>
+                <section class="custom-menu__list">
+                    <div class="menu-item"><a href="{{ route('inicio.index') }}"><i class="fas fa-home"></i>Inicio</a>
+                    </div>
+                    <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i class="far fa-user-circle"></i> Perfil</a></div>
+                    <div class="menu-item"><a href="{{ route('recetas.index') }}"><i class="fas fa-concierge-bell"></i> Recetas</a></div>
+                </section>
 
-                    <section class="custom-menu__list" style="margin-top:50px;">
-                        <span>Aplicaciones</span>
-                        <div class="menu-item"><a href="{{ route('chatify') }}"><i
-                                    class="far fa-comment-dots"></i>Chat</a></div>
-                    </section>
-                </div>
+                <section class="custom-menu__list" style="margin-top:50px;">
+                    <span>Aplicaciones</span>
+                    <div class="menu-item"><a href="{{ route('chatify') }}"><i class="far fa-comment-dots"></i>Chat</a></div>
+                </section>
+            </div>
 
 
-                <div class="sidebar__bottom">
-                    <a href="{{ route('logout') }}" data-target="#logoutModal"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <h5><b><span class="emoticon"></span> Cerrar Sesión</b></h5>
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </nav>
+            <div class="sidebar__bottom">
+                <a href="{{ route('logout') }}" data-target="#logoutModal" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <h5><b><span class="emoticon"></span> Cerrar Sesión</b></h5>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </nav>
         @endauth
 
 
@@ -70,13 +66,13 @@
         <div id="content">
             <!-- STICKY BANNER LOGIN AND REGISTER -->
             @guest
-                <div class="container-fluid login-banner sticky-top">
-                    <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y compartir
-                        recetas por favor create una cuenta <a class="action" href="{{ route('login') }}"><b>aquí</b></a>
-                        o
-                        tal caso de disponer una cuenta <a class="action" href="{{ route('login') }}"><b>inicie
-                                sesión</b></a> </h5>
-                </div>
+            <div class="container-fluid login-banner sticky-top">
+                <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y compartir
+                    recetas por favor create una cuenta <a class="action" href="{{ route('register') }}"><b>aquí</b></a>
+                    o
+                    tal caso de disponer una cuenta <a class="action" href="{{ route('login') }}"><b>inicie
+                            sesión</b></a> </h5>
+            </div>
             @endguest
 
             <!-- NAVBAR-TOP NAVIGATION -->
@@ -85,43 +81,37 @@
                     <!-- NAVBAR HEADER OR BRAND -->
                     <div class="navbar-header">
                         @guest
-                            <a class="navbar-brand" href="/">Dishes 🥡</a>
+                        <a class="navbar-brand" href="/">Dishes 🥡</a>
                         @else
-                            <button type="button" id="sidebarCollapse" class="btn btn-light">
-                                <i class="fa fa-bars"></i>
-                                <span class="sr-only">Toggle Menu</span>
-                            </button>
+                        <button type="button" id="sidebarCollapse" class="btn btn-light">
+                            <i class="fa fa-bars"></i>
+                            <span class="sr-only">Toggle Menu</span>
+                        </button>
                         @endguest
                     </div>
 
                     <!-- MOBILE GRID SEACH -->
                     @auth
-                        <form class="form-group col-9 col-sm-9 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0"
-                            action="{{ route('buscar.show') }}" method="GET">
-                            <input class="form-control form-control-lg nav-search" type="search" name="buscar"
-                                placeholder="Buscar" aria-label="Search">
-                        </form>
+                    <form class="form-group col-9 col-sm-9 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0" action="{{ route('buscar.show') }}" method="GET">
+                        <input class="form-control form-control-lg nav-search" type="search" name="buscar" placeholder="Buscar" aria-label="Search">
+                    </form>
                     @else
-                        <form class="form-group col-8 col-sm-8 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0"
-                            action="{{ route('buscar.show') }}" method="GET">
-                            <input class="form-control form-control-lg nav-search" type="search" name="buscar"
-                                placeholder="Buscar" aria-label="Search">
-                        </form>
+                    <form class="form-group col-8 col-sm-8 col-md-9 col-lg-5 col-xl-5 me-auto mb-2 mb-lg-0" action="{{ route('buscar.show') }}" method="GET">
+                        <input class="form-control form-control-lg nav-search" type="search" name="buscar" placeholder="Buscar" aria-label="Search">
+                    </form>
                     @endauth
 
                     <!-- USER PROFILE -->
                     <!-- d-none d-lg-block -->
                     <ul class="nav navbar-nav d-none d-lg-block">
                         @guest
-                            <a class="btn login-button" href="{{ route('login') }}">Iniciar Sesión</a>
+                        <a class="btn login-button" href="{{ route('login') }}">Iniciar Sesión</a>
                         @else
-                            @if (!Auth::user()->perfil->imagen)
-                                <user-recetas user-image={{ asset('images/noImage.jpg') }}
-                                    user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
-                            @else
-                                <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }}
-                                    user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
-                            @endif
+                        @if (!Auth::user()->perfil->imagen)
+                        <user-recetas user-image={{ asset('images/noImage.jpg') }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                        @else
+                        <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                        @endif
                         @endguest
                     </ul>
                 </div>
@@ -129,32 +119,16 @@
 
             <!-- PAGE CONTENT-->
             <div id="page-content" class="container-fluid" style="padding: 20px 20px 20px;">
-
                 <!-- CATEGORY SLIDER -->
                 @if (!str_contains(Request::url(), '/recetas') && !str_contains(Request::url(), '/perfiles'))
-                    <div class="owl-carousel owl-theme categories-carousel">
-                        @foreach ($categorias as $categoria)
-                            <a class="category-card"
-                                href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
-                                {!! $categoria->icono !!}
-                                <br><span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
-                            </a>
-                        @endforeach
-                    </div>
-
-                    <!-- <div id="splide-category-horizontal" class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            @foreach ($categorias as $categoria)
-                            <div class="splide__slide">
-                            <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
-                                <i class="fas fa-concierge-bell"></i><br><span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
-                            </a>
-                            </div>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div> -->
+                <div class="owl-carousel owl-theme categories-carousel" style="height: 100px;">
+                    @foreach ($categorias as $categoria)
+                    <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                        {!! $categoria->icono !!}
+                        <br><span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
+                    </a>
+                    @endforeach
+                </div>
                 @endif
 
                 <!-- CONTENT INJECTION -->

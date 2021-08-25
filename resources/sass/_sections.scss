@@ -1,23 +1,23 @@
 // ALL CATEGORIES
-.all-categories-section{
+section.all-categories{
     background-color: none;
 }
 
-.all-categories-section .title-wrapper{
-    // background-color: yellow;
+section.all-categories .title-wrapper{
     height: 50px;
     min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.all-categories-section .title-wrapper .title-wrapper__text{
+
+section.all-categories .title-wrapper .title-wrapper__text{
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
 }
 
-.all-categories-section .splide-vertical .splide__slide{
+section.all-categories .splide-vertical .splide__slide{
     display: flex;
     justify-content: center;
     align-items: center;

@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <h2 class="subtitle"><b>Administrar Recetas</b></h2>
+        <h2 class="subtitle"><b>🧾 Administrar Recetas</b></h2>
         <hr class="divider">
         <!-- TABLE RECIPES -->
         <table class="table table-bordered table-striped table-hover text-center" id="example">
@@ -43,7 +43,7 @@
         <br>
 
         <!-- FAVORITES -->
-        <h2 class="subtitle"><b>Favoritos 😈</b></h2>
+        <h2 class="subtitle"><b>😈 Favoritos</b></h2>
         <hr class="divider">
         @if (count(Auth::user()->meGusta) > 0)
             @foreach (Auth::user()->meGusta as $receta)

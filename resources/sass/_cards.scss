@@ -1,14 +1,17 @@
 // CATEGORY CARD
 .category-card {
     background-color: white;
+
+    width: 200px;
+    height: 110px;
+
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     border-radius: 5px;
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 300px;
-    height: 150px;
 
     text-decoration: none;
 
@@ -23,6 +26,8 @@
     }
 }
 
+
+// CATEGORY CARD
 .category-card i {
     color: $primary;
     font-size: 35px;
@@ -61,37 +66,95 @@
 // RECIPE CARD
 .recipe-card {
     background-color: white;
-    width: 200px;
-    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 300px;
+    min-width: 300px;
+    height: 350px;
+    // height: 470px;
+    padding: 15px;
+
+    border-radius: 8px;
+}
+
+.recipe-card .top {
+    display: flex;
+    flex-direction: row;
+
+    .left {
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+
+        // padding: 10px;
+        margin-left: 25px;
+    }
+
+    .right {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: flex-start;
+
+        .favorite {
+            font-size: 40px;
+        }
+    }
+}
+
+.recipe-card .body {
+    // background-color: aqua;
+
+    flex: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 5px;
 
-    .recipe-card__image {
-        max-width: 100%;
-        vertical-align: top;
-        position: relative;
-        
-        img{
-            // height: 30px;
-            object-fit: cover;
-        }
+    .steps {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        text-align: justify;
+        font-weight: bolder;
+        color: #525252;
     }
 
-    .recipe-card__thumbnail {
-        position: relative;
-        overflow: hidden;  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        width: 100%;
-        height: 40%;
-       
+    .image {
+        width: 6rem;
+        height: 5rem;
+        align-self: center;
+        // border-radius: 5px;
+        border: 4px black double;
+        object-fit: cover;
+    }
+}
 
-        img {
-            object-fit: fill;
-        }
+.recipe-card .bottom {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 22px 0px;
+
+    border-top: 1px #E6E6E6 solid;
+
+    .likes i {
+        border-radius: 20px;
+
+        padding: 10px;
+        margin-right: 5px;
+
+        background-color: red;
+        color: white;
+    }
+
+    .likes,
+    .date {
+        font-weight: bolder;
+        color: #000000;
     }
 }
