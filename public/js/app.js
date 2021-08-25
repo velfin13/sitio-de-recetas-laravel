@@ -11261,7 +11261,7 @@ __webpack_require__.r(__webpack_exports__);
 
           if (existe) {
             fetch("/api/rating/new", {
-              method: "post",
+              method: "put",
               body: JSON.stringify({
                 receta: _this.idReceta,
                 user: _this.idUser,
@@ -11273,7 +11273,7 @@ __webpack_require__.r(__webpack_exports__);
             }).then(function (res) {
               return res.json();
             }).then(function (data) {
-              sweetalert__WEBPACK_IMPORTED_MODULE_1___default()("Gracias!", "Nueva calificaion", "success");
+              sweetalert__WEBPACK_IMPORTED_MODULE_1___default()("Gracias!", "Nueva calificaion!!!", "success");
 
               _this.getRating();
             })["catch"](function (err) {

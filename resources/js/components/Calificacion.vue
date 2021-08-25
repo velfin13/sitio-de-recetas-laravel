@@ -243,7 +243,7 @@ export default {
 
                         if (existe) {
                             fetch("/api/rating/new", {
-                                method: "post",
+                                method: "put",
                                 body: JSON.stringify({
                                     receta: this.idReceta,
                                     user: this.idUser,
@@ -260,7 +260,7 @@ export default {
                                 .then(data => {
                                     swal(
                                         "Gracias!",
-                                        "Nueva calificaion",
+                                        "Nueva calificaion!!!",
                                         "success"
                                     );
                                     this.getRating();
