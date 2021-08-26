@@ -70,10 +70,15 @@
             <!-- STICKY BANNER LOGIN AND REGISTER -->
             @guest
                 <div class="container-fluid login-banner sticky-top">
-                    <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y compartir
-                        recetas por favor create una cuenta <a class="action"
-                            href="{{ route('register') }}"><b>aquí</b></a> o tal caso de disponer una cuenta <a
-                            class="action" href="{{ route('login') }}"><b>inicie sesión</b></a></h5>
+                    <div class="alert alert-success" role="alert">
+                        <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y
+                            compartir
+                            recetas por favor create una cuenta <a class="action"
+                                href="{{ route('register') }}"><b>aquí</b></a> o tal caso de disponer una cuenta
+                            <a class="action" href="{{ route('login') }}"><b>inicie sesión</b></a>
+                        </h5>
+                    </div>
+
                 </div>
             @endguest
 
@@ -151,6 +156,7 @@
     </div>
 
     @yield('script')
+
 </body>
 
 </html>
