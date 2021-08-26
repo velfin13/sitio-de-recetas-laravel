@@ -45,7 +45,7 @@
                                     class="fas fa-concierge-bell"></i> Recetas</a></div>
 
                         <div class="menu-item"><a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}"><i
-                                    class="fas fa-concierge-bell"></i> Editar perfil</a></div>
+                                    class="fas fa-user-edit"></i> Editar perfil</a></div>
                     </section>
 
 
