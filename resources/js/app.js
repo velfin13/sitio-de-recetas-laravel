@@ -63,59 +63,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if ($(selector).length) {
             new Splide(selector, {
-                type: "loop",
-                autoplay: true,
-                interval: (index % 2 == 0) ? 3000 : 2000,
-                direction: 'ttb',
+                direction  : 'ttb',
+                heightRatio: 1,
+                perPage    : 1,
+
                 pagination: false,
-                keyboard: false,
-                arrows: false,
-                height: "200px;",
-                autoHeight: true,
-                lazyLoad: "nearby",
-                breakpoints: {
-                    0: {
-                        perPage: 2,
-                    },
-                    600: {
-                        perPage: 2,
-                    },
-                    1000: {
-                        perPage: 2,
-                    },
-                    2000: {
-                        perPage: 2,
-                    }
-                }
+                arrows:false,
             }).mount();
         }
     }
 
+    // CORREGIR AQUI
     new Splide('#splide-horizontal', {
-        lazyLoad: "nearby",
+        // lazyLoad: "nearby",
         direction: "ltr",
         // autoplay: true,
         // interval: 4000,
-        resetProgress: true,
+        // resetProgress: true,
         pagination: false,
-        height: '25rem',
-        trimSpace: true,
-        throttle: 0,
+        height: '27rem',
+        // trimSpace: true,
+        // throttle: 0,
         perPage: 5,
-        breakpoints: {
-            0: {
-                perPage: 1,
-            },
-            600: {
-                perPage: 1.5,
-            },
-            1000: {
-                perPage: 2,
-            },
-            2000: {
-                perPage: 4,
-            }
-        }
+        // breakpoints: {
+        //     0: {
+        //         perPage: 1,
+        //     },
+        //     600: {
+        //         perPage: 1.5,
+        //     },
+        //     1000: {
+        //         perPage: 2,
+        //     },
+        //     2000: {
+        //         perPage: 4,
+        //     }
+        // }
     }).mount();
 
     if ($("#splide-category-horizontal").length) {
@@ -125,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             autoplay: true,
             interval: 4000,
             resetProgress: true,
-            perPage: 5,
+            perPage: 2,
             pagination: false,
             autoHeight: true,
             trimSpace: true,

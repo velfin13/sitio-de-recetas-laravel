@@ -206,71 +206,148 @@
 
 // RECIPE CARD
 .recipe-card {
+    $width: 280px;
+    $height: 380px;
+
     background-color: white;
 
     display: flex;
     flex-direction: column;
 
-    max-width: 300px;
-    min-width: 300px;
-    height: 350px;
-    // height: 470px;
-    padding: 15px;
+    max-width: $width;
+    min-width: $width;
+    height: $height;
 
     border-radius: 8px;
+    padding: 15px;
+
+    // .top,
+    // .bottom {
+    //     padding: 15px;
+    // }
 }
 
+
 .recipe-card .top {
+    // background-color: purple;
+
     display: flex;
     flex-direction: row;
+
+    border-bottom: 1px #E6E6E6 solid;
 
     .left {
         display: flex;
         flex: 2;
         flex-direction: column;
-
-        // padding: 10px;
-        margin-left: 25px;
     }
 
     .right {
         display: flex;
         flex: 1;
-        justify-content: center;
-        align-items: flex-start;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        padding-right: 10px;
 
         .favorite {
-            font-size: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: flex-end;
+            font-size: 30px;
+            color: #DFDFDF;
         }
     }
 }
 
 .recipe-card .body {
-    // background-color: aqua;
+    height: 50%;
 
     flex: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     padding: 5px;
 
-    .steps {
-        padding-left: 20px;
-        padding-right: 20px;
+    .body__top {
+        background-color: #FAFAFA;
 
-        text-align: justify;
-        font-weight: bolder;
-        color: #525252;
+        height: 50%;
+        width: 100%;
+
+        padding-top: 10px;
+
+        .steps {
+            color: #525252;
+
+            margin-left: 10px;
+            margin-right: 10px;
+
+            text-justify: newspaper;
+            font-weight: bolder;
+        }
     }
 
-    .image {
-        width: 6rem;
-        height: 5rem;
-        align-self: center;
-        // border-radius: 5px;
-        border: 4px black double;
-        object-fit: cover;
+    .body__bottom {
+        height: 50%;
+        width: 100%;
+
+        display: flex;
+
+        .left,
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .image i,.video i{
+                color: #E0E0E0;
+                font-size: 25px;
+            }
+        }
+
+        .left {
+            .image {
+                background-color: #F9F9F9;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 6rem;
+                height: 5rem;
+                min-width: 6rem;
+                min-height: 5rem;
+
+                align-self: center;
+
+                border: 1px #C4C4C4 solid;
+                object-fit: cover;
+            }
+        }
+
+        .right {
+            .video {
+                background-color: #F9F9F9;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 6rem;
+                height: 5rem;
+                min-width: 6rem;
+                min-height: 5rem;
+
+                border: 1px #C4C4C4 solid;
+            }
+        }
     }
+
+
 }
 
 .recipe-card .bottom {
@@ -279,7 +356,7 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 10px 22px 0px;
+    padding-top: 10px;
 
     border-top: 1px #E6E6E6 solid;
 
@@ -289,13 +366,14 @@
         padding: 10px;
         margin-right: 5px;
 
-        background-color: red;
-        color: white;
+        border: 1px #E6E6E6 solid;
+        color: $primary;
     }
 
     .likes,
     .date {
         font-weight: bolder;
         color: #000000;
+
     }
 }

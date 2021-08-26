@@ -73,39 +73,48 @@
                                 <ul class="splide__list">
                                     @foreach ($group as $recetas)
                                     @if(count($recetas) == 0)
-                                    <div class="recipe-card text-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                        <span style="font-size: 50px; margin: 10px; color: grey;">😔</span>
-                                        <h5>No se encontraron recetas para <br> <b>{{ str_replace('-', ' ', $key) }}</b></h5>
-                                    </div>
+                                    <li class="splide__slide">
+                                        <div class="recipe-card text-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                            <span style="font-size: 50px; margin: 10px; color: grey;">😔</span>
+                                            <h5>No se encontraron recetas para <br> <b>{{ str_replace('-', ' ', $key) }}</b></h5>
+                                        </div>
+                                    </li>
                                     @endif
                                     @foreach ($recetas as $receta)
-                                    <!-- <h1>{{$receta}}</h1> -->
-
-                                    <!-- RECIPE CARD -->
-                                    <div class="recipe-card">
-                                        <div class="top">
-                                            <div class="left">
-                                                <h5><b>{{ Str::title($nueva->titulo) }}</b></h5>
-                                                <h6>Creado por <b>Joseph Garcia</b></h6>
+                                    <li class="splide__slide" style="margin-top:20px;">
+                                        <!-- RECIPE CARD -->
+                                        <div class="recipe-card">
+                                            <div class="top">
+                                                <div class="left">
+                                                    <h5><b>{{ Str::title($receta->titulo) }}</b></h5>
+                                                    <h6>Creado por <b>Joseph Garcia</b></h6>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="favorite"><i class="fas fa-chevron-right"></i></span>
+                                                </div>
                                             </div>
-                                            <div class="right">
-                                                <!-- <span class="favorite"><i class="fas fa-bookmark"></i></span> -->
-                                                <!-- <span class="favorite"><i class="far fa-heart"></i></span> -->
-                                                <!-- <like-button likes="0" like="0" receta-id="{{ $receta->id }}"></like-button> -->
+
+                                            <div class="body">
+                                                <div class="body__top">
+                                                    <p class="steps">{{ Str::words(strip_tags($receta->preparacion), 18) }}</p>
+                                                </div>
+                                                <div class="body__bottom">
+                                                    <div class="left">
+                                                        <!-- <img class="image" src="/storage/{{ $nueva->imagen }}" alt="recipe-image"> -->
+                                                        <div class="image"><i class="far fa-image"></i></div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="video"><i class="fas fa-video"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="bottom">
+                                                <span class="likes"><i class="fas fa-heart"></i> <b>{{count($nueva->likes)}}</b></span>
+                                                <span class="date">{{date('d-m-Y', strtotime($receta->created_at))}}</span>
                                             </div>
                                         </div>
-
-                                        <div class="body">
-                                            <!-- <p class="steps">asdjiasdij ijasidjaisd aisjdais djasd ijasdijas dasd ajisdjaisdjsa dasidja isjdaisd asdijasidja</p> -->
-                                            <p class="steps">{{ Str::words(strip_tags($receta->preparacion), 11) }}</p>
-                                            <img class="image" src="/storage/{{ $nueva->imagen }}" alt="recipe-image">
-                                        </div>
-
-                                        <div class="bottom">
-                                            <span class="likes"><i class="fas fa-heart"></i> <b>{{count($nueva->likes)}}</b></span>
-                                            <span class="date">{{date('d-m-Y', strtotime($receta->created_at))}}</span>
-                                        </div>
-                                    </div>
+                                    </li>
                                     @endforeach
                                     @endforeach
                                 </ul>
