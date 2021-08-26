@@ -11417,13 +11417,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["userImage", "userName", "userId"],
@@ -11436,6 +11429,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getCountReceta();
+    console.log(this.userImage);
   },
   methods: {
     getCountReceta: function getCountReceta() {
@@ -98713,7 +98707,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "user" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "user__avatar" }, [
+      _c("img", {
+        staticClass: "rounded-circle",
+        attrs: {
+          alt: "100x100",
+          src: _vm.Image,
+          "data-holder-rendered": "true"
+        }
+      })
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "user__details" }, [
       _c("span", [_c("b", [_vm._v(_vm._s(_vm.Name))])]),
@@ -98722,23 +98725,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "user__avatar" }, [
-      _c(
-        "figure",
-        {
-          staticClass: "rounded-circle",
-          attrs: { alt: "100x100", "data-holder-rendered": "true" }
-        },
-        [_c("i", { staticClass: "fas fa-user-circle" })]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
