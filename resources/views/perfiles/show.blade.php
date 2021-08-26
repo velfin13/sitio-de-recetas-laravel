@@ -25,7 +25,6 @@
             @if ($perfil->usuario->url)
             <a href="{{ $perfil->usuario->url }}">{{ $perfil->usuario->url }}</a>
             @endif
-            www.dominio.com
         </div>
 
         <div class="my-profile__bio col-11">
