@@ -22,14 +22,27 @@
                 <ul class="splide__list">
                     @foreach ($nuevas as $nueva)
                     <li class="splide__slide">
-                        <a href="{{ route('recetas.show', ['receta' => $nueva->id]) }}" style="text-decoration: none; color:black">
-                            <div class="card" style="width: 200px; height: 150px;">
-                                <img style="height: 100px;" class="card-img-top" src="/storage/{{ $nueva->imagen }}" alt="Card image cap">
-                                <div class="card-body" style="padding-bottom: 40px;">
-                                    <h5 class="card-title" style="text-align: center;"><b>{{Str::title($nueva->titulo)}}</b></h5>
+                        <!-- LASTS CARD -->
+                        <!-- 
+                        </a> -->
+                        <div class="latest-recipe-card">
+                            <div class="background">
+                                <img class="image" src="/storage/{{ $nueva->imagen }}" alt="image">
+                            </div>
+                            <div class="content">
+                                <div class="body">
+                                    <h5 class="title">{{ Str::title($nueva->titulo)}}</h5>
+                                    <h6 class="created_by">{{ Str::words(strip_tags($nueva->preparacion), 8) }}</h6>
+                                </div>
+                                <div class="footer">
+                                    <span class="likes"><b class="counter">{{count($nueva->likes)}}</b><i class="fas fa-heart"></i></span>
+                                    <span class="date">{{date('d-m-Y', strtotime($nueva->created_at))}}</span>
                                 </div>
                             </div>
-                        </a>
+                            <div class="see-more">
+                                <span><a href="{{ route('recetas.show', ['receta' => $nueva->id]) }}" style="text-decoration: none; color:black">Ver 🧐</a></span>
+                            </div>
+                        </div>
                     </li>
                     @endforeach
                 </ul>
@@ -77,7 +90,8 @@
                                                 <h6>Creado por <b>Joseph Garcia</b></h6>
                                             </div>
                                             <div class="right">
-                                                <span class="favorite"><i class="far fa-heart"></i></span>
+                                                <!-- <span class="favorite"><i class="fas fa-bookmark"></i></span> -->
+                                                <!-- <span class="favorite"><i class="far fa-heart"></i></span> -->
                                                 <!-- <like-button likes="0" like="0" receta-id="{{ $receta->id }}"></like-button> -->
                                             </div>
                                         </div>
