@@ -2,7 +2,7 @@
     <div class="user">
         <div class="user__avatar">
             <img
-                class="rounded-circle"
+                class="rounded-circle mb-3"
                 alt="100x100"
                 :src="Image"
                 data-holder-rendered="true"

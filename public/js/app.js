@@ -98709,7 +98709,7 @@ var render = function() {
   return _c("div", { staticClass: "user" }, [
     _c("div", { staticClass: "user__avatar" }, [
       _c("img", {
-        staticClass: "rounded-circle",
+        staticClass: "rounded-circle mb-3",
         attrs: {
           alt: "100x100",
           src: _vm.Image,
