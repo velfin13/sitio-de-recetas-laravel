@@ -148,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($("#splide-latest-recipes-horizontal").length) {
         new Splide('#splide-latest-recipes-horizontal', {
             type: "loop",
-            direction: "rtl",
             autoplay: true,
             interval: 4500,
             perPage: 8,

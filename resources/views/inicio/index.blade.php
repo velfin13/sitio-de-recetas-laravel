@@ -22,9 +22,7 @@
                 <ul class="splide__list">
                     @foreach ($nuevas as $nueva)
                     <li class="splide__slide">
-                        <!-- LASTS CARD -->
-                        <!-- 
-                        </a> -->
+                        <!-- LATEST CARD -->
                         <div class="latest-recipe-card">
                             <div class="background">
                                 <img class="image" src="/storage/{{ $nueva->imagen }}" alt="image">
@@ -35,14 +33,15 @@
                                     <h6 class="created_by">{{ Str::words(strip_tags($nueva->preparacion), 8) }}</h6>
                                 </div>
                                 <div class="footer">
-                                    <span class="likes"><b class="counter">{{count($nueva->likes)}}</b><i class="fas fa-heart"></i></span>
+                                    <span class="likes"><i class="fas fa-heart"></i><b class="counter">{{count($nueva->likes)}}</b></span>
                                     <span class="date">{{date('d-m-Y', strtotime($nueva->created_at))}}</span>
                                 </div>
                             </div>
                             <div class="see-more">
-                                <span><a href="{{ route('recetas.show', ['receta' => $nueva->id]) }}" style="text-decoration: none; color:black">Ver 🧐</a></span>
+                                <span><a href="{{ route('recetas.show', ['receta' => $nueva->id]) }}">Ver 👀</a></span>
                             </div>
                         </div>
+                        <!-- END LATEST CARD -->
                     </li>
                     @endforeach
                 </ul>
