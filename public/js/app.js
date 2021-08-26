@@ -11947,7 +11947,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   $(".categories-carousel").owlCarousel({
-    rtl: true,
+    // rtl: true,
     loop: true,
     center: true,
     nav: true,

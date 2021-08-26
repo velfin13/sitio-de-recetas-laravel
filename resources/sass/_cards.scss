@@ -2,7 +2,7 @@
 .category-card {
     background-color: white;
 
-    width: 200px;
+    width: 210px;
     height: 110px;
 
     display: flex;
@@ -15,19 +15,21 @@
 
     text-decoration: none;
 
+    padding-bottom: 10px;
+
     &:hover {
         background-color: $primary;
-        color: white;
 
-        i,
-        .category-card__title {
+        .category-card__icon,
+        .category-card__title,
+        .category-card__counter {
             color: white !important;
         }
     }
 }
 
 // CATEGORY CARD
-.category-card i {
+.category-card .category-card__icon {
     color: $primary;
     font-size: 35px;
 }
@@ -37,6 +39,12 @@
     font-size: 16px;
     font-weight: bold;
     text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+.category-card .category-card__counter {
+    color: #525252;
+    font-weight: 600;
 }
 
 // LASTS RECIPES CARD
@@ -114,7 +122,6 @@
 }
 
 .latest-recipe-card .content .footer {
-    // background-color: rgba(236, 236, 236, 0.95);
     background-color: rgba($primary, 0.96);
 
     height: 100%;
@@ -156,9 +163,7 @@
 .latest-recipe-card .see-more {
     $height: 45px;
 
-    // background-color: #E7E7E7;
     background-color: $primary;
-
 
     position: absolute;
     display: flex;

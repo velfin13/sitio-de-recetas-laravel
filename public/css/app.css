@@ -14446,7 +14446,7 @@ body {
 
 .category-card {
   background-color: white;
-  width: 200px;
+  width: 210px;
   height: 110px;
   display: flex;
   flex-direction: column;
@@ -14455,17 +14455,18 @@ body {
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
+  padding-bottom: 10px;
 }
 .category-card:hover {
   background-color: #FDD661;
-  color: white;
 }
-.category-card:hover i,
-.category-card:hover .category-card__title {
+.category-card:hover .category-card__icon,
+.category-card:hover .category-card__title,
+.category-card:hover .category-card__counter {
   color: white !important;
 }
 
-.category-card i {
+.category-card .category-card__icon {
   color: #FDD661;
   font-size: 35px;
 }
@@ -14475,6 +14476,12 @@ body {
   font-size: 16px;
   font-weight: bold;
   text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.category-card .category-card__counter {
+  color: #525252;
+  font-weight: 600;
 }
 
 .latest-recipe-card {
