@@ -5,18 +5,34 @@
     <h2 class="subtitle"><b>🧾 {{Str::title($recetas->titulo)}}</b></h2>
     <hr class="divider">
 
-    <div class="row">
-        <div class="image-wrapper col-6">
-            <h1>imagen</h1>
+    <section id="multimedia">
+        <div class="row">
+            <div class="image-wrapper col-12 col-sm-12 col-md-6 col-xl-6">
+                <img src="/storage/{{ $recetas->imagen }}" alt="img">
+            </div>
+            <div class="video-wrapper col-12 col-sm-12 col-md-6 col-xl-6">
+                @if($recetas->url === null)
+                <h1>sin video</h1>
+                @else
+                <iframe src="{{ $recetas->url }}"></iframe>
+                @endif
+            </div>
         </div>
-        <div class="video-wrapper col-6">
-            <h1>video</h1>
-        </div>
-    </div>
+    </section>
 
-    <div class="row">
-        <h5>Detalles</h5>
-        <hr class="divider">
-    </div>
+    <section id="chef">
+        <div class="row">
+            <h5>Detalles</h5>
+            <hr class="divider">
+        </div>
+    </section>
+
+    <section id="recipe">
+        <div class="row">
+            <h5>Detalles</h5>
+            <hr class="divider">
+        </div>
+    </section>
+
 </div>
 @endsection

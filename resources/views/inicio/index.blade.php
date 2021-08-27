@@ -80,43 +80,44 @@
                                     @foreach ($recetas as $receta)
                                     <li class="splide__slide" style="margin-top:20px;">
                                         <!-- RECIPE CARD -->
-                                        <div class="recipe-card">
-                                            <div class="top">
-                                                <div class="left">
-                                                    <!-- {{$receta->url}} -->
-                                                    <h5><b>{{ Str::title($receta->titulo) }}</b></h5>
-                                                    <h6>Creado por <b>Joseph Garcia</b></h6>
-                                                </div>
-                                                <div class="right">
-                                                    <span class="figure"><i class="fas fa-chevron-right"></i></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="body">
-                                                <div class="body__top">
-                                                    <p class="steps">{{ Str::words(strip_tags($receta->preparacion), 18) }}</p>
-                                                </div>
-                                                <div class="body__bottom">
-                                                    <!-- LEFT -->
+                                        <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
+                                            <div class="recipe-card">
+                                                <div class="top">
                                                     <div class="left">
-                                                        <!-- <a href="#image-modal" rel="modal:open">
+                                                        <!-- {{$receta->url}} -->
+                                                        <h5><b>{{ Str::title($receta->titulo) }}</b></h5>
+                                                        <h6>Creado por <b>Joseph Garcia</b></h6>
+                                                    </div>
+                                                    <div class="right">
+                                                        <span class="figure"><i class="fas fa-chevron-right"></i></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="body__top">
+                                                        <p class="steps">{{ Str::words(strip_tags($receta->preparacion), 18) }}</p>
+                                                    </div>
+                                                    <div class="body__bottom">
+                                                        <!-- LEFT -->
+                                                        <div class="left">
+                                                            <!-- <a href="#image-modal" rel="modal:open">
                                                             <img class="image" src="/storage/{{ $nueva->imagen }}" alt="recipe-image">
                                                             <div class="image"><i class="far fa-image"></i></div>
                                                         </a> -->
 
-                                                        <div class="image">
-                                                            <div class="background">
-                                                                <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
+                                                            <div class="image">
+                                                                <div class="background">
+                                                                    <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
+                                                                </div>
+                                                                <div class="content">
+                                                                    <i class="far fa-image"></i>
+                                                                </div>
                                                             </div>
-                                                            <div class="content">
-                                                                <i class="far fa-image"></i>
-                                                            </div>
-                                                        </div>
 
-                                                    </div>
-                                                    <!-- RIGHT -->
-                                                    <div class="right">
-                                                        <!-- <a class="js-modal-btn" data-video-url="https://www.youtube.com/embed/2zf5Tc9UxUk">
+                                                        </div>
+                                                        <!-- RIGHT -->
+                                                        <div class="right">
+                                                            <!-- <a class="js-modal-btn" data-video-url="https://www.youtube.com/embed/2zf5Tc9UxUk">
                                                             <div class="video">
                                                                 <div class="background">
                                                                     <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg" alt="thumbnail">
@@ -127,29 +128,30 @@
                                                             </div>
                                                         </a> -->
 
-                                                        @if($receta->url === null)
-                                                        <div class="video video--empty">
-                                                            <i class="fas fa-video"></i>
-                                                        </div>
-                                                        @else
-                                                        <div class="video">
-                                                            <div class="background">
-                                                                <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg" alt="thumbnail">
+                                                            @if($receta->url === null)
+                                                            <div class="video video--empty">
+                                                                <i class="fas fa-video"></i>
                                                             </div>
-                                                            <div class="content">
-                                                                <i class="far fa-play-circle"></i>
+                                                            @else
+                                                            <div class="video">
+                                                                <div class="background">
+                                                                    <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg" alt="thumbnail">
+                                                                </div>
+                                                                <div class="content">
+                                                                    <i class="far fa-play-circle"></i>
+                                                                </div>
                                                             </div>
+                                                            @endif
                                                         </div>
-                                                        @endif
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="bottom">
-                                                <span class="likes"><i class="fas fa-heart"></i> <b>{{count($nueva->likes)}}</b></span>
-                                                <span class="date">{{date('d-m-Y', strtotime($receta->created_at))}}</span>
+                                                <div class="bottom">
+                                                    <span class="likes"><i class="fas fa-heart"></i> <b>{{count($nueva->likes)}}</b></span>
+                                                    <span class="date">{{date('d-m-Y', strtotime($receta->created_at))}}</span>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                     @endforeach
                                     @endforeach

@@ -1,9 +1,9 @@
 // ALL CATEGORIES
-section.all-categories{
+section.all-categories {
     background-color: none;
 }
 
-section.all-categories .title-wrapper{
+section.all-categories .title-wrapper {
     height: 50px;
     min-height: 50px;
     display: flex;
@@ -11,15 +11,58 @@ section.all-categories .title-wrapper{
     justify-content: center;
 }
 
-section.all-categories .title-wrapper .title-wrapper__text{
+section.all-categories .title-wrapper .title-wrapper__text {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
 }
 
-section.all-categories .splide-vertical .splide__slide{
+section.all-categories .splide-vertical .splide__slide {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+// RECIPE DETAIL
+div#recipe-detail {
+    background-color: none;
+    // border: 1px #E3E3E3 dashed;
+    height: 80vh;
+    padding: 20px;
+}
+
+div#recipe-detail #multimedia {
+    .image-wrapper {
+        // background-color: yellow;
+        img {
+            object-fit: cover;
+        }
+
+    }
+
+    .video-wrapper {
+        // background-color: red;
+
+    }
+
+    .image-wrapper,
+    .video-wrapper {
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        img,
+        iframe {
+            width: 18rem;
+            height: 13rem;
+        }
+    }
+}
+
+div#recipe-detail #chef {}
+
+div#recipe-detail #recipe {}
