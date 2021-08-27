@@ -14,6 +14,7 @@
                 @if($recetas->url === null)
                 <h1>sin video</h1>
                 @else
+                {{$recetas->url}}
                 <iframe src="{{ $recetas->url }}"></iframe>
                 @endif
             </div>
