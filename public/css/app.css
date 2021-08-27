@@ -14469,6 +14469,7 @@ body {
 .category-card .category-card__icon {
   color: #FDD661;
   font-size: 35px;
+  cursor: pointer;
 }
 
 .category-card .category-card__title {
@@ -14493,6 +14494,7 @@ body {
   min-width: 250px;
   max-height: 140px;
   min-height: 140px;
+  cursor: pointer;
 }
 .latest-recipe-card:hover .see-more {
   transform: translate(0px, 0px);
@@ -14556,6 +14558,7 @@ body {
 }
 .latest-recipe-card .content .footer .likes .counter {
   color: white;
+  margin-left: 8px;
 }
 .latest-recipe-card .content .footer .likes i {
   padding: 8px;
@@ -14563,7 +14566,6 @@ body {
   border: 1px white solid;
   background-color: #FDD661;
   color: white;
-  margin-right: 5px;
 }
 .latest-recipe-card .content .footer .date {
   font-weight: bolder;
@@ -14609,16 +14611,19 @@ body {
   height: 380px;
   border-radius: 8px;
   padding: 15px;
+  cursor: pointer;
 }
 
 .recipe-card .top {
   display: flex;
   flex-direction: row;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-bottom: 1px #E6E6E6 solid;
 }
 .recipe-card .top .left {
   display: flex;
-  flex: 2;
+  flex: 3;
   flex-direction: column;
 }
 .recipe-card .top .right {
@@ -14629,13 +14634,13 @@ body {
   text-align: right;
   padding-right: 10px;
 }
-.recipe-card .top .right .favorite {
+.recipe-card .top .right .figure {
+  color: #F2F2F2;
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: flex-end;
   font-size: 30px;
-  color: #DFDFDF;
 }
 
 .recipe-card .body {
@@ -14672,36 +14677,76 @@ body {
   justify-content: center;
   align-items: center;
 }
-.recipe-card .body .body__bottom .left .image i, .recipe-card .body .body__bottom .left .video i,
+.recipe-card .body .body__bottom .left a,
+.recipe-card .body .body__bottom .right a {
+  text-decoration: none;
+}
+.recipe-card .body .body__bottom .left .image i,
+.recipe-card .body .body__bottom .left .video i,
 .recipe-card .body .body__bottom .right .image i,
 .recipe-card .body .body__bottom .right .video i {
   color: #E0E0E0;
   font-size: 25px;
 }
-.recipe-card .body .body__bottom .left .image {
-  background-color: #F9F9F9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 6rem;
-  height: 5rem;
-  min-width: 6rem;
-  min-height: 5rem;
-  align-self: center;
-  border: 1px #C4C4C4 solid;
-  -o-object-fit: cover;
-     object-fit: cover;
+.recipe-card .body .body__bottom .left .video .video--empty,
+.recipe-card .body .body__bottom .right .video .video--empty {
+  color: #E0E0E0;
 }
+.recipe-card .body .body__bottom .left .image:hover,
+.recipe-card .body .body__bottom .left .video:hover,
+.recipe-card .body .body__bottom .right .image:hover,
+.recipe-card .body .body__bottom .right .video:hover {
+  background-color: #FDD661;
+  cursor: pointer;
+}
+.recipe-card .body .body__bottom .left .image:hover i,
+.recipe-card .body .body__bottom .left .video:hover i,
+.recipe-card .body .body__bottom .right .image:hover i,
+.recipe-card .body .body__bottom .right .video:hover i {
+  color: white;
+}
+.recipe-card .body .body__bottom .left .image,
 .recipe-card .body .body__bottom .right .video {
   background-color: #F9F9F9;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 6rem;
   height: 5rem;
   min-width: 6rem;
   min-height: 5rem;
-  border: 1px #C4C4C4 solid;
+  align-self: center;
+  border: 1px #F1F1F1 solid;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-card .body .body__bottom .left .image .background,
+.recipe-card .body .body__bottom .right .video .background {
+  width: 100%;
+  height: 100%;
+}
+.recipe-card .body .body__bottom .left .image .background img,
+.recipe-card .body .body__bottom .right .video .background img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-card .body .body__bottom .left .image .content,
+.recipe-card .body .body__bottom .right .video .content {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.recipe-card .body .body__bottom .left .image .content i,
+.recipe-card .body .body__bottom .right .video .content i {
+  color: #F7F7F7;
 }
 
 .recipe-card .bottom {
@@ -15434,4 +15479,18 @@ section.all-categories .splide-vertical .splide__slide {
 .page-content {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+#open-popup {
+  padding: 20px;
+}
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 40px;
+  width: auto;
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
 }

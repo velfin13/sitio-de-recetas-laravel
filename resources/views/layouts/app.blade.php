@@ -7,22 +7,37 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
+    <!-- FONTS -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('fonts/vendor/font-awesome/css/all.min.css') }}" rel="stylesheet">
 
-    <!-- PLUGINS -->
-    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css') }}">
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css') }}">
+    <script src="{{ asset('plugins/owl-carousel/dist/owl.carousel.min.js') }}"></script>
+
+    <!-- SPLIDE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+    <!-- JQUERY MODAL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <!-- MODAL VIDEO -->
+    <link rel="stylesheet" href="{{asset('plugins/modal-video/css/modal-video.min.css')}}">
+    <script src="{{asset('plugins/modal-video/js/modal-video.min.js')}}"></script>
+
+    <!-- MAGNIFIC POPUP -->
+    <link rel="stylesheet" href="{{asset('plugins/magnific-popup/dist/magnific-popup.css')}}">
+    <script src="{{asset('plugins/magnific-popup/dist/jquery.magnific-popup.js')}}"></script>
 
     <!-- APP JS and CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- SCRIPTS PLUGINS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="{{ asset('plugins/owl-carousel/dist/owl.carousel.min.js') }}"></script>
     @yield('styles')
 </head>
 
@@ -65,24 +80,10 @@
         <div id="content">
             <!-- STICKY BANNER LOGIN AND REGISTER -->
             @guest
-<<<<<<< HEAD
             <div class="container-fluid login-banner sticky-top">
                 <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y compartir
                     recetas por favor create una cuenta <a class="action" href="{{ route('register') }}"><b>aquí</b></a> o tal caso de disponer una cuenta <a class="action" href="{{ route('login') }}"><b>inicie sesión</b></a></h5>
             </div>
-=======
-                <div class="container-fluid login-banner sticky-top">
-                    <div class="alert alert-success" role="alert">
-                        <h5 class="login-banner__message">¿Aún no te encuentras authenticado 🧐?, para explorar y
-                            compartir
-                            recetas por favor create una cuenta <a class="action"
-                                href="{{ route('register') }}"><b>aquí</b></a> o tal caso de disponer una cuenta
-                            <a class="action" href="{{ route('login') }}"><b>inicie sesión</b></a>
-                        </h5>
-                    </div>
-
-                </div>
->>>>>>> f4444badc3ba314916f2ecee08cc4a492a988889
             @endguest
 
             <!-- NAVBAR-TOP NAVIGATION -->

@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 @endsection
 
 @section('content')
@@ -50,10 +47,10 @@
         @endif
     </section>
 
+    <!-- TODAS LAS RECETAS -->
     <section class="all-categories">
         <h2 class="subtitle"><b>🥰 Todas nuestras recetas</b></h2>
         <hr class="divider" style="margin-top:10px;">
-
 
         @if(count($recetas) === 0)
         <p class="alert alert-warning text-center"><b>No se encontró ninguna categoria 😓!</b></p>
@@ -86,11 +83,12 @@
                                         <div class="recipe-card">
                                             <div class="top">
                                                 <div class="left">
+                                                    <!-- {{$receta->url}} -->
                                                     <h5><b>{{ Str::title($receta->titulo) }}</b></h5>
                                                     <h6>Creado por <b>Joseph Garcia</b></h6>
                                                 </div>
                                                 <div class="right">
-                                                    <span class="favorite"><i class="fas fa-chevron-right"></i></span>
+                                                    <span class="figure"><i class="fas fa-chevron-right"></i></span>
                                                 </div>
                                             </div>
 
@@ -99,12 +97,50 @@
                                                     <p class="steps">{{ Str::words(strip_tags($receta->preparacion), 18) }}</p>
                                                 </div>
                                                 <div class="body__bottom">
+                                                    <!-- LEFT -->
                                                     <div class="left">
-                                                        <!-- <img class="image" src="/storage/{{ $nueva->imagen }}" alt="recipe-image"> -->
-                                                        <div class="image"><i class="far fa-image"></i></div>
+                                                        <!-- <a href="#image-modal" rel="modal:open">
+                                                            <img class="image" src="/storage/{{ $nueva->imagen }}" alt="recipe-image">
+                                                            <div class="image"><i class="far fa-image"></i></div>
+                                                        </a> -->
+
+                                                        <div class="image">
+                                                            <div class="background">
+                                                                <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
+                                                            </div>
+                                                            <div class="content">
+                                                                <i class="far fa-image"></i>
+                                                            </div>
+                                                        </div>
+
                                                     </div>
+                                                    <!-- RIGHT -->
                                                     <div class="right">
-                                                        <div class="video"><i class="fas fa-video"></i></div>
+                                                        <!-- <a class="js-modal-btn" data-video-url="https://www.youtube.com/embed/2zf5Tc9UxUk">
+                                                            <div class="video">
+                                                                <div class="background">
+                                                                    <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg" alt="thumbnail">
+                                                                </div>
+                                                                <div class="content">
+                                                                    <i class="fas fa-video"></i>
+                                                                </div>
+                                                            </div>
+                                                        </a> -->
+
+                                                        @if($receta->url === null)
+                                                        <div class="video video--empty">
+                                                            <i class="fas fa-video"></i>
+                                                        </div>
+                                                        @else
+                                                        <div class="video">
+                                                            <div class="background">
+                                                                <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg" alt="thumbnail">
+                                                            </div>
+                                                            <div class="content">
+                                                                <i class="far fa-play-circle"></i>
+                                                            </div>
+                                                        </div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,4 +170,9 @@
 @endsection
 
 @section('scripts')
+<script>
+    $('.image-link').magnificPopup({
+        type: 'image'
+    });
+</script>
 @endsection

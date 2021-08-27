@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if ($(selector).length) {
             new Splide(selector, {
-                direction  : 'ttb',
+                direction: 'ttb',
                 heightRatio: 1,
-                perPage    : 1,
+                perPage: 1,
 
                 pagination: false,
-                arrows:false,
+                arrows: false,
             }).mount();
         }
     }
@@ -273,4 +273,16 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#sidebarCollapse").on("click", function () {
         $("#sidebar").toggleClass("active");
     });
+});
+
+// modal video
+document.addEventListener("DOMContentLoaded", function () {
+    new ModalVideo('.js-modal-btn');
+});
+
+// magnific popup
+$(document).ready(function () {
+    // $('.image-link').magnificPopup({
+    //     type: 'image'
+    // });
 });
