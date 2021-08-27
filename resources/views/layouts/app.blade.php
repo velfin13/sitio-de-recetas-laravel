@@ -45,7 +45,7 @@
     <div id="app" class="wrapper">
         <!-- SIDEBAR ONLY IF IS AUTH-->
         @auth
-        <nav id="sidebar">
+        <nav id="sidebar" class="active">
             <div class="custom-menu">
                 <section class="custom-menu__title">
                     <h5><b>Dishes 🥡</b></h5>
