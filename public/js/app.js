@@ -11836,64 +11836,108 @@ document.addEventListener("DOMContentLoaded", function () {
     if ($(selector).length) {
       new Splide(selector, {
         direction: 'ttb',
-        heightRatio: 1,
         perPage: 1,
         pagination: false,
-        arrows: false
+        arrows: false,
+        height: "380px",
+        breakpoints: {
+          0: {
+            perPage: 1
+          },
+
+          /* Small devices (portrait tablets and large phones, 600px and up) */
+          600: {
+            perPage: 1
+          },
+
+          /* Medium devices (landscape tablets, 768px and up) */
+          768: {
+            perPage: 1
+          },
+
+          /* Large devices (laptops/desktops, 992px and up) */
+          920: {
+            perPage: 1
+          },
+
+          /* Extra large devices (large laptops and desktops, 1200px and up) */
+          1200: {
+            perPage: 1
+          }
+        }
       }).mount();
     }
-  } // CORREGIR AQUI
-
+  }
 
   new Splide('#splide-horizontal', {
-    // lazyLoad: "nearby",
     direction: "ltr",
-    // autoplay: true,
-    // interval: 4000,
-    // resetProgress: true,
+    autoplay: true,
+    interval: 4000,
+    resetProgress: true,
     pagination: false,
     height: '27rem',
-    // trimSpace: true,
-    // throttle: 0,
-    perPage: 5 // breakpoints: {
-    //     0: {
-    //         perPage: 1,
-    //     },
-    //     600: {
-    //         perPage: 1.5,
-    //     },
-    //     1000: {
-    //         perPage: 2,
-    //     },
-    //     2000: {
-    //         perPage: 4,
-    //     }
-    // }
+    autoHeight: true,
+    perPage: 5,
+    breakpoints: {
+      0: {
+        perPage: 1
+      },
 
+      /* Small devices (portrait tablets and large phones, 600px and up) */
+      600: {
+        perPage: 1
+      },
+
+      /* Medium devices (landscape tablets, 768px and up) */
+      768: {
+        perPage: 1.5
+      },
+
+      /* Large devices (laptops/desktops, 992px and up) */
+      920: {
+        perPage: 4
+      },
+
+      /* Extra large devices (large laptops and desktops, 1200px and up) */
+      1200: {
+        perPage: 3
+      }
+    }
   }).mount();
 
   if ($("#splide-category-horizontal").length) {
     new Splide('#splide-category-horizontal', {
       type: "loop",
-      direction: "ltr",
       autoplay: true,
       interval: 4000,
-      resetProgress: true,
-      perPage: 2,
-      pagination: false,
-      autoHeight: true,
-      trimSpace: true,
-      throttle: 0,
-      height: '5rem',
+      perPage: 8,
+      height: '100px',
       breakpoints: {
         0: {
-          perPage: 1.5
+          perPage: 1.1
         },
+        411: {
+          perPage: 1.3
+        },
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
         600: {
           perPage: 2
         },
-        1000: {
-          perPage: 2
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        768: {
+          perPage: 3
+        },
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        920: {
+          perPage: 4
+        },
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        1200: {
+          perPage: 8
         }
       }
     }).mount();
@@ -11904,23 +11948,34 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "loop",
       autoplay: true,
       interval: 4500,
-      perPage: 8,
       cover: true,
       heightRatio: 0.5,
       height: '10rem',
       pagination: false,
+      perPage: 5,
       breakpoints: {
         0: {
           perPage: 1
         },
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
         600: {
-          perPage: 1.5
+          perPage: 1.1
         },
-        1000: {
-          perPage: 4
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        768: {
+          perPage: 2.3
         },
-        2000: {
-          perPage: 6
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        920: {
+          perPage: 2
+        },
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        1200: {
+          perPage: 2.5
         }
       }
     }).mount();
@@ -11929,21 +11984,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   $(".categories-carousel").owlCarousel({
-    // rtl: true,
+    autoplay: true,
     loop: true,
     center: true,
     nav: true,
-    responsive: {
-      0: {
-        items: 1.5
-      },
-      600: {
-        items: 3
-      },
-      1000: {
-        items: 8
-      }
-    }
+    items: 3
   });
   $(".lastest-recipes-carousel").owlCarousel({
     rtl: false,
@@ -11983,18 +12028,7 @@ document.addEventListener("DOMContentLoaded", function () {
         perPage: 3
       }
     }
-  }); // $(".all-categories-carousel").owlCarousel({
-  //     items: 1,
-  //     loop: false,
-  //     nav: false,
-  //     margin: 0
-  // });
-  // $('.all-categories-carousel').data('.all-categories-carousel').difference = function (first, second) {
-  //     return {
-  //         x: first.x - second.x + (first.y - second.y),
-  //         y: first.y - second.y
-  //     };
-  // };
+  });
 });
 /* datatable */
 
