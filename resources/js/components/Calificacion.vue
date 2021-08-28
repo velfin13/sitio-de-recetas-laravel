@@ -4,7 +4,7 @@
       <!-- TOP SECTION -->
       <div class="top">
         <div class="row">
-          <div class="first col-4">
+          <div class="first col-12 col-md-12 col-xl-4">
             <h2 class="text-center">
               <b
                 >¿Que tal te parecio <br />
@@ -31,7 +31,7 @@
               👍 Puntuar
             </button>
           </div>
-          <div class="second col-12 col-md-4">
+          <div class="second col-12 col-md-12 col-xl-4">
             <div class="row-bar">
               <div class="left-bar">
                 <i class="fas fa-star"></i>
@@ -105,7 +105,7 @@
               </div>
             </div>
           </div>
-          <div class="third col-12 col-md-4">
+          <div class="third col-12 col-md-12 col-xl-4">
             <div class="counter">
               <h3 class="number">
                 <b>{{ totaluser }}</b>
@@ -150,6 +150,8 @@
   flex-direction: column;
 
   min-height: 300px;
+
+  padding: 20px;
 }
 
 .score-card .top {
@@ -165,6 +167,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .score-card .top .first .rating-wrapper {
@@ -176,6 +181,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  padding-top: 20px;
+  padding-bottom: 0px;
 }
 
 .score-card .top .second .row-bar {
@@ -199,7 +207,7 @@
 }
 
 .score-card .top .second .row-bar .right-bar {
-  background-color: yellow;
+  padding-left: 5px;
 
   display: flex;
   flex: 3;
@@ -215,6 +223,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .score-card .top .third .counter {
@@ -238,7 +249,8 @@
   justify-content: center;
   align-items: center;
 
-  /* border: 1px grey dashed; */
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .score-card .bottom .text {
