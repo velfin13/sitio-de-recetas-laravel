@@ -15481,7 +15481,10 @@ div#recipe-detail {
   height: 80vh;
   padding: 20px;
 }
-div#recipe-detail #chef, div#recipe-detail #recipe, div#recipe-detail #stars, div#recipe-detail #comments {
+div#recipe-detail #chef,
+div#recipe-detail #recipe,
+div#recipe-detail #stars,
+div#recipe-detail #comments {
   background-color: white;
   padding: 20px;
   margin-bottom: 25px;
@@ -15505,6 +15508,41 @@ div#recipe-detail #multimedia .video-wrapper img,
 div#recipe-detail #multimedia .video-wrapper iframe {
   width: 18rem;
   height: 13rem;
+}
+
+div#recipe-detail #comments #comment-list .comment-item {
+  background-color: #FAFAFA;
+  height: 140px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-top: 1px #F0F0F0 solid;
+}
+div#recipe-detail #comments #comment-list .comment-item .left {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 5%;
+}
+div#recipe-detail #comments #comment-list .comment-item .right {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding-left: 10px;
+}
+div#recipe-detail #comments #comment-list .comment-item .right .top {
+  flex: 1;
+}
+div#recipe-detail #comments #comment-list .comment-item .right .body {
+  flex: 3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+div#recipe-detail #comments #comment-list .comment-item .right .bottom {
+  flex: 1;
+  color: grey;
 }
 
 .splide-vertical .splide__track {

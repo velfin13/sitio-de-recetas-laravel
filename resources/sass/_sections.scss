@@ -30,7 +30,10 @@ div#recipe-detail {
     height: 80vh;
     padding: 20px;
 
-    #chef,#recipe,#stars,#comments {
+    #chef,
+    #recipe,
+    #stars,
+    #comments {
         background-color: white;
         padding: 20px;
         margin-bottom: 25px;
@@ -39,6 +42,7 @@ div#recipe-detail {
 
 div#recipe-detail #multimedia {
     .image-wrapper {
+
         // background-color: yellow;
         img {
             object-fit: cover;
@@ -69,7 +73,68 @@ div#recipe-detail #multimedia {
     }
 }
 
-
 div#recipe-detail #chef {}
 
 div#recipe-detail #recipe {}
+
+div#recipe-detail #comments {}
+
+div#recipe-detail #comments #comment-form {}
+
+div#recipe-detail #comments #comment-list {
+
+    .comment-item {
+        background-color: #FAFAFA;
+
+        height: 140px;
+        min-height: 140px;
+
+        display: flex;
+        flex-direction: row;
+
+        padding: 10px;
+        // margin-bottom: 20px;
+        border-top: 1px #F0F0F0 solid;
+
+        .left {
+            // background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+
+            width: 5%;
+        }
+
+        .right {
+            // background-color: aqua;
+
+            display: flex;
+            flex-direction: column;
+            width: 95%;
+
+            padding-left: 10px;
+
+            .top {
+                // background-color: red;
+                flex: 1;
+            }
+
+            .body {
+                // background-color: yellow;
+                flex: 3;
+
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+            }
+
+            .bottom {
+                flex: 1;
+
+                color: grey;
+
+            }
+        }
+    }
+}

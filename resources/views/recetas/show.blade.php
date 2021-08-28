@@ -77,7 +77,7 @@
         <hr class="divider" style="width: 200px;">
 
         <!-- FORM -->
-        <div class="row">
+        <div id="comment-form" class="row">
             <div class="col-12">
                 @auth
                 <form action="{{route('comment.store')}}" class="form" method="POST">
@@ -103,19 +103,30 @@
         <!-- END FORM -->
 
         <!-- COMMENTS -->
-        <div class="row">
-            @if(count($comentarios) === 1)
+        <div id="comment-list" class="row">
+            @if(count($comentarios) === 0)
             <h1>NO HAY COMENTARIOS</h1>
             @else
-            <h2>SI HAY COMENTARIOS</h2>
+            @foreach ($comentarios as $item)
+            <div class="comment-item col-12">
+                <div class="left">
+                    <foto-perfil id-user={{ $item->user_id }}></foto-perfil>
+                </div>
+                <div class="right">
+                    <div class="top">
+                        <span><b><comentario-nombre id-user={{ $item->user_id }}></comentario-nombre></b></span>
+                        <span>{{date('d-m-Y', strtotime($item->created_at))}}</span>
+                    </div>
+                    <div class="body">
+                        {{ $item->comentario }}
+                    </div>
+                    <div class="bottom">
+                        <span>Eliminar</span>
+                    </div>
+                </div>
+            </div>
+            @endforeach
             @endif
-        </div>
-
-        <!-- card -->
-        <div class="comment col-12">
-            <div class="top"></div>
-            <div class="body"></div>
-            <div class="bottom"></div>
         </div>
         <!-- END COMMENTS -->
     </section>
