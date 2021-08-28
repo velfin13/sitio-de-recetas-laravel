@@ -11875,7 +11875,8 @@ document.addEventListener("DOMContentLoaded", function () {
   new Splide('#splide-horizontal', {
     type: "loop",
     autoplay: true,
-    resetProgress: true,
+    interval: 6000,
+    // resetProgress: true,
     pagination: false,
     height: '27rem',
     autoHeight: true,
@@ -11911,7 +11912,7 @@ document.addEventListener("DOMContentLoaded", function () {
     new Splide('#splide-category-horizontal', {
       type: "loop",
       autoplay: true,
-      interval: 5000,
+      interval: 1000,
       arrows: false,
       pagination: false,
       cover: true,
@@ -11953,7 +11954,6 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "loop",
       autoplay: true,
       interval: 5000,
-      cover: true,
       heightRatio: 0.5,
       height: '10rem',
       pagination: false,
