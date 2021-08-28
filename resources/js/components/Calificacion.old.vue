@@ -1,45 +1,52 @@
 <template>
   <div class="container-fluid">
-    <div class="score-card">
-      <!-- TOP SECTION -->
-      <div class="top">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="heading">Puntuación</h3>
+        
+
         <div class="row">
-          <div class="first col-4">
-            <h2 class="text-center">
-              <b
-                >¿Que tal te parecio <br />
-                esta receta 🤔?</b
-              >
-            </h2>
-            <div class="rating-wrapper">
-              <star-rating
-                v-model="rating"
-                inactive-color="#FCFCFC"
-                active-color="#000000"
-                text-class="rate-it-text"
-                :item-size="20"
-                :inline="true"
-                :spacing="20"
-              >
-              </star-rating>
-            </div>
-            <button
-              id="set-rating-button"
-              @click="setRating()"
-              class="btn btn-light"
+          <div  class="col-md-6">
+            <star-rating
+              v-model="rating"
+              :increment="0.5"
+              text-class="custom-text"
             >
-              👍 Puntuar
+            </star-rating>
+          </div>
+
+          <div class="col-md-6">
+            <button @click="setRating()" class="btn btn-primary">
+              Publicar
             </button>
           </div>
-          <div class="second col-12 col-md-4">
+        </div>
+
+
+
+        <h3 class="heading">Reseñas</h3>
+        <div class="review-rating">
+          <div class="left-review">
+            <div class="review-title">{{ totalrate ? totalrate : 0 }}</div>
+            <div class="review-star">
+              <star-rating
+                :inline="true"
+                :read-only="true"
+                :show-rating="false"
+                v-model="totalrate"
+                :increment="0.1"
+                :star-size="20"
+                active-color="#000000"
+              ></star-rating>
+            </div>
+            <div class="review-people">
+              <i class="fa fa-user"></i> {{ totaluser }}
+            </div>
+          </div>
+          <div class="right-review">
+            
             <div class="row-bar">
-              <div class="left-bar">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
+              <div class="left-bar">5</div>
               <div class="right-bar">
                 <div class="bar-container">
                   <div class="bar-5" style="width: 0%"></div>
@@ -47,13 +54,7 @@
               </div>
             </div>
             <div class="row-bar">
-              <div class="left-bar">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
+              <div class="left-bar">4</div>
               <div class="right-bar">
                 <div class="bar-container">
                   <div class="bar-4" style="width: 0%"></div>
@@ -61,13 +62,7 @@
               </div>
             </div>
             <div class="row-bar">
-              <div class="left-bar">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
+              <div class="left-bar">3</div>
               <div class="right-bar">
                 <div class="bar-container">
                   <div class="bar-3" style="width: 0%"></div>
@@ -75,14 +70,7 @@
               </div>
             </div>
             <div class="row-bar">
-              <div class="left-bar">
-                <!-- dos estrellas llenas -->
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
+              <div class="left-bar">2</div>
               <div class="right-bar">
                 <div class="bar-container">
                   <div class="bar-2" style="width: 0%"></div>
@@ -90,14 +78,7 @@
               </div>
             </div>
             <div class="row-bar">
-              <div class="left-bar">
-                <!-- 1 estrella llena -->
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
+              <div class="left-bar">1</div>
               <div class="right-bar">
                 <div class="bar-container">
                   <div class="bar-1" style="width: 0%"></div>
@@ -105,184 +86,136 @@
               </div>
             </div>
           </div>
-          <div class="third col-12 col-md-4">
-            <div class="counter">
-              <h3 class="number">
-                <b>{{ totaluser }}</b>
-              </h3>
-              <h4 class="text">Valoraciones</h4>
-            </div>
-          </div>
         </div>
       </div>
-      <!-- END TOP SECTION -->
-
-      <!-- BOTTOM SECTION -->
-      <div class="bottom">
-        <span v-if="totaluser === 0" class="text"
-          ><b>{{ totaluser }}</b> personas han puntado esta receta 😒</span
-        >
-
-        <span v-if="totaluser != 0" class="text"
-          ><b>{{ totaluser }}</b> personas han puntado esta receta 🤩</span
-        >
-      </div>
-      <!-- END BOTTOM SECTION -->
     </div>
   </div>
 </template>
 
 <style>
-/* IDS */
-#set-rating-button {
-  background-color: white;
-  padding: 10px 20px 10px;
-  border: 1px black solid;
-  border-radius: 0px;
-  border-color: #f0f0f0;
+/* Star Rating */
+* {
+  box-sizing: border-box;
 }
 
-/*SCORE CARD*/
-.score-card {
-  background-color: #fbfbfb;
-
-  display: flex;
-  flex-direction: column;
-
-  min-height: 300px;
+.fa {
+  font-size: 12px;
 }
 
-.score-card .top {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-.score-card .top .first {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.score-card .top .first .rating-wrapper {
+.left-bar {
+  float: left;
+  width: 5%;
   margin-top: 10px;
-  margin-bottom: 20px;
 }
 
-.score-card .top .second {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.score-card .top .second .row-bar {
-  /* background-color: yellow; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
+.right-bar {
   margin-top: 10px;
-  margin-bottom: 10px;
+  float: left;
+  width: 95%;
 }
 
-.score-card .top .second .row-bar .left-bar {
-  display: flex;
-  flex: 1;
-
-  justify-content: flex-start;
-  align-content: center;
-
-  width: 50%;
+.row-bar:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.score-card .top .second .row-bar .right-bar {
-  background-color: yellow;
-
-  display: flex;
-  flex: 3;
-
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 50%;
+.review-rating:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.score-card .top .third {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.score-card .top .third .counter {
+.left-review {
+  float: left;
+  width: 30%;
+  margin-top: 10px;
   text-align: center;
 }
 
-.score-card .top .third .counter .number {
-  font-size: 40px;
+.right-review {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
 }
 
-.score-card .top .third .counter .text {
-  text-align: center;
+.review-title {
+  font-size: 56pt;
 }
 
-.score-card .bottom {
-  background-color: #f7f7f7;
-
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /* border: 1px grey dashed; */
+.review-star {
+  margin: 0 0 10px 0;
 }
 
-.score-card .bottom .text {
-  font-size: 18px;
+.review-people .fa {
+  font-size: 11pt;
 }
 
-/* VUE RATE IT */
-.rate-it-text {
-  display: none;
-}
-
-/* BARS */
 .bar-container {
+  width: 100%;
   background-color: #f1f1f1;
+  text-align: center;
+  color: white;
 }
 
 .bar-5 {
-  width: 100%;
   height: 18px;
   background-color: #57bb8a;
 }
 
 .bar-4 {
-  width: 100%;
   height: 18px;
   background-color: #9ace6a;
 }
 
 .bar-3 {
-  width: 100%;
   height: 18px;
   background-color: #ffcf02;
 }
 
 .bar-2 {
-  width: 100%;
   height: 18px;
   background-color: #ff9f02;
 }
 
 .bar-1 {
-  width: 100%;
   height: 18px;
   background-color: #ff6f31;
+}
+
+.star-rating {
+  text-align: center;
+  margin: auto;
+  width: 45%;
+}
+
+.star-rating .fa:hover {
+  color: orange;
+}
+
+.heading {
+  font-size: 25px;
+  color: #999;
+  border-bottom: 2px solid #eee;
+}
+
+@media (max-width: 400px) {
+  .left-bar,
+  .right-bar,
+  .left-review,
+  .right-review {
+    width: 100%;
+  }
+}
+.custom-text {
+  font-weight: bold;
+  font-size: 1.9em;
+  border: 1px solid #cfcfcf;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  color: #999;
+  background: #fff;
 }
 </style>
 
@@ -298,9 +231,11 @@ export default {
       rating: 0,
     };
   },
+
   created() {
     this.getRating();
   },
+
   methods: {
     data: () => {},
     setRating() {

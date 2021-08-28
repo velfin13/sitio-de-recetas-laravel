@@ -11225,6 +11225,93 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -48932,7 +49019,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* Star Rating */\n* {\r\n    box-sizing: border-box;\n}\n.fa {\r\n    font-size: 12px;\n}\n.left-bar {\r\n    float: left;\r\n    width: 5%;\r\n    margin-top: 10px;\n}\n.right-bar {\r\n    margin-top: 10px;\r\n    float: left;\r\n    width: 95%;\n}\n.row-bar:after {\r\n    content: \"\";\r\n    display: table;\r\n    clear: both;\n}\n.review-rating:after {\r\n    content: \"\";\r\n    display: table;\r\n    clear: both;\n}\n.left-review {\r\n    float: left;\r\n    width: 30%;\r\n    margin-top: 10px;\r\n    text-align: center;\n}\n.right-review {\r\n    float: left;\r\n    width: 70%;\r\n    margin-top: 10px;\n}\n.review-title {\r\n    font-size: 56pt;\n}\n.review-star {\r\n    margin: 0 0 10px 0;\n}\n.review-people .fa {\r\n    font-size: 11pt;\n}\n.bar-container {\r\n    width: 100%;\r\n    background-color: #f1f1f1;\r\n    text-align: center;\r\n    color: white;\n}\n.bar-5 {\r\n    height: 18px;\r\n    background-color: #57bb8a;\n}\n.bar-4 {\r\n    height: 18px;\r\n    background-color: #9ace6a;\n}\n.bar-3 {\r\n    height: 18px;\r\n    background-color: #ffcf02;\n}\n.bar-2 {\r\n    height: 18px;\r\n    background-color: #ff9f02;\n}\n.bar-1 {\r\n    height: 18px;\r\n    background-color: #ff6f31;\n}\n.star-rating {\r\n    text-align: center;\r\n    margin: auto;\r\n    width: 45%;\n}\n.star-rating .fa:hover {\r\n    color: orange;\n}\n.heading {\r\n    font-size: 25px;\r\n    color: #999;\r\n    border-bottom: 2px solid #eee;\n}\n@media (max-width: 400px) {\n.left-bar,\r\n    .right-bar,\r\n    .left-review,\r\n    .right-review {\r\n        width: 100%;\n}\n}\n.custom-text {\r\n    font-weight: bold;\r\n    font-size: 1.9em;\r\n    border: 1px solid #cfcfcf;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    border-radius: 5px;\r\n    color: #999;\r\n    background: #fff;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* IDS */\n#set-rating-button {\r\n  background-color: white;\r\n  padding: 10px 20px 10px;\r\n  border: 1px black solid;\r\n  border-radius: 0px;\r\n  border-color: #f0f0f0;\n}\r\n\r\n/*SCORE CARD*/\n.score-card {\r\n  background-color: #fbfbfb;\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  min-height: 300px;\n}\n.score-card .top {\r\n  flex: 2;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-content: center;\n}\n.score-card .top .first {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.score-card .top .first .rating-wrapper {\r\n  margin-top: 10px;\r\n  margin-bottom: 20px;\n}\n.score-card .top .second {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\n}\n.score-card .top .second .row-bar {\r\n  /* background-color: yellow; */\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-evenly;\r\n\r\n  margin-top: 10px;\r\n  margin-bottom: 10px;\n}\n.score-card .top .second .row-bar .left-bar {\r\n  display: flex;\r\n  flex: 1;\r\n\r\n  justify-content: flex-start;\r\n  align-content: center;\r\n\r\n  width: 50%;\n}\n.score-card .top .second .row-bar .right-bar {\r\n  background-color: yellow;\r\n\r\n  display: flex;\r\n  flex: 3;\r\n\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-content: center;\r\n  width: 50%;\n}\n.score-card .top .third {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.score-card .top .third .counter {\r\n  text-align: center;\n}\n.score-card .top .third .counter .number {\r\n  font-size: 40px;\n}\n.score-card .top .third .counter .text {\r\n  text-align: center;\n}\n.score-card .bottom {\r\n  background-color: #f7f7f7;\r\n\r\n  flex: 1;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  /* border: 1px grey dashed; */\n}\n.score-card .bottom .text {\r\n  font-size: 18px;\n}\r\n\r\n/* VUE RATE IT */\n.rate-it-text {\r\n  display: none;\n}\r\n\r\n/* BARS */\n.bar-container {\r\n  background-color: #f1f1f1;\n}\n.bar-5 {\r\n  width: 100%;\r\n  height: 18px;\r\n  background-color: #57bb8a;\n}\n.bar-4 {\r\n  width: 100%;\r\n  height: 18px;\r\n  background-color: #9ace6a;\n}\n.bar-3 {\r\n  width: 100%;\r\n  height: 18px;\r\n  background-color: #ffcf02;\n}\n.bar-2 {\r\n  width: 100%;\r\n  height: 18px;\r\n  background-color: #ff9f02;\n}\n.bar-1 {\r\n  width: 100%;\r\n  height: 18px;\r\n  background-color: #ff6f31;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -98559,98 +98646,80 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("h3", { staticClass: "heading" }, [
-          _vm._v("Opiniones de los usuarios")
-        ]),
-        _vm._v(" "),
+    _c("div", { staticClass: "score-card" }, [
+      _c("div", { staticClass: "top" }, [
         _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-md-6" },
-            [
-              _c("star-rating", {
-                attrs: { increment: 0.5, "text-class": "custom-text" },
-                model: {
-                  value: _vm.rating,
-                  callback: function($$v) {
-                    _vm.rating = $$v
-                  },
-                  expression: "rating"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" })
-        ]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: {
-                  click: function($event) {
-                    return _vm.setRating()
-                  }
-                }
-              },
-              [
-                _vm._v(
-                  "\n                        Publicar\n                    "
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("h3", { staticClass: "heading" }, [_vm._v("Reseñas")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "review-rating" }, [
-          _c("div", { staticClass: "left-review" }, [
-            _c("div", { staticClass: "review-title" }, [
-              _vm._v(_vm._s(_vm.totalrate ? _vm.totalrate : 0))
-            ]),
+          _c("div", { staticClass: "first col-4" }, [
+            _vm._m(0),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "review-star" },
+              { staticClass: "rating-wrapper" },
               [
                 _c("star-rating", {
                   attrs: {
+                    "inactive-color": "#FCFCFC",
+                    "active-color": "#000000",
+                    "text-class": "rate-it-text",
+                    "item-size": 20,
                     inline: true,
-                    "read-only": true,
-                    "show-rating": false,
-                    increment: 0.1,
-                    "star-size": 20,
-                    "active-color": "#000000"
+                    spacing: 20
                   },
                   model: {
-                    value: _vm.totalrate,
+                    value: _vm.rating,
                     callback: function($$v) {
-                      _vm.totalrate = $$v
+                      _vm.rating = $$v
                     },
-                    expression: "totalrate"
+                    expression: "rating"
                   }
                 })
               ],
               1
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "review-people" }, [
-              _c("i", { staticClass: "fa fa-user" }),
-              _vm._v(" " + _vm._s(_vm.totaluser) + "\n                    ")
-            ])
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-light",
+                attrs: { id: "set-rating-button" },
+                on: {
+                  click: function($event) {
+                    return _vm.setRating()
+                  }
+                }
+              },
+              [_vm._v("\n            👍 Puntuar\n          ")]
+            )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "third col-12 col-md-4" }, [
+            _c("div", { staticClass: "counter" }, [
+              _c("h3", { staticClass: "number" }, [
+                _c("b", [_vm._v(_vm._s(_vm.totaluser))])
+              ]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "text" }, [_vm._v("Valoraciones")])
+            ])
+          ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "bottom" }, [
+        _vm.totaluser === 0
+          ? _c("span", { staticClass: "text" }, [
+              _c("b", [_vm._v(_vm._s(_vm.totaluser))]),
+              _vm._v(" personas han puntado esta receta 😒")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.totaluser != 0
+          ? _c("span", { staticClass: "text" }, [
+              _c("b", [_vm._v(_vm._s(_vm.totaluser))]),
+              _vm._v(" personas han puntado esta receta 🤩")
+            ])
+          : _vm._e()
       ])
     ])
   ])
@@ -98660,9 +98729,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "right-review" }, [
+    return _c("h2", { staticClass: "text-center" }, [
+      _c("b", [
+        _vm._v("¿Que tal te parecio "),
+        _c("br"),
+        _vm._v("\n              esta receta 🤔?")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "second col-12 col-md-4" }, [
       _c("div", { staticClass: "row-bar" }, [
-        _c("div", { staticClass: "left-bar" }, [_vm._v("5")]),
+        _c("div", { staticClass: "left-bar" }, [
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" })
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "right-bar" }, [
           _c("div", { staticClass: "bar-container" }, [
@@ -98672,7 +98763,17 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row-bar" }, [
-        _c("div", { staticClass: "left-bar" }, [_vm._v("4")]),
+        _c("div", { staticClass: "left-bar" }, [
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" })
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "right-bar" }, [
           _c("div", { staticClass: "bar-container" }, [
@@ -98682,7 +98783,17 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row-bar" }, [
-        _c("div", { staticClass: "left-bar" }, [_vm._v("3")]),
+        _c("div", { staticClass: "left-bar" }, [
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" })
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "right-bar" }, [
           _c("div", { staticClass: "bar-container" }, [
@@ -98692,7 +98803,17 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row-bar" }, [
-        _c("div", { staticClass: "left-bar" }, [_vm._v("2")]),
+        _c("div", { staticClass: "left-bar" }, [
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" })
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "right-bar" }, [
           _c("div", { staticClass: "bar-container" }, [
@@ -98702,7 +98823,17 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row-bar" }, [
-        _c("div", { staticClass: "left-bar" }, [_vm._v("1")]),
+        _c("div", { staticClass: "left-bar" }, [
+          _c("i", { staticClass: "fas fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" }),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-star" })
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "right-bar" }, [
           _c("div", { staticClass: "bar-container" }, [
