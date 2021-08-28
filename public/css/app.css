@@ -15481,6 +15481,11 @@ div#recipe-detail {
   height: 80vh;
   padding: 20px;
 }
+div#recipe-detail #chef, div#recipe-detail #recipe, div#recipe-detail #stars, div#recipe-detail #comments {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 25px;
+}
 
 div#recipe-detail #multimedia .image-wrapper img {
   -o-object-fit: cover;

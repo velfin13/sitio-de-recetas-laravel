@@ -29,6 +29,12 @@ div#recipe-detail {
     // border: 1px #E3E3E3 dashed;
     height: 80vh;
     padding: 20px;
+
+    #chef,#recipe,#stars,#comments {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 25px;
+    }
 }
 
 div#recipe-detail #multimedia {
@@ -62,6 +68,7 @@ div#recipe-detail #multimedia {
         }
     }
 }
+
 
 div#recipe-detail #chef {}
 

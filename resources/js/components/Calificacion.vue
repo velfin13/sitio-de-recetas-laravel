@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5">
+    <div class="container-fluid">
         <div class="card">
             <div class="card-body">
                 <h3 class="heading">Opiniones de los usuarios</h3>
