@@ -11835,6 +11835,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if ($(selector).length) {
       new Splide(selector, {
+        type: "loop",
+        autoplay: true,
+        interval: 5000,
         direction: 'ttb',
         perPage: 1,
         pagination: false,
@@ -11870,9 +11873,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   new Splide('#splide-horizontal', {
-    direction: "ltr",
+    type: "loop",
     autoplay: true,
-    interval: 4000,
     resetProgress: true,
     pagination: false,
     height: '27rem',
@@ -11909,9 +11911,12 @@ document.addEventListener("DOMContentLoaded", function () {
     new Splide('#splide-category-horizontal', {
       type: "loop",
       autoplay: true,
-      interval: 4000,
-      perPage: 6,
-      height: '100px',
+      interval: 5000,
+      arrows: false,
+      pagination: false,
+      cover: true,
+      perPage: 6.2,
+      height: '120px',
       breakpoints: {
         0: {
           perPage: 1.1
@@ -11947,7 +11952,7 @@ document.addEventListener("DOMContentLoaded", function () {
     new Splide('#splide-latest-recipes-horizontal', {
       type: "loop",
       autoplay: true,
-      interval: 4500,
+      interval: 5000,
       cover: true,
       heightRatio: 0.5,
       height: '10rem',
