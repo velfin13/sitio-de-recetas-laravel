@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             type: "loop",
             autoplay: true,
             interval: 4000,
-            perPage: 8,
+            perPage: 6,
             height: '100px',
             breakpoints: {
                 0: {
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 /* Extra large devices (large laptops and desktops, 1200px and up) */
                 1200: {
-                    perPage: 8,
+                    perPage: 4,
                 }
             }
         }).mount();
