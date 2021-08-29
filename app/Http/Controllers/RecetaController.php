@@ -24,7 +24,7 @@ class RecetaController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show', 'search','countRecetas']]);
+        $this->middleware('auth', ['except' => ['show', 'search', 'countRecetas']]);
     }
 
 
@@ -203,6 +203,7 @@ class RecetaController extends Controller
 
             $check_url = explode("/", $data['url']);
 
+
             if ($check_url[2] == "www.youtube.com") {
                 $parametro = explode("?", $check_url[3]);
 
@@ -210,6 +211,10 @@ class RecetaController extends Controller
                     $nuevo_parametro = explode("=", $parametro[1]);
 
                     $url_corregida = "https://www.youtube.com/embed/" . $nuevo_parametro[1];
+                } else if ($parametro[0] == "embed") {
+                    $url_corregida = $request['url'];
+                } else {
+                    $url_corregida = null;
                 }
             } else if ($check_url[2] == "youtu.be") {
                 $parametro = $check_url[3];
@@ -220,6 +225,8 @@ class RecetaController extends Controller
         } else {
             $url_corregida = null;
         }
+
+
 
 
         $receta->titulo = $data['titulo'];
