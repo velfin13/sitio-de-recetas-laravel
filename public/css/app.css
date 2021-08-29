@@ -15380,6 +15380,19 @@ div#recipe-detail #multimedia .video-wrapper iframe {
   width: 18rem;
   height: 13rem;
 }
+div#recipe-detail #multimedia .empty-video {
+  background-color: #F0F0F0;
+  color: #E0E0E0;
+  border: 1px #F1F1F1 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 18rem;
+  height: 13rem;
+  font-size: 30px;
+}
 
 div#recipe-detail #comments #comment-form {
   margin-bottom: 10px;

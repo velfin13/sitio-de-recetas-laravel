@@ -16,7 +16,9 @@
             </div>
             <div class="video-wrapper col-12 col-sm-12 col-md-6 col-xl-6">
                 @if($recetas->url === null)
-                <h1>sin video</h1>
+                <div class="empty-video">
+                    <i class="fas fa-video"></i>
+                </div>
                 @else
                 <iframe src="{{ $recetas->url }}"></iframe>
                 @endif

@@ -50,11 +50,6 @@ div#recipe-detail #multimedia {
 
     }
 
-    .video-wrapper {
-        // background-color: red;
-
-    }
-
     .image-wrapper,
     .video-wrapper {
         height: 300px;
@@ -70,6 +65,22 @@ div#recipe-detail #multimedia {
             width: 18rem;
             height: 13rem;
         }
+    }
+
+    .empty-video {
+        background-color: #F0F0F0;
+        color: #E0E0E0;
+        border: 1px #F1F1F1 solid;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        width: 18rem;
+        height: 13rem;
+        font-size: 30px;
     }
 }
 
