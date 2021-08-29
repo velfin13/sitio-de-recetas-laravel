@@ -100,11 +100,6 @@
                                                     <div class="body__bottom">
                                                         <!-- LEFT -->
                                                         <div class="left">
-                                                            <!-- <a href="#image-modal" rel="modal:open">
-                                                            <img class="image" src="/storage/{{ $nueva->imagen }}" alt="recipe-image">
-                                                            <div class="image"><i class="far fa-image"></i></div>
-                                                        </a> -->
-
                                                             <div class="image">
                                                                 <div class="background">
                                                                     <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
@@ -117,17 +112,6 @@
                                                         </div>
                                                         <!-- RIGHT -->
                                                         <div class="right">
-                                                            <!-- <a class="js-modal-btn" data-video-url="https://www.youtube.com/embed/2zf5Tc9UxUk">
-                                                            <div class="video">
-                                                                <div class="background">
-                                                                    <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg" alt="thumbnail">
-                                                                </div>
-                                                                <div class="content">
-                                                                    <i class="fas fa-video"></i>
-                                                                </div>
-                                                            </div>
-                                                        </a> -->
-
                                                             @if($receta->url === null)
                                                             <div class="video video--empty">
                                                                 <i class="fas fa-video"></i>
@@ -152,6 +136,7 @@
                                                 </div>
                                             </div>
                                         </a>
+                                        <!-- END RECIPE CARD -->
                                     </li>
                                     @endforeach
                                     @endforeach

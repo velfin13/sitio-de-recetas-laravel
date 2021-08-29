@@ -98,7 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     new Splide('#splide-horizontal', {
-        type: "loop",
+        // type: "loop",
+        lazyLoad:'sequential',
         autoplay: true,
         interval: 6000,
 

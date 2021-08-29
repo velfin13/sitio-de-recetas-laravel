@@ -131,8 +131,10 @@
             <!-- PAGE CONTENT-->
             <div id="page-content" class="container-fluid">
                 <!-- CATEGORY SLIDER -->
+
                 @if (!str_contains(Request::url(), '/recetas') && !str_contains(Request::url(), '/perfiles'))
-                <!-- <div class="owl-carousel owl-theme categories-carousel" style="height: 100px;">
+
+                <div class="owl-carousel owl-theme categories-carousel" style="height: 100px;">
                     @foreach ($categorias as $categoria)
                     <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
                         <span class="category-card__icon">{!! $categoria->icono !!}</span>
@@ -140,9 +142,8 @@
                         <span class="category-card__counter">10 Recetas</span>
                     </a>
                     @endforeach
-                </div> -->
-
-                <div id="splide-category-horizontal" class="splide">
+                </div>
+                <!-- <div id="splide-category-horizontal" class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($categorias as $categoria)
@@ -156,7 +157,7 @@
                             @endforeach
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 @endif
 
                 <!-- CONTENT INJECTION -->

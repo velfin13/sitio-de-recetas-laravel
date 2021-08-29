@@ -1,5 +1,5 @@
 <template>
-  <small>{{ usuario }}</small>
+  <b>{{ usuario }}</b>
 </template>
 <script>
 export default {

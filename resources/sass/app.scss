@@ -14,9 +14,7 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 //COMPONENTS
-@import "comment";
 @import "base";
-@import "hero";
 @import "cards";
 @import "recetas";
 @import "like";
@@ -32,15 +30,3 @@
 @import "sections";
 @import "splides";
 @import "page-content";
-
-#open-popup {padding:20px}
-.white-popup {
-  position: relative;
-  background: #FFF;
-  padding: 40px;
-  width: auto;
-  max-width: 200px;
-  margin: 20px auto;
-  text-align: center;
-}
-

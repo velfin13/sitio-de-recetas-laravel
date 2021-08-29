@@ -2,7 +2,11 @@
 
 @section('content')
 <div id="recipe-detail" class="container-fluid">
-    <h2 class="subtitle"><b>🧾 {{Str::title($recetas->titulo)}}</b></h2>
+    <div class="title-and-like" style="display: flex;flex-direction: row; justify-content: space-between;">
+        <h2 class="subtitle"><b>🧾 {{Str::title($recetas->titulo)}}</b></h2>
+        <like-button likes="{{ $likes }}" like="{{ $like }}" receta-id="{{ $recetas->id }}">
+        </like-button>
+    </div>
     <hr class="divider">
 
     <section id="multimedia">
@@ -77,55 +81,73 @@
         <hr class="divider" style="width: 200px;">
 
         <!-- FORM -->
-        <div id="comment-form" class="row">
-            <div class="col-12">
-                @auth
-                <form action="{{route('comment.store')}}" class="form" method="POST">
-                    @csrf
-                    {{-- comentario --}}
-                    @error('comentario')
-                    <span class="invalid-feedback d-block" role="alert">
-                        <div class="alert alert-danger text-center" role="alert">
-                            {{ $message }}
-                        </div>
-                    </span>
-                    @enderror
-                    <textarea type="text" value="{{ old('comentario') }}" name="comentario" class="@error('comentario') is-invalid @enderror" placeholder="Ingresa tu comentario"></textarea>
-                    <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
-                    <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i> Comentar </button>
-                </form>
-                @else
-                <h1>Para comentar debes inciar sesion</h1>
-                @endauth
-            </div>
+        <div id="comment-form">
+            <form action="{{route('comment.store')}}" method="POST">
+                <div class="form-wrapper">
+                    <div class="left">
+                        @auth
+                        @csrf
+                        @error('comentario')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <div class="alert alert-danger text-center" role="alert">
+                                {{ $message }}
+                            </div>
+                        </span>
+                        @enderror
+
+                        <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                        <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
+
+                        <input type="text" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
+
+                        @else
+                        <h1>Para comentar debes inciar sesion</h1>
+                        @endauth
+                    </div>
+
+                    <div class="right">
+                        <button type="submit" class="btn btn-light"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </form>
+
         </div>
         <!-- END FORM -->
 
         <!-- COMMENTS -->
         <div id="comment-list" class="row">
             @if(count($comentarios) === 0)
-            <h1>NO HAY COMENTARIOS</h1>
+            <p class="alert alert-warning text-center"><b>Esta receta aun no tiene comentarios, ¿Quieres dejar un comentario acerca "{{Str::title($recetas->titulo)}}" 🧐?</b></p>
             @else
-            @foreach ($comentarios as $item)
-            <div class="comment-item col-12">
-                <div class="left">
-                    <foto-perfil id-user={{ $item->user_id }}></foto-perfil>
+            <div class="comments">
+                @foreach ($comentarios as $item)
+                <div class="comment-item col-12">
+                    <div class="left">
+                        <foto-perfil id-user={{ $item->user_id }}></foto-perfil>
+                    </div>
+                    <div class="right">
+                        <div class="top">
+                            <span class="name"><b>
+                                    <comentario-nombre id-user={{ $item->user_id }}></comentario-nombre>
+                                </b></span>
+                            <div style="display:flex;align-items:center"><i class="far fa-calendar-alt date-icon"></i><span class="date">{{date('d-m-Y', strtotime($item->created_at))}}</span></div>
+
+                        </div>
+                        <div class="body">
+                            {{ $item->comentario }}
+                        </div>
+                        <div class="bottom">
+                            @auth
+                            @if (Auth::user()->id == $item->user_id)
+                            <eliminar-comentario id-comentario={{ $item->id }} id-receta={{ $item->receta_id }}>
+                            </eliminar-comentario>
+                            @endif
+                            @endauth
+                        </div>
+                    </div>
                 </div>
-                <div class="right">
-                    <div class="top">
-                        <span><b><comentario-nombre id-user={{ $item->user_id }}></comentario-nombre></b></span>
-                        <span>{{date('d-m-Y', strtotime($item->created_at))}}</span>
-                    </div>
-                    <div class="body">
-                        {{ $item->comentario }}
-                    </div>
-                    <div class="bottom">
-                        <span>Eliminar</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            @endforeach
             @endif
         </div>
         <!-- END COMMENTS -->
