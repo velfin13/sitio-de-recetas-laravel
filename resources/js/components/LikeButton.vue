@@ -53,4 +53,8 @@ export default {
 .like-btn{
   height: 30px !important;
 }
+
+.like-wrapper {
+  display: flex;
+}
 </style>

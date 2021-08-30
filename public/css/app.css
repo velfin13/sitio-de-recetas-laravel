@@ -14316,6 +14316,29 @@ a {
   text-decoration: none !important;
 }
 
+input.form-control,
+trix-editor.form-control,
+select.form-control {
+  background-color: white;
+  border: 1px #EBEBEB solid;
+}
+
+input.form-control:hover,
+trix-editor.form-control:hover,
+select.form-control:hover {
+  background-color: white;
+  border: 1px #EBEBEB solid !important;
+  box-shadow: none !important;
+}
+
+input.form-control:focus,
+trix-editor.form-control:focus,
+select.form-control:focus {
+  background-color: white;
+  border: 1px #EBEBEB solid !important;
+  box-shadow: none !important;
+}
+
 .category-card {
   background-color: white;
   width: 210px;
@@ -14973,7 +14996,6 @@ html {
   justify-content: center;
   margin-top: 0 auto;
   margin-bottom: 0 auto;
-  background-color: white;
 }
 
 .my-profile .my-profile__avatar {
@@ -15254,7 +15276,7 @@ html {
 }
 
 .custom-menu .custom-menu__title {
-  padding: 20px 20px;
+  padding: 32px 20px;
 }
 
 .custom-menu .custom-menu__list {
@@ -15479,6 +15501,103 @@ div#recipe-detail #comments #comment-list .comment-item .right .bottom {
   color: grey;
 }
 
+div#create-recipe trix-editor {
+  min-height: 250px;
+}
+div#create-recipe input,
+div#create-recipe select {
+  color: none;
+}
+div#create-recipe input.form-control,
+div#create-recipe trix-editor.form-control,
+div#create-recipe select.form-control {
+  background-color: white;
+  border: 1px #EBEBEB solid;
+}
+div#create-recipe input.form-control:hover,
+div#create-recipe trix-editor.form-control:hover,
+div#create-recipe select.form-control:hover {
+  background-color: white;
+  border: 1px #EBEBEB solid !important;
+  box-shadow: none !important;
+}
+div#create-recipe input.form-control:focus,
+div#create-recipe trix-editor.form-control:focus,
+div#create-recipe select.form-control:focus {
+  background-color: white;
+  border: 1px #EBEBEB solid !important;
+  box-shadow: none !important;
+}
+
+div#edit-recipe trix-editor {
+  min-height: 250px;
+}
+div#edit-recipe input,
+div#edit-recipe select {
+  color: none;
+}
+div#edit-recipe input.form-control,
+div#edit-recipe trix-editor.form-control,
+div#edit-recipe select.form-control {
+  background-color: white;
+  border: 1px #EBEBEB solid;
+}
+div#edit-recipe input.form-control:hover,
+div#edit-recipe trix-editor.form-control:hover,
+div#edit-recipe select.form-control:hover {
+  background-color: white;
+  border: 1px #EBEBEB solid !important;
+  box-shadow: none !important;
+}
+div#edit-recipe input.form-control:focus,
+div#edit-recipe trix-editor.form-control:focus,
+div#edit-recipe select.form-control:focus {
+  background-color: white;
+  border: 1px #EBEBEB solid !important;
+  box-shadow: none !important;
+}
+div#edit-recipe img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+div#edit-recipe #image img,
+div#edit-recipe #video iframe {
+  width: 18rem;
+  height: 10rem;
+  margin-bottom: 10px;
+}
+div#edit-recipe #image .image-wrapper,
+div#edit-recipe #video .video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div#edit-recipe #image .form-group,
+div#edit-recipe #video .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+div#edit-recipe .empty-video {
+  background-color: #F0F0F0;
+  color: #E0E0E0;
+  border: 1px #F1F1F1 solid;
+  width: 18rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#edit-recipe .empty-video i {
+  font-size: 35px;
+}
+div#edit-recipe .img,
+div#edit-recipe iframe,
+div#edit-recipe .empty-video {
+  margin-bottom: 15px;
+}
+
 .splide-vertical .splide__track {
   display: flex;
   justify-content: center;
@@ -15528,4 +15647,13 @@ input.action-button:active,
 input.action-button:visited {
   background-color: #FDD661;
   color: white;
+}
+
+.download-button :hover {
+  cursor: pointer;
+}
+
+input.form-control.nav-search:hover, :focus {
+  border: none !important;
+  box-shadow: none !important;
 }

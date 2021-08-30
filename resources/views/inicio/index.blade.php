@@ -18,7 +18,7 @@
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($nuevas as $nueva)
-                                <li class="splide__slide">
+                                <li class="splide__slide" style="margin-left: 30px; margin-right: 30px;">
                                     <!-- LATEST CARD -->
                                     <div class="latest-recipe-card">
                                         <div class="background">
@@ -51,6 +51,8 @@
             @endif
         </section>
 
+        <br>
+        
         <!-- TODAS LAS RECETAS -->
         <section class="all-categories">
             <h2 class="subtitle"><b>🥰 Todas nuestras recetas</b></h2>
@@ -64,7 +66,7 @@
                     <div class="splide__track">
                         <ul class="splide__list">
                             @foreach ($recetas as $key => $group)
-                                <li class="splide__slide">
+                                <li class="splide__slide" style="margin-left: 30px; margin-right: 30px;">
                                     <div class="title-wrapper">
                                         <h6 class="title-wrapper__text">{{ str_replace('-', ' ', $key) }}</h6>
                                     </div>

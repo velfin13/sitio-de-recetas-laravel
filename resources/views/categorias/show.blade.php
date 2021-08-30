@@ -12,9 +12,9 @@
         <!-- SPLIDE HORIZONTAL -->
         <div id="splide-horizontal" class="splide splide-horizontal" >
             <div class="splide__track">
-                <ul class="splide__list">
+                <ul class="splide__list" >
                     @foreach ($recetas as $receta)
-                    <li class="splide__slide">
+                    <li class="splide__slide" style="margin-left: 30px; margin-right: 30px;">
                         <!-- RECIPE CARD -->
                         <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
                             <div class="recipe-card">

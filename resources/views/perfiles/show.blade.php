@@ -2,8 +2,25 @@
 
 @section('content')
 <div class="container-fluid">
+    <!-- <section id="profile">
+        <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
+        <hr class="divider">
+
+        <div class="row">
+            <div id="first" class="col-12 col-md-6 col-xl-6">
+                <h1>Nombre</h1>
+            </div>
+            <div id="second" class="col-12 col-md-6 col-xl-6">
+                @if ($perfil->imagen)
+                <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
+                @else
+                <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
+                @endif
+            </div>
+        </div>
+    </section> -->
+
     <section id="profile">
-        <!-- PROFILE -->
         <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
         <hr class="divider">
 
@@ -11,9 +28,9 @@
             <div class="my-profile__avatar col-1">
                 <div class="my-profile__avatar-image">
                     @if ($perfil->imagen)
-                    <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 3rem;">
+                    <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 8rem;">
                     @else
-                    <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 3rem;">
+                    <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 8rem;">
                     @endif
                 </div>
                 <div class="my-profile__avatar-name">
@@ -22,21 +39,30 @@
             </div>
 
             <div class="col-12 text-center" style="margin-bottom: 20px;">
-                {{-- si tiene pagina web --}}
                 @if ($perfil->usuario->url)
                 <a href="{{ $perfil->usuario->url }}">{{ $perfil->usuario->url }}</a>
                 @endif
             </div>
 
-            <div class="my-profile__bio col-11">
+            <div class="my-profile__bio col-11 text-center">
                 @if ($perfil->biografia)
-                <p>{!! $perfil->biografia !!}</p>
+                <h5>{!! $perfil->biografia !!}</h5>
                 @else
-                <p>Aun no has agregado tu biografia</p>
+                <h5>"Aun no has añadido tu biografia"</h5>
                 @endif
+            </div>
+
+            <div class="actions col-12" style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 15px;">
+                <a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
+                    <button class="btn action-button">Editar Perfil</button>
+
+                </a>
             </div>
         </div>
     </section>
+
+    <br>
+    <br>
 
     <section id="recipes">
         <!-- PROFILE RECIPES -->
@@ -49,7 +75,7 @@
             <div class="splide__track">
                 <ul class="splide__list">
                     @foreach ($recetas as $receta)
-                    <li class="splide__slide">
+                    <li class="splide__slide" style="margin-left: 30px; margin-right: 30px;">
                         <!-- RECIPE CARD -->
                         <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
                             <div class="recipe-card">

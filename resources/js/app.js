@@ -41,7 +41,7 @@ Vue.component("foto-perfil", require("./components/GetPerfilUser.vue").default);
 Vue.component("comentario-nombre", require("./components/NombrePerfil.vue").default);
 Vue.component("user-recetas", require("./components/CountRecetas.vue").default);
 Vue.component("all-categories", require("./components/AllCategories.vue").default);
-Vue.component("video-receta-img",require('./components/ImagenVideoReceta.vue').default)
+Vue.component("video-receta-img", require('./components/ImagenVideoReceta.vue').default)
 Vue.component("star-rating", Raters.StarRating);
 
 /**
@@ -66,12 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
             new Splide(selector, {
                 type: "loop",
                 autoplay: true,
-                interval: 5000,
+                interval: 9000,
 
                 direction: 'ttb',
                 perPage: 1,
                 pagination: false,
                 arrows: false,
+
+                autoWidth: true,
+                autoHeight: true,
                 height: "380px",
                 breakpoints: {
                     0: {
@@ -98,50 +101,55 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    new Splide('#splide-horizontal', {
-        // type: "loop",
-        lazyLoad: 'sequential',
-        autoplay: true,
-        interval: 6000,
+    if ($("#splide-horizontal").length) {
+        new Splide('#splide-horizontal', {
+            type: "loop",
+            autoplay: true,
+            interval: 8000,
 
-        // resetProgress: true,
-        pagination: false,
-        height: '27rem',
-        autoHeight: true,
-        perPage: 5,
-        breakpoints: {
-            0: {
-                perPage: 1,
-            },
-            /* Small devices (portrait tablets and large phones, 600px and up) */
-            600: {
-                perPage: 1,
-            },
-            /* Medium devices (landscape tablets, 768px and up) */
-            768: {
-                perPage: 1.5,
-            },
-            /* Large devices (laptops/desktops, 992px and up) */
-            920: {
-                perPage: 4,
-            },
-            /* Extra large devices (large laptops and desktops, 1200px and up) */
-            1200: {
-                perPage: 3,
+            // resetProgress: true,
+            pagination: false,
+            height: '27rem',
+            autoWidth: true,
+            perPage: 5,
+            breakpoints: {
+                0: {
+                    perPage: 1,
+                },
+                /* Small devices (portrait tablets and large phones, 600px and up) */
+                600: {
+                    perPage: 1,
+                },
+                /* Medium devices (landscape tablets, 768px and up) */
+                768: {
+                    perPage: 1.5,
+                },
+                /* Large devices (laptops/desktops, 992px and up) */
+                920: {
+                    perPage: 4,
+                },
+                /* Extra large devices (large laptops and desktops, 1200px and up) */
+                1200: {
+                    perPage: 3,
+                }
             }
-        }
-    }).mount();
+        }).mount();
+
+    }
 
     if ($("#splide-category-horizontal").length) {
         new Splide('#splide-category-horizontal', {
             type: "loop",
             autoplay: true,
-            interval: 1000,
+            interval: 9000,
 
             arrows: false,
             pagination: false,
             cover: true,
             perPage: 6.2,
+
+            autoWidth: true,
+            autoHeight: true,
             height: '120px',
             breakpoints: {
                 0: {
@@ -170,20 +178,70 @@ document.addEventListener("DOMContentLoaded", function () {
         }).mount();
     }
 
+    if ($("#splide-favorites-horizontal").length) {
+        new Splide('.splide-favorites-horizontal', {
+            // type: "loop",
+            autoplay: true,
+            interval: 8000,
+
+            arrows: false,
+            pagination: false,
+            perPage: 6.2,
+
+            autoWidth: true,
+            autoHeight: true,
+            height: '9rem',
+            breakpoints: {
+                0: {
+                    perPage: 1,
+                },
+                280: {
+                    perPage: 1,
+                },
+                411: {
+                    perPage: 1.02,
+                },
+                /* Small devices (portrait tablets and large phones, 600px and up) */
+                600: {
+                    perPage: 1.5,
+                },
+                /* Medium devices (landscape tablets, 768px and up) */
+                768: {
+                    perPage: 2.5,
+                },
+                /* Large devices (laptops/desktops, 992px and up) */
+                920: {
+                    perPage: 1,
+                },
+                /* Extra large devices (large laptops and desktops, 1200px and up) */
+                1200: {
+                    perPage: 6.2,
+                }
+            }
+        }).mount();
+    }
+
     if ($("#splide-latest-recipes-horizontal").length) {
         new Splide('#splide-latest-recipes-horizontal', {
-            type: "loop",
+            // type: "loop",
             autoplay: true,
-            interval: 5000,
+            interval: 9000,
             heightRatio: 0.5,
-            height: '10rem',
             pagination: false,
             perPage: 5,
+
+            autoWidth: true,
+            autoHeight: true,
+            height: '10rem',
             breakpoints: {
                 0: {
                     perPage: 1,
                 },
                 /* Small devices (portrait tablets and large phones, 600px and up) */
+                540: {
+                    perPage: 1.5,
+                },
+
                 600: {
                     perPage: 1.1,
                 },

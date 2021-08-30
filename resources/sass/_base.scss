@@ -9,3 +9,31 @@ a {
     color: black !important;
     text-decoration: none !important;
 }
+
+input.form-control,
+trix-editor.form-control,
+select.form-control {
+    background-color: white;
+    border: 1px #EBEBEB solid;
+}
+
+input.form-control:hover,
+trix-editor.form-control:hover,
+select.form-control:hover {
+    background-color: white;
+    border: 1px #EBEBEB solid !important;
+    box-shadow: none !important;
+}
+
+input.form-control:focus,
+trix-editor.form-control:focus,
+select.form-control:focus {
+    background-color: white;
+    border: 1px #EBEBEB solid !important;
+    box-shadow: none !important;
+}
+
+
+// trix-editor {
+//     min-height: 250px;
+// }

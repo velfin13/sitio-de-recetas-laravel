@@ -48,13 +48,15 @@
         <nav id="sidebar">
             <div class="custom-menu">
                 <section class="custom-menu__title">
-                    <h5><b>Dishes 🥡</b></h5>
+                    <a href="{{ route('inicio.index') }}">
+                        <h5><b>Dishes 🥡</b></h5>
+                    </a>
                 </section>
 
                 <section class="custom-menu__list">
                     <div class="menu-item"><a href="{{ route('inicio.index') }}"><i class="fas fa-home"></i>Inicio</a>
                     </div>
-                    <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i class="far fa-user-circle"></i> Perfil</a></div>
+                    <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i class="fas fa-user-circle"></i></i> Perfil</a></div>
                     <div class="menu-item"><a href="{{ route('recetas.index') }}"><i class="fas fa-concierge-bell"></i> Recetas</a></div>
 
                     <!-- <div class="menu-item"><a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}"><i class="fas fa-user-edit"></i> Editar perfil</a></div> -->
@@ -132,34 +134,44 @@
             <div id="page-content" class="container-fluid">
                 <!-- CATEGORY SLIDER -->
 
-                @if (!str_contains(Request::url(), '/recetas') && !str_contains(Request::url(), '/perfiles'))
+                @if (!str_contains(Request::url(), '/recetas') && !str_contains(Request::url(), '/perfiles') && !str_contains(Request::url(), '/buscar'))
 
-                <div class="owl-carousel owl-theme categories-carousel" style="height: 100px;">
-                    @foreach ($categorias as $categoria)
-                    <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
-                        <span class="category-card__icon">{!! $categoria->icono !!}</span>
-                        <span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
-                        <span class="category-card__counter">10 Recetas</span>
-                    </a>
-                    @endforeach
-                </div>
-                <!-- <div id="splide-category-horizontal" class="splide">
-                    <div class="splide__track">
-                        <ul class="splide__list">
+                <div class="container-fluid">
+                    <section class="all-categories">
+                        <h2 class="subtitle"><b>🥸 Categorías</b></h2>
+                        <hr class="divider" style="margin-top:10px;">
+
+                        <!-- ALTERNATIVA -->
+                        <!-- <div class="owl-carousel owl-theme categories-carousel" style="height: 100px;">
                             @foreach ($categorias as $categoria)
-                            <li class="splide__slide">
                             <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
                                 <span class="category-card__icon">{!! $categoria->icono !!}</span>
                                 <span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
                                 <span class="category-card__counter">10 Recetas</span>
                             </a>
-                            </li>
                             @endforeach
-                        </ul>
-                    </div>
-                </div> -->
-                @endif
+                        </div> -->
 
+                        <div id="splide-category-horizontal" class="splide">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    @foreach ($categorias as $categoria)
+                                    <li class="splide__slide" style="margin-left: 30px; margin-right: 30px;">
+                                        <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
+                                            <span class="category-card__icon">{!! $categoria->icono !!}</span>
+                                            <span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
+                                            <span class="category-card__counter">10 Recetas</span>
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                @endif
+                <br>
                 <!-- CONTENT INJECTION -->
                 <div class="py-1 mt-4 ml-5 col-12">
                     @yield('botones')
