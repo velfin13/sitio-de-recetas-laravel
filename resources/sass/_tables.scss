@@ -1,0 +1,16 @@
+#recipes-table {
+
+    tbody tr:hover td,
+    tbody tr:hover th {
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+    }
+}

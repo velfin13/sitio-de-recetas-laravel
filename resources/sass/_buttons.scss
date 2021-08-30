@@ -1,0 +1,30 @@
+// ACTION BUTTON
+button.action-button {
+    background-color: #FAFAFA;
+    color: black;
+
+    border: 1px #EBEBEB solid;
+    padding: 10px 20px 10px;
+}
+
+button.action-button:hover,
+button.action-button:active,
+button.action-button:visited {
+    background-color: $primary;
+    color: white;
+}
+
+input.action-button {
+    background-color: #FAFAFA;
+    color: black;
+
+    border: 1px #EBEBEB solid;
+    padding: 10px 20px 10px;
+}
+
+input.action-button:hover,
+input.action-button:active,
+input.action-button:visited {
+    background-color: $primary;
+    color: white;
+}

@@ -113,7 +113,7 @@
             </div>
             <hr style="border-bottom: 3px black dashed;">
             <div class="recipe__body-preparation">
-                <h5>PREPARCION:</h5>
+                <h5>PREPARACIÓN:</h5>
                 {!! $preparacion !!}
             </div>
             <hr style="border-bottom: 3px black dashed;">

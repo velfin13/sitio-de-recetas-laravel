@@ -57,7 +57,7 @@
                     <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i class="far fa-user-circle"></i> Perfil</a></div>
                     <div class="menu-item"><a href="{{ route('recetas.index') }}"><i class="fas fa-concierge-bell"></i> Recetas</a></div>
 
-                    <div class="menu-item"><a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}"><i class="fas fa-user-edit"></i> Editar perfil</a></div>
+                    <!-- <div class="menu-item"><a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}"><i class="fas fa-user-edit"></i> Editar perfil</a></div> -->
                 </section>
 
 

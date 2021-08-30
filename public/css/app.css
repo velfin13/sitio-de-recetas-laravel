@@ -15488,3 +15488,44 @@ div#recipe-detail #comments #comment-list .comment-item .right .bottom {
   margin-left: 50px;
   margin-right: 50px;
 }
+
+#recipes-table tbody tr:hover td,
+#recipes-table tbody tr:hover th {
+  cursor: pointer;
+  background-color: white;
+}
+#recipes-table .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+button.action-button {
+  background-color: #FAFAFA;
+  color: black;
+  border: 1px #EBEBEB solid;
+  padding: 10px 20px 10px;
+}
+
+button.action-button:hover,
+button.action-button:active,
+button.action-button:visited {
+  background-color: #FDD661;
+  color: white;
+}
+
+input.action-button {
+  background-color: #FAFAFA;
+  color: black;
+  border: 1px #EBEBEB solid;
+  padding: 10px 20px 10px;
+}
+
+input.action-button:hover,
+input.action-button:active,
+input.action-button:visited {
+  background-color: #FDD661;
+  color: white;
+}

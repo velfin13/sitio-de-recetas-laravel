@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     new Splide('#splide-horizontal', {
         // type: "loop",
-        lazyLoad:'sequential',
+        lazyLoad: 'sequential',
         autoplay: true,
         interval: 6000,
 
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
             autoplay: true,
             interval: 1000,
 
-            arrows:false,
+            arrows: false,
             pagination: false,
             cover: true,
             perPage: 6.2,
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     perPage: 1.1,
                 },
                 411: {
-                    perPage:1.3,
+                    perPage: 1.3,
                 },
                 /* Small devices (portrait tablets and large phones, 600px and up) */
                 600: {
@@ -303,9 +303,9 @@ document.addEventListener("DOMContentLoaded", function () {
     new ModalVideo('.js-modal-btn');
 });
 
-// magnific popup
-$(document).ready(function () {
-    // $('.image-link').magnificPopup({
-    //     type: 'image'
-    // });
+// clickable row table
+document.addEventListener("DOMContentLoaded", function () {
+    $(".clickable-row").click(function () {
+        window.location = $(this).data("href");
+    });
 });

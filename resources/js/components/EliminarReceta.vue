@@ -1,7 +1,7 @@
 <template>
-    <button class="btn btn-danger mr-1" @click="eliminarReceta">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-    </button>
+    <a class="btn btn-danger" @click="eliminarReceta">
+        <i class="fa fa-trash" aria-hidden="true" style="color:white"></i>
+    </a>
 </template>
 
 <script>

@@ -2,51 +2,48 @@
 
 @section('content')
 <div class="container-fluid">
-    <!-- PROFILE -->
-    <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
-    <hr class="divider">
+    <section id="profile">
+        <!-- PROFILE -->
+        <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
+        <hr class="divider">
 
-    <div class="my-profile row">
-        <div class="my-profile__avatar col-1">
-            <div class="my-profile__avatar-image">
-                @if ($perfil->imagen)
-                <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 3rem;">
-                @else
-                <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 3rem;">
+        <div class="my-profile row">
+            <div class="my-profile__avatar col-1">
+                <div class="my-profile__avatar-image">
+                    @if ($perfil->imagen)
+                    <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 3rem;">
+                    @else
+                    <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 3rem;">
+                    @endif
+                </div>
+                <div class="my-profile__avatar-name">
+                    <h5>{{ $perfil->usuario->name }}</h5>
+                </div>
+            </div>
+
+            <div class="col-12 text-center" style="margin-bottom: 20px;">
+                {{-- si tiene pagina web --}}
+                @if ($perfil->usuario->url)
+                <a href="{{ $perfil->usuario->url }}">{{ $perfil->usuario->url }}</a>
                 @endif
             </div>
-            <div class="my-profile__avatar-name">
-                <h5>{{ $perfil->usuario->name }}</h5>
+
+            <div class="my-profile__bio col-11">
+                @if ($perfil->biografia)
+                <p>{!! $perfil->biografia !!}</p>
+                @else
+                <p>Aun no has agregado tu biografia</p>
+                @endif
             </div>
         </div>
+    </section>
 
-        <div class="col-12 text-center" style="margin-bottom: 20px;">
-            {{-- si tiene pagina web --}}
-            @if ($perfil->usuario->url)
-            <a href="{{ $perfil->usuario->url }}">{{ $perfil->usuario->url }}</a>
-            @endif
-        </div>
+    <section id="recipes">
+        <!-- PROFILE RECIPES -->
+        <h2 class="subtitle"><b>🤤 Tus últimas recetas </b></h2>
+        <hr class="divider">
 
-        <div class="my-profile__bio col-11">
-            @if ($perfil->biografia)
-            <p>{!! $perfil->biografia !!}</p>
-            @else
-            <p>Aun no has agregado tu biografia</p>
-            @endif
-        </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <!-- PROFILE RECIPES -->
-    <h2 class="subtitle"><b>🤤 Tus últimas recetas </b></h2>
-    <hr class="divider">
-
-    <div class="row">
         @if (count($recetas) > 0)
-        @foreach ($recetas as $receta)
         <!-- SPLIDE HORIZONTAL -->
         <div id="splide-horizontal" class="splide splide-horizontal">
             <div class="splide__track">
@@ -117,12 +114,13 @@
             </div>
         </div>
         <!-- END SPLIDE HORIZONTAL -->
-        @endforeach
+
         @else
         <div class="container-fluid">
             <p class="alert alert-warning text-center"><b>Este usuario aun no ha creado ninguna receta!</b></p>
         </div>
         @endif
-    </div>
+    </section>
+
 </div>
 @endsection

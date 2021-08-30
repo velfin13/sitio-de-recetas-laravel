@@ -12178,11 +12178,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   new ModalVideo('.js-modal-btn');
-}); // magnific popup
+}); // clickable row table
 
-$(document).ready(function () {// $('.image-link').magnificPopup({
-  //     type: 'image'
-  // });
+document.addEventListener("DOMContentLoaded", function () {
+  $(".clickable-row").click(function () {
+    window.location = $(this).data("href");
+  });
 });
 
 /***/ }),
@@ -99087,9 +99088,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "button",
-    { staticClass: "btn btn-danger mr-1", on: { click: _vm.eliminarReceta } },
-    [_c("i", { staticClass: "fa fa-trash", attrs: { "aria-hidden": "true" } })]
+    "a",
+    { staticClass: "btn btn-danger", on: { click: _vm.eliminarReceta } },
+    [
+      _c("i", {
+        staticClass: "fa fa-trash",
+        staticStyle: { color: "white" },
+        attrs: { "aria-hidden": "true" }
+      })
+    ]
   )
 }
 var staticRenderFns = []
