@@ -3,22 +3,22 @@
 @section('content')
     <div class="container-fluid">
         <!-- <section id="profile">
-            <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
-            <hr class="divider">
+                <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
+                <hr class="divider">
 
-            <div class="row">
-                <div id="first" class="col-12 col-md-6 col-xl-6">
-                    <h1>Nombre</h1>
-                </div>
-                <div id="second" class="col-12 col-md-6 col-xl-6">
-                    @if ($perfil->imagen)
-                    <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
+                <div class="row">
+                    <div id="first" class="col-12 col-md-6 col-xl-6">
+                        <h1>Nombre</h1>
+                    </div>
+                    <div id="second" class="col-12 col-md-6 col-xl-6">
+                        @if ($perfil->imagen)
+                        <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
                 @else
-                    <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
-                    @endif
+                        <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
+                        @endif
+                    </div>
                 </div>
-            </div>
-        </section> -->
+            </section> -->
 
         <section id="profile">
             <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
@@ -58,14 +58,16 @@
                     </div>
                 </div>
 
-                @if (Auth::user()->id == $perfil->user_id)
-                    <div class="actions col-12"
-                        style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 15px;">
-                        <a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
-                            <button class="btn action-button">Editar Perfil</button>
-                        </a>
-                    </div>
-                @endif
+                @auth
+                    @if (Auth::user()->id == $perfil->user_id)
+                        <div class="actions col-12"
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 15px;">
+                            <a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
+                                <button class="btn action-button">Editar Perfil</button>
+                            </a>
+                        </div>
+                    @endif
+                @endauth
 
 
             </div>
