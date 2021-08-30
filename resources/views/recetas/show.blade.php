@@ -53,7 +53,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-xl-6">
                 <h5><b>Ingredientes</b></h5>
-                <p>{!! $recetas->preparacion !!}</p>
+                <p>{!! $recetas->ingredientes !!}</p>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-xl-6">
                 <h5><b>Preparación</b></h5>

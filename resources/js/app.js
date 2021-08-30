@@ -41,6 +41,7 @@ Vue.component("foto-perfil", require("./components/GetPerfilUser.vue").default);
 Vue.component("comentario-nombre", require("./components/NombrePerfil.vue").default);
 Vue.component("user-recetas", require("./components/CountRecetas.vue").default);
 Vue.component("all-categories", require("./components/AllCategories.vue").default);
+Vue.component("video-receta-img",require('./components/ImagenVideoReceta.vue').default)
 Vue.component("star-rating", Raters.StarRating);
 
 /**
