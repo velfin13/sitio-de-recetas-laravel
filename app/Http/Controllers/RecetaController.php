@@ -149,6 +149,7 @@ class RecetaController extends Controller
 
         //pasar cantidad de likes a la vista
         $likes = $receta->likes->count();
+    
 
         return view('recetas.show')
             ->with('recetas', $receta)
