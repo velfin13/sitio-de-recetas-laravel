@@ -18,6 +18,42 @@
         </div>
         <hr class="divider">
 
+        <section id="image">
+            <h3><b>😎 Foto</b></h3>
+            <hr class="divider" style="width: 200px;">
+
+            <div class="row">
+                <div class="col-12 col-md-12 col-xl-12" style="margin-bottom: 10px;">
+                    <div class="form-group">
+                        @if ($perfil->imagen)
+                        <div class="image-wrapper">
+                            <label for="image-picker">
+                                <img id="image-preview" src="/storage/{{ $perfil->imagen }}" alt="your image" />
+                            </label>
+
+                            <input style="display: none;" id="image-picker" name="imagen" type="file" accept="image/*" />
+                        </div>
+                        @else
+                        <div class="image-wrapper">
+                            <label for="image-picker">
+                                <img id="image-preview" src="{{ asset('images/avatarEmpty.jpg')}}" alt="your image" />
+                            </label>
+                            <input style="display: none;" id="image-picker" name="imagen" type="file" accept="image/*" />
+                        </div>
+                        @endif
+
+                        @error('imagen')
+                        <span class="invalid-feedback d-block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br>
+
         <section id="info">
             <h3><b>🥸 Información Personal</b></h3>
             <hr class="divider" style="width: 200px;">
@@ -25,7 +61,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-xl-6" style="margin-bottom: 10px;">
                     <div class="form-group">
-                    <span style="margin: 3px;"><b>*Nombre:</b></span>
+                        <span style="margin: 3px;"><b>*Nombre:</b></span>
                         <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder="Nombre de usuario" value="{{ $perfil->usuario->name }}">
                         @error('nombre')
                         <span class="invalid-feedback d-block" role="alert">
@@ -38,7 +74,7 @@
 
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="form-group">
-                    <span style="margin: 3px;"><b>*Sitio web:</b></span>
+                        <span style="margin: 3px;"><b>*Sitio web:</b></span>
                         <input type="url" name="url" class="form-control @error('url') is-invalid @enderror" id="url" placeholder="Sitio web" value="{{ $perfil->usuario->url }}">
                         @error('url')
                         <span class="invalid-feedback d-block" role="alert">
@@ -59,7 +95,7 @@
             <div class="row">
                 <div class="col-12 col-md-12 col-xl-12" style="margin-bottom: 10px;">
                     <div class="form-group">
-                    <span style="margin: 3px;"><b>*Biografía:</b></span>
+                        <span style="margin: 3px;"><b>*Biografía:</b></span>
 
                         <input id="biografia" type="hidden" name="biografia" value="{{ $perfil->biografia }}">
                         <trix-editor style="min-height: 180px;" input="biografia" class="form-control @error('biografia') is-invalid @enderror">
@@ -77,7 +113,7 @@
 
         <br>
 
-        <section id="image">
+        <!-- <section id="image">
             <h3><b>😎 Foto</b></h3>
             <hr class="divider" style="width: 200px;">
 
@@ -105,7 +141,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
     </div>

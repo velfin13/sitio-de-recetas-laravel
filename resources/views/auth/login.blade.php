@@ -2,6 +2,19 @@
 
 @section('auth')
 
+@error('email')
+<div class="alert alert-danger fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+</div>
+@enderror
+
+
+@error('password')
+<div class="alert alert-danger fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+</div>
+@enderror
+
 <div class="container h-100 mt-3">
     <div class="d-flex justify-content-center h-100">
         <div class="user_card">
@@ -21,25 +34,12 @@
                     {{-- email --}}
                     <div class="input-group mb-3">
                         <input id="email" type="email" placeholder="Email" class="form-control input_user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
 
                     {{-- password --}}
                     <div class="input-group mb-2">
                         <input id="password" type="password" placeholder="Contraseña" class="form-control input_pass @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
-
 
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
@@ -47,6 +47,7 @@
                             <label class="custom-control-label remember" for="remember">{{ __('Remember Me') }}</label>
                         </div>
                     </div>
+
                     <div class="d-flex justify-content-center mt-3 login_container">
                         <button type="submit" class="btn login_btn">{{ __('Login') }}</button>
                     </div>
@@ -55,13 +56,13 @@
 
             <div class="mt-4">
                 <div class="d-flex justify-content-center enlaces_auth">
-                    Aún no tienes una cuenta?<a href="{{ route('register') }}" class="ml-2 btn-link"><span class="register"><b>Registrate</b></span></a>
+                    ¿Aún no estás registrado?<a href="{{ route('register') }}" class="ml-2 btn-link"><span class="register"><b>Registrate</b></span></a>
                 </div>
-                <div class="d-flex justify-content-center enlaces_auth">
+                <!-- <div class="d-flex justify-content-center enlaces_auth">
                     @if (Route::has('password.request'))
                     <a class="btn btn-link forgot_password" href="{{ route('password.request') }}"><b>{{ __('Forgot Your Password?') }}</b></a>
                     @endif
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

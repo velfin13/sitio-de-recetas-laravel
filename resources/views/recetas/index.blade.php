@@ -25,6 +25,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if(count($recetas) === 0)
+                    <tr>
+                        <td class="alert alert-warning text-center" colspan="3"><b>Aún no has creado recetas 😒</b></td>
+                    </tr>
+                    @else
                     @foreach ($recetas as $receta)
                     <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
                         <tr class="clickable-row" data-href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
@@ -37,6 +42,7 @@
                         </tr>
                     </a>
                     @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
@@ -87,10 +93,7 @@
         </div>
         <!-- END SPLIDE HORIZONTAL -->
         @else
-        <div class="alert alert-warning" role="alert">
-            <b>Aun no le has dado me gusta a ninguna receta!</b>
-            <small>Dale me gusta y apareceran aqui!!</small>
-        </div>
+        <p class="alert alert-warning text-center"><b>Aún no has agregado recetas a favoritos 😅</b></p>
         @endif
     </section>
 </div>

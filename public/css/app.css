@@ -15598,6 +15598,19 @@ div#edit-recipe .empty-video {
   margin-bottom: 15px;
 }
 
+div#edit-profile .image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div#edit-profile .image-wrapper img {
+  border-radius: 200px;
+  width: 15rem;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .splide-vertical .splide__track {
   display: flex;
   justify-content: center;

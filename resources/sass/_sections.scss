@@ -240,6 +240,7 @@ div#create-recipe {
 
 }
 
+// EDIT RECIPE
 div#edit-recipe {
 
     trix-editor {
@@ -322,5 +323,21 @@ div#edit-recipe {
     iframe,
     .empty-video {
         margin-bottom: 15px;
+    }
+}
+
+// EDIT PROFILE
+div#edit-profile {
+    .image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            border-radius: 200px;
+            width: 15rem;
+            height: 15rem;
+            object-fit: cover;
+        }
     }
 }

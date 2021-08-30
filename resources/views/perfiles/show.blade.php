@@ -28,34 +28,35 @@
             <div class="my-profile__avatar col-1">
                 <div class="my-profile__avatar-image">
                     @if ($perfil->imagen)
-                    <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 8rem;">
+                    <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 15rem; height: 15rem;">
                     @else
-                    <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 8rem;">
+                    <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 15rem; height: 15rem;">
                     @endif
                 </div>
-                <div class="my-profile__avatar-name">
+                <div class="my-profile__avatar-name" style="margin-top: 20px;">
                     <h5>{{ $perfil->usuario->name }}</h5>
                 </div>
             </div>
 
-            <div class="col-12 text-center" style="margin-bottom: 20px;">
+            <div class="col-12 text-center" style="margin-bottom: 15px;">
                 @if ($perfil->usuario->url)
                 <a href="{{ $perfil->usuario->url }}">{{ $perfil->usuario->url }}</a>
                 @endif
             </div>
 
-            <div class="my-profile__bio col-11 text-center">
-                @if ($perfil->biografia)
-                <h5>{!! $perfil->biografia !!}</h5>
-                @else
-                <h5>"Aun no has añadido tu biografia"</h5>
-                @endif
+            <div class="my-profile__bio col-11 text-center" style="justify-content: center; align-items: center; align-content: center; display: flex;">
+                <div class="bio-wrapper" style="background-color: #FAFAFA; width: 800px; min-width: 800px; padding: 30px; border: 1px #E5E5E5 solid;">
+                    @if ($perfil->biografia)
+                    <h5>{!! $perfil->biografia !!}</h5>
+                    @else
+                    <h5>"Aun no has añadido tu biografia"</h5>
+                    @endif
+                </div>
             </div>
 
             <div class="actions col-12" style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 15px;">
                 <a href="{{ route('perfiles.edit', ['perfil' => Auth::user()->id]) }}">
                     <button class="btn action-button">Editar Perfil</button>
-
                 </a>
             </div>
         </div>
