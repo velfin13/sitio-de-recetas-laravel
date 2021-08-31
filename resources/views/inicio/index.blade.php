@@ -94,7 +94,7 @@
                                                         <!-- {{ $receta->url }} -->
                                                         <h5><b>{{ Str::title($receta->titulo) }}</b>
                                                         </h5>
-                                                        <h6>Creado por <b>Joseph Garcia</b></h6>
+                                                        <h6>Creado por <b>{{ Str::words(strip_tags($receta->autor->name), 10) }}</b></h6>
                                                     </div>
                                                     <div class="right">
                                                         <span class="figure"><i class="fas fa-chevron-right"></i></span>
@@ -115,7 +115,7 @@
                                                                     <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
                                                                 </div>
                                                                 <div class="content">
-                                                                <i style="color: #E0E0E0" class="fal fa-camera"></i>
+                                                                    <i style="color: #E0E0E0" class="fal fa-camera"></i>
                                                                 </div>
                                                             </div>
 

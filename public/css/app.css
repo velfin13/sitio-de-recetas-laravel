@@ -15103,7 +15103,7 @@ html {
 }
 .navbar .login-button:hover {
   background-color: #FDD661;
-  color: white;
+  color: white !important;
 }
 
 #sidebarCollapse {
@@ -15623,6 +15623,11 @@ div#edit-profile .image-wrapper img {
 .splide-vertical .splide__track {
   display: flex;
   justify-content: center;
+}
+
+#splide-horizontal li {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .page-content {

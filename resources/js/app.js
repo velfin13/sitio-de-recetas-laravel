@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             new Splide(selector, {
                 type: "loop",
                 autoplay: true,
-                interval: 9000,
+                interval: 1200,
 
                 direction: 'ttb',
                 perPage: 1,
@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pagination: false,
             height: '27rem',
             autoWidth: true,
+            autoHeight: true,
             perPage: 5,
             breakpoints: {
                 0: {
