@@ -54,13 +54,11 @@
                 </section>
 
                 <section class="custom-menu__list">
-                    <div class="menu-item"><a href="{{ route('inicio.index') }}"><i class="fas fa-home"></i>Inicio</a>
+                    <div class="menu-item"><a href="{{ route('inicio.index') }}"><i class="far fa-home"></i>Inicio</a>
                     </div>
-                    <div class="menu-item"><a href="{{ route('recetas.index') }}"><i class="fas fa-concierge-bell"></i> Recetas</a></div>
-                    <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i class="fas fa-user-circle"></i></i> Perfil</a></div>
+                    <div class="menu-item"><a href="{{ route('recetas.index') }}"><i class="far fa-concierge-bell"></i></i> Recetas</a></div>
+                    <div class="menu-item"><a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}"><i class="far fa-user-circle"></i> Perfil</a></div>
                 </section>
-
-
             </div>
 
 
@@ -119,7 +117,7 @@
                         <a class="btn login-button" href="{{ route('login') }}">Iniciar Sesión</a>
                         @else
                         @if (!Auth::user()->perfil->imagen)
-                        <user-recetas user-image={{ asset('images/noImage.jpg') }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                        <user-recetas user-image={{ asset('images/avatarEmpty.jpg') }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
                         @else
                         <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
                         @endif

@@ -1,0 +1,60 @@
+.image-picker :hover {
+    cursor: pointer;
+}
+
+.image-picker.image-picker--border {
+    border-radius: 200px;
+    border: 5px black solid;
+}
+
+// MULTIMEDIA
+.multimedia-backdrop {
+    display: flex;
+    position: relative;
+
+    object-fit: cover;
+    border-radius: 200px;
+
+    .background {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 200px;
+        box-shadow: 0 0 0 1px rgba(27, 31, 36, 0.15);
+    }
+
+    .content {
+        color: #EAEAEA;
+        font-size: 80px;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+
+        border-radius: 200px;
+    }
+
+    .edit {
+        background-color: #F7F7F7;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        padding: 5px 15px 5px;
+
+        border: 1px #E9E9E9 solid;
+    }
+
+    // .edit:hover {
+    //     background-color: $primary;
+    //     color: white;
+    // }
+}

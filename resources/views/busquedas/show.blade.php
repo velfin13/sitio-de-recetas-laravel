@@ -5,10 +5,31 @@
     <h2 class="subtitle"><b>🧐 {{count($recetas)}} Resultado(s) para "{{$busqueda}}"</b></h2>
     <hr class="divider">
 
-    <div class="row">
-        @foreach ($recetas as $receta)
 
-        <div class="col-12 col-md-3 col-xl-3" style="margin-bottom: 20px; display: flex; align-items: center; align-content: center; justify-content: center;">
+    @foreach ($recetas as $receta)
+    <div class="row">
+        <div class="col-12">
+            <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
+                <div class="search-item">
+                    <div class="first">
+                        <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
+                    </div>
+                    <div class="second ">
+                        <span class="title"><b>{{ Str::title($receta->titulo) }}</b></span>
+                        <span class="steps"><i class="far fa-align-left"></i> {{ Str::words(strip_tags($receta->preparacion), 18)}}</span>
+                    </div>
+                    <div class="third d-none d-md-flex"><span><i class="fal fa-calendar-alt"></i> {{ date('d-m-Y', strtotime($receta->created_at)) }}</span></div>
+                    <div class="four"><span><i class="far fa-angle-right"></i></span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    @endforeach
+
+</div>
+@endsection
+
+<!-- <div class="col-12 col-md-3 col-xl-3" style="margin-bottom: 20px; display: flex; align-items: center; align-content: center; justify-content: center;">
             <a href="{{ route('recetas.show', ['receta' => $receta->id]) }}">
                 <div class="recipe-card">
                     <div class="top">
@@ -67,23 +88,4 @@
                     </div>
                 </div>
             </a>
-        </div>
-        @endforeach
-    </div>
-</div>
-
-
-<!-- <div class="col-12">
-            <div class="search-item">
-                <div class="left"></div>
-                <div class="right"></div>
-            </div>
         </div> -->
-
-
-
-
-<div class="d-flex justify-content-center">
-    {{ $recetas->links() }}
-</div>
-@endsection

@@ -1,6 +1,13 @@
 <template>
   <div>
     <!-- si la imagen es null -->
+    <!-- <img
+      src="/images/avatarEmpty.jpg"
+      width="64"
+      height="64"
+      alt="profile"
+      v-if="photo === null"
+    /> -->
     <img
       src="/images/noImage.jpg"
       width="64"

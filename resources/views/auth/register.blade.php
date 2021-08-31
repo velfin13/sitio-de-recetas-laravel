@@ -1,5 +1,29 @@
 @extends('layouts.auth')
 
+<!-- @error('name')
+<div class="alert alert-danger fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+</div>
+@enderror
+
+@error('email')
+<div class="alert alert-danger fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+</div>
+@enderror
+
+@error('password')
+<div class="alert alert-danger fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+</div>
+@enderror
+
+@error('url')
+<div class="alert alert-danger fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+</div>
+@enderror -->
+
 @section('auth')
 <div class="container h-100 mt-3">
     <div class="d-flex justify-content-center h-100">

@@ -6,7 +6,7 @@
             <h2 class="subtitle"><b>🧾 {{ Str::title($recetas->titulo) }}</b></h2>
             <div id="actions" style="display: flex; flex-direction: row; align-items: center;">
                 <a target="_blank" href="{{ route('pdfs.index', ['receta' => $recetas->id]) }}"><span
-                        class="download-button" style="font-size: 20px;"><i class="fas fa-download"></i></span></a>
+                        class="download-button" style="font-size: 24px;"><i class="far fa-download"></i></span></a>
                 <like-button likes="{{ $likes }}" like="{{ $like }}" receta-id="{{ $recetas->id }}">
                 </like-button>
             </div>

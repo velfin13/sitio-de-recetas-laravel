@@ -27,16 +27,35 @@
                     <div class="form-group">
                         @if ($perfil->imagen)
                         <div class="image-wrapper">
-                            <label for="image-picker">
-                                <img id="image-preview" src="/storage/{{ $perfil->imagen }}" alt="your image" />
+                            <label class="image-picker" for="image-picker">
+                                <div class="multimedia-backdrop">
+                                    <div class="background">
+                                        <img id="image-preview" src="/storage/{{ $perfil->imagen }}" alt="your image" />
+                                    </div>
+                                    <div class="content">
+                                        <!-- <i class="far fa-camera"></i> -->
+                                    </div>
+                                    <div class="edit">
+                                        <span><b><i class="fal fa-pencil"></i> Editar</b></span>
+                                    </div>
+                                </div>
                             </label>
-
                             <input style="display: none;" id="image-picker" name="imagen" type="file" accept="image/*" />
                         </div>
                         @else
                         <div class="image-wrapper">
-                            <label for="image-picker">
-                                <img id="image-preview" src="{{ asset('images/avatarEmpty.jpg')}}" alt="your image" />
+                            <label class="image-picker" for="image-picker">
+                                <div class="multimedia-backdrop">
+                                    <div class="background">
+                                    <img id="image-preview" src="{{ asset('images/avatarEmpty.jpg')}}" alt="your image" />
+                                    </div>
+                                    <div class="content">
+                                        <!-- <i class="far fa-camera"></i> -->
+                                    </div>
+                                    <div class="edit">
+                                        <span><b><i class="fal fa-pencil"></i> Editar</b></span>
+                                    </div>
+                                </div>
                             </label>
                             <input style="display: none;" id="image-picker" name="imagen" type="file" accept="image/*" />
                         </div>

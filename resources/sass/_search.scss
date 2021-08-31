@@ -1,9 +1,120 @@
 // BUTTON SEARCH
-input.form-control.nav-search:hover,:focus {
+input.form-control.nav-search:hover,
+:focus {
     border: none !important;
     box-shadow: none !important;
 }
 
 .search-item {
+    // background-color: #FAFAFA;
+
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    border: 1px #ECECEC solid;
+
+    margin-bottom: 8px;
+
+    .first,
+    .second,
+    .third,
+    .four {
+        padding: 15px;
+    }
+
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.search-item .first {
+    // background-color: red;
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+
+    border-right: 1px #ECECEC solid;
+
+
+    img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border: 1px #ECECEC solid;
+    }
+}
+
+.search-item .second {
+    // background-color: yellow;
+
+    flex: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
+
     
+
+    .title {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .steps {
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 10px;
+
+        i {
+            color: #A7A7A7;
+            margin-right: 5px;
+        }
+
+
+    }
+}
+
+.search-item .third {
+    // background-color: purple;
+
+    flex: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #262626;
+
+    border-left: 1px #ECECEC solid;
+
+
+    i {
+        margin-right: 5px;
+        color: #A7A7A7;
+    }
+}
+
+.search-item .four {
+    // background-color: aqua;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    font-size: 30px;
+    color: #C3C3C3;
+
+    border-left: 1px #ECECEC solid;
 }
