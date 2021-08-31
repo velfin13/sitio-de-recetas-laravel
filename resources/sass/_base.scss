@@ -21,7 +21,8 @@ input.form-control:hover,
 trix-editor.form-control:hover,
 select.form-control:hover {
     background-color: white;
-    border: 1px #EBEBEB solid !important;
+    // border: 1px #EBEBEB solid !important;
+    border: none;
     box-shadow: none !important;
 }
 
@@ -29,7 +30,7 @@ input.form-control:focus,
 trix-editor.form-control:focus,
 select.form-control:focus {
     background-color: white;
-    border: 1px #EBEBEB solid !important;
+    border: none;
     box-shadow: none !important;
 }
 

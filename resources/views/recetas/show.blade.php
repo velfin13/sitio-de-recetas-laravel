@@ -103,7 +103,7 @@
                         <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
 
-                        <input type="text" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
+                        <input type="text" maxlength="200" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
 
                         @else
                         <h1>Para comentar debes inciar sesion</h1>
@@ -127,6 +127,7 @@
             @else
             <div class="comments">
                 @foreach ($comentarios as $item)
+                <!-- COMMENT -->
                 <div class="comment-item col-12">
                     <div class="left">
                         <foto-perfil id-user={{ $item->user_id }}></foto-perfil>
@@ -134,15 +135,10 @@
                     <div class="right">
                         <!-- TOP -->
                         <div class="top">
-                            <span class="name"><b>
-                                    <comentario-nombre id-user={{ $item->user_id }}></comentario-nombre>
-                                </b></span>
-                            <div style="display:flex;align-items:center">
-                                <!-- <span class="date"> <i class="far fa-calendar-alt date-icon"></i>{{ date('d-m-Y', strtotime($item->created_at)) }}</span> -->
-                                <!-- <span class="date"> <i class="far fa-calendar-alt date-icon"></i>{{$item->created_at}}</span> -->
-                                <moment-date></momentdate>
-
-                            </div>
+                            <span class="name">
+                                <comentario-nombre id-user={{ $item->user_id }}></comentario-nombre>
+                            </span>
+                            <span style="display: flex; align-items: center;">{{ date('d-m-Y', strtotime($item->created_at)) }} <i class="fas fa-circle" style="font-size: 8px; margin-left: 5px; margin-right: 5px;"></i> <local-date date="{{$item->created_at}}"></local-date></span>
                         </div>
                         <!-- BODY -->
                         <div class="body">
@@ -158,6 +154,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- END COMMENT -->
                 @endforeach
             </div>
             @endif

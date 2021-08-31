@@ -22,8 +22,8 @@ moment().format();
 
 
 window.Vue = require("vue");
-window.moment = require('moment');
 window.$ = require("jquery");
+window.moment = require('moment');
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -47,7 +47,7 @@ Vue.component("comentario-nombre", require("./components/NombrePerfil.vue").defa
 Vue.component("user-recetas", require("./components/CountRecetas.vue").default);
 Vue.component("all-categories", require("./components/AllCategories.vue").default);
 Vue.component("video-receta-img", require('./components/ImagenVideoReceta.vue').default);
-Vue.component("moment-date", require('./components/MomentJs.vue').default);
+Vue.component("local-date", require('./components/LocalDate.vue').default);
 Vue.component("star-rating", Raters.StarRating);
 
 /**

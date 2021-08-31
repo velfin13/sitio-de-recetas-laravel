@@ -1,6 +1,8 @@
 // BUTTON SEARCH
-input.form-control.nav-search:hover,
-:focus {
+input.form-control.nav-search{
+    border: none;
+}
+input.form-control.nav-search:focus {
     border: none !important;
     box-shadow: none !important;
 }

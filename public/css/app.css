@@ -14327,7 +14327,7 @@ input.form-control:hover,
 trix-editor.form-control:hover,
 select.form-control:hover {
   background-color: white;
-  border: 1px #EBEBEB solid !important;
+  border: none;
   box-shadow: none !important;
 }
 
@@ -14335,7 +14335,7 @@ input.form-control:focus,
 trix-editor.form-control:focus,
 select.form-control:focus {
   background-color: white;
-  border: 1px #EBEBEB solid !important;
+  border: none;
   box-shadow: none !important;
 }
 
@@ -14666,109 +14666,6 @@ select.form-control:focus {
 .recipe-card .bottom .date {
   font-weight: bolder;
   color: #000000;
-}
-
-trix-editor {
-  min-height: 200px;
-  height: auto !important;
-}
-
-.bg-primary .navbar-brand {
-  color: white;
-  font-family: "Fredoka One", cursive;
-  font-size: 2rem;
-  font-family: "Fredoka One", cursive;
-  color: #fff !important;
-  font-size: 2.4rem;
-  text-decoration: none;
-}
-.bg-primary .navbar-brand:hover {
-  color: white;
-}
-
-.icono {
-  width: 16px;
-}
-
-.barra {
-  background-color: #ed4646 !important;
-}
-
-.fecha {
-  color: #FDD661 !important;
-}
-
-.receta-meta p {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.enlace-autor {
-  color: #222;
-}
-.enlace-autor:hover {
-  text-decoration: none;
-  color: #222;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: #fff;
-  font-size: 1.4rem;
-}
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-  color: #fff;
-}
-
-.titulo-categoria {
-  font-family: "Cabin", sans-serif;
-  color: #333;
-  font-size: 1.8rem;
-  border-bottom: 3px solid #FDD661 !important;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-  padding-right: 2rem;
-}
-
-.btn-receta,
-.btn-receta:hover {
-  background-color: #ed4646 !important;
-  border: none;
-}
-
-.owl-carousel .owl-stage {
-  display: flex;
-}
-
-.categorias-bg {
-  background-color: #fff;
-}
-.categorias-bg .nav-link {
-  color: #222 !important;
-  display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  font-size: 1.2rem !important;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.categorias-bg .nav-link:before, .categorias-bg .nav-link:after {
-  content: "";
-  position: absolute;
-  transition: transform 0.5s ease;
-}
-.categorias-bg .nav-link:before {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background: #FDD661;
-  transform: translateX(-100%);
-}
-.categorias-bg .nav-link:hover:before {
-  transform: translateX(0);
 }
 
 .like-btn {
@@ -15465,52 +15362,47 @@ div#recipe-detail #comments #comment-list .comments {
   flex-direction: column-reverse;
 }
 div#recipe-detail #comments #comment-list .comment-item {
-  background-color: white;
-  height: 140px;
-  min-height: 140px;
+  min-height: 120px;
+  max-height: 250px;
   display: flex;
   flex-direction: row;
-  padding: 30px;
-  border-top: 1px #F0F0F0 solid;
+  border-bottom: 1px #F0F0F0 solid;
+  padding: 5px;
 }
 div#recipe-detail #comments #comment-list .comment-item .left {
-  flex: 2;
+  flex: 3;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
+div#recipe-detail #comments #comment-list .comment-item .left img {
+  border-radius: 100px;
+  border: 1px #F0F0F0 solid;
+}
 div#recipe-detail #comments #comment-list .comment-item .right {
-  flex: 40;
+  flex: 30;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
 }
 div#recipe-detail #comments #comment-list .comment-item .right .top {
-  flex: 1;
+  flex: 3;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-div#recipe-detail #comments #comment-list .comment-item .right .top .date-icon,
-div#recipe-detail #comments #comment-list .comment-item .right .top date {
-  color: #282828;
-}
-div#recipe-detail #comments #comment-list .comment-item .right .top .date-icon {
-  font-size: 18px;
-  margin-right: 5px;
-}
-div#recipe-detail #comments #comment-list .comment-item .right .top .date {
-  font-weight: 700;
+  flex-direction: column;
 }
 div#recipe-detail #comments #comment-list .comment-item .right .body {
-  flex: 3;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 div#recipe-detail #comments #comment-list .comment-item .right .bottom {
-  flex: 1;
-  color: grey;
+  display: 2;
+  display: flex;
+  flex-direction: column;
+}
+div#recipe-detail #comments #comment-list .comment-item .right .top, div#recipe-detail #comments #comment-list .comment-item .right .body, div#recipe-detail #comments #comment-list .comment-item .right .bottom {
+  padding-left: 10px;
 }
 
 div#create-recipe trix-editor {
@@ -15683,8 +15575,11 @@ input.action-button:visited {
   cursor: pointer;
 }
 
-input.form-control.nav-search:hover,
-:focus {
+input.form-control.nav-search {
+  border: none;
+}
+
+input.form-control.nav-search:focus {
   border: none !important;
   box-shadow: none !important;
 }
