@@ -135,7 +135,6 @@
                                                                                 @else
                                                                                     <div class="video">
                                                                                         <div class="background">
-                                                                                            {{-- velkin --}}
                                                                                             <video-receta-img
                                                                                                 link={{ $receta->url }}>
                                                                                             </video-receta-img>

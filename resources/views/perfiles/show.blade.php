@@ -155,8 +155,10 @@
                                                         @else
                                                             <div class="video">
                                                                 <div class="background">
-                                                                    <img src="https://img.youtube.com/vi/f0DSVVP89Gs/default.jpg"
-                                                                        alt="thumbnail">
+                                                                    
+                                                                        <video-receta-img
+                                                                                                link={{ $receta->url }}>
+                                                                                            </video-receta-img>
                                                                 </div>
                                                                 <div class="content">
                                                                     <i class="far fa-play-circle"></i>
