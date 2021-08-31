@@ -93,7 +93,7 @@
                                                     <div class="left">
                                                         <!-- {{ $receta->url }} -->
                                                         <h5><b>{{ Str::words(strip_tags($receta->titulo), 6) }}</b></h5>
-                                                        <h6>Creado por <b>{{ Str::words(strip_tags($receta->autor->name), 5) }}</b></h6>
+                                                        <h6>Creado por <b>{{ Str::words(strip_tags($receta->autor->name), 2) }}</b></h6>
                                                     </div>
                                                     <div class="right">
                                                         <span class="figure"><i class="fas fa-chevron-right"></i></span>
