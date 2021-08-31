@@ -15725,6 +15725,7 @@ input.form-control.nav-search:hover,
 .search-item .second .title {
   font-size: 17px;
   margin-bottom: 5px;
+  font-weight: bolder;
 }
 .search-item .second .steps {
   font-size: 14px;
