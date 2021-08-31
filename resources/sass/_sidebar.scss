@@ -37,11 +37,17 @@
 }
 
 .wrapper {
-    overflow-x: hidden;
+
+    // display: flex;
+    // align-items: stretch;
+    // perspective: 1500px;
+    // min-height: 100%;
+
+    width: 100%;
+    height: 100vh;
     display: flex;
-    align-items: stretch;
+    overflow-x: hidden;
     perspective: 1500px;
-    min-height: 100%;
 }
 
 #content {
@@ -49,8 +55,8 @@
 }
 
 #content #page-content {
-    position: fixed;
-    min-width: 100vw;
+    // position: fixed;
+    min-width: 80vw;
 }
 
 #sidebar {
@@ -141,6 +147,15 @@
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
     }
+
+    // FIX OPEN SIDEBAR
+    #sidebar.active~#page-content {
+        background-color: red !important;
+        width: 50vw !important;
+        height: calc(100vh - 28px) !important;
+        position: absolute !important;
+    }
+
 }
 
 // CUSTOM MENU

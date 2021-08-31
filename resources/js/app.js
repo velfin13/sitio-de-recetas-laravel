@@ -350,6 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
             $(".js-fullheight").css("height", $(window).height());
         });
     };
+    
     fullHeight();
 
     $("#sidebarCollapse").on("click", function () {
