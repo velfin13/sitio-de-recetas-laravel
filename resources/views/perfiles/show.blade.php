@@ -3,22 +3,22 @@
 @section('content')
     <div class="container-fluid">
         <!-- <section id="profile">
-                    <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
-                    <hr class="divider">
+                                        <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
+                                        <hr class="divider">
 
-                    <div class="row">
-                        <div id="first" class="col-12 col-md-6 col-xl-6">
-                            <h1>Nombre</h1>
-                        </div>
-                        <div id="second" class="col-12 col-md-6 col-xl-6">
-                            @if ($perfil->imagen)
-                            <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
+                                        <div class="row">
+                                            <div id="first" class="col-12 col-md-6 col-xl-6">
+                                                <h1>Nombre</h1>
+                                            </div>
+                                            <div id="second" class="col-12 col-md-6 col-xl-6">
+                                                @if ($perfil->imagen)
+                                                <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
                 @else
-                            <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
-                            @endif
-                        </div>
-                    </div>
-                </section> -->
+                                                <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </section> -->
 
         <section id="profile">
             @auth
@@ -83,7 +83,18 @@
 
         <section id="recipes">
             <!-- PROFILE RECIPES -->
-            <h2 class="subtitle"><b>🤤 Tus últimas recetas </b></h2>
+            @auth
+                @if (Auth::user()->id == $perfil->user_id)
+                    <h2 class="subtitle"><b>🤤 Tus últimas recetas </b></h2>
+                @else
+                    <h2 class="subtitle"><b>🤤 Últimas recetas creadas por {{ $perfil->usuario->name }}</b></h2>
+                @endif
+            @else
+                <h2 class="subtitle"><b>🤤 Últimas recetas creadas por {{ $perfil->usuario->name }}</b></h2>
+            @endauth
+
+
+
             <hr class="divider">
 
             @if (count($recetas) > 0)
