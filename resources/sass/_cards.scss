@@ -231,11 +231,14 @@
 .recipe-card .top {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    align-content: center;
 
     padding-top: 5px;
     padding-bottom: 5px;
     border-bottom: 1px #E6E6E6 solid;
 
+    min-height: 25%;
 
     .left {
         display: flex;
