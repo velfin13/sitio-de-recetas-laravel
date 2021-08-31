@@ -11979,7 +11979,7 @@ document.addEventListener("DOMContentLoaded", function () {
       new Splide(selector, {
         type: "loop",
         autoplay: true,
-        interval: 1200,
+        interval: 12000,
         direction: 'ttb',
         perPage: 1,
         pagination: false,
