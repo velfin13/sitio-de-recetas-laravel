@@ -115,7 +115,7 @@
                                                                     <img class="image" src="/storage/{{ $receta->imagen }}" alt="recipe-image">
                                                                 </div>
                                                                 <div class="content">
-                                                                    <i class="far fa-image"></i>
+                                                                <i style="color: #E0E0E0" class="fal fa-camera"></i>
                                                                 </div>
                                                             </div>
 
@@ -124,7 +124,7 @@
                                                         <div class="right">
                                                             @if ($receta->url === null)
                                                             <div class="video video--empty">
-                                                                <i class="fas fa-video"></i>
+                                                                <i class="fal fa-video"></i>
                                                             </div>
                                                             @else
                                                             <div class="video">
@@ -133,7 +133,7 @@
                                                                     </video-receta-img>
                                                                 </div>
                                                                 <div class="content">
-                                                                    <i class="far fa-play-circle"></i>
+                                                                    <i style="color: #E0E0E0" class="fal fa-video"></i>
                                                                 </div>
                                                             </div>
                                                             @endif
