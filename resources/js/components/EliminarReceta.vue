@@ -1,7 +1,7 @@
 <template>
-    <a class="btn btn-danger" @click="eliminarReceta">
+    <button type="button" class="btn btn-danger" @click="eliminarReceta">
         <i class="fa fa-trash" aria-hidden="true" style="color:white"></i>
-    </a>
+    </button>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import axios from "axios";
 export default {
     props: ["recetaId"],
     methods: {
-        eliminarReceta() {
+        eliminarReceta(e) {
             Swal.fire({
                 title: "Deseas eliminar esta receta?",
                 text: "Una vez eliminada no se puede recuperar!",
@@ -50,6 +50,8 @@ export default {
                         });
                 }
             });
+            
+            
         }
     }
 };
