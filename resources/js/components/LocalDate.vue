@@ -11,6 +11,7 @@ export default {
   },
   computed: {
     setLocalDate() {
+      moment.locale('es-ES');
       return moment(this.date).fromNow();
     },
   },

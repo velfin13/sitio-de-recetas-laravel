@@ -11881,6 +11881,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     setLocalDate: function setLocalDate() {
+      moment.locale('es-ES');
       return moment(this.date).fromNow();
     }
   }
