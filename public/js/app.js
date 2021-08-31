@@ -11626,7 +11626,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["recetaId"],
   methods: {
-    eliminarReceta: function eliminarReceta() {
+    eliminarReceta: function eliminarReceta(e) {
       var _this = this;
 
       sweetalert2__WEBPACK_IMPORTED_MODULE_0___default().fire({
@@ -99271,8 +99271,12 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "a",
-    { staticClass: "btn btn-danger", on: { click: _vm.eliminarReceta } },
+    "button",
+    {
+      staticClass: "btn btn-danger",
+      attrs: { type: "button" },
+      on: { click: _vm.eliminarReceta }
+    },
     [
       _c("i", {
         staticClass: "fa fa-trash",
