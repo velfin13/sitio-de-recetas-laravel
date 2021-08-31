@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="right">
-                        <button type="submit" class="btn btn-light"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        <button type="submit" class="btn btn-light"><i class="far fa-paper-plane"></i></button>
                     </div>
                 </div>
             </form>

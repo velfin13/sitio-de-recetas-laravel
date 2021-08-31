@@ -119,11 +119,13 @@
                         @guest
                         <a class="btn login-button" href="{{ route('login') }}">Iniciar Sesión</a>
                         @else
+                        <a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}">
                         @if (!Auth::user()->perfil->imagen)
                         <user-recetas user-image={{ asset('images/avatarEmpty.jpg') }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
                         @else
                         <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
                         @endif
+                        </a>
                         @endguest
                     </ul>
                 </div>
