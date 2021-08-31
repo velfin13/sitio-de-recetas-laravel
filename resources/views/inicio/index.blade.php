@@ -26,7 +26,7 @@
                             </div>
                             <div class="content">
                                 <div class="body">
-                                    <h5 class="title">{{ Str::title($nueva->titulo) }}</h5>
+                                    <h5 class="title">{{ Str::words(strip_tags($nueva->titulo), 4)}}</h5>
                                     <h6 class="created_by">
                                         {{ Str::words(strip_tags($nueva->preparacion), 8) }}
                                     </h6>
