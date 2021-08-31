@@ -24,7 +24,7 @@
                             <i class="fas fa-video"></i>
                         </div>
                     @else
-                        <iframe src="{{ $recetas->url }}"></iframe>
+                        <iframe allow="fullscreen;" src="{{ $recetas->url }}"></iframe>
                     @endif
                 </div>
             </div>
