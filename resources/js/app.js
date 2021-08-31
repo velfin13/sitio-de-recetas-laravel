@@ -16,9 +16,14 @@ require("datatables.net-autofill-bs4");
 require("datatables.net-buttons-bs4");
 require("datatables.net-responsive-bs4");
 
-window.Vue = require("vue");
-window.$ = require("jquery");
+// moment js
+var moment = require('moment');
+moment().format();
 
+
+window.Vue = require("vue");
+window.moment = require('moment');
+window.$ = require("jquery");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -41,7 +46,8 @@ Vue.component("foto-perfil", require("./components/GetPerfilUser.vue").default);
 Vue.component("comentario-nombre", require("./components/NombrePerfil.vue").default);
 Vue.component("user-recetas", require("./components/CountRecetas.vue").default);
 Vue.component("all-categories", require("./components/AllCategories.vue").default);
-Vue.component("video-receta-img", require('./components/ImagenVideoReceta.vue').default)
+Vue.component("video-receta-img", require('./components/ImagenVideoReceta.vue').default);
+Vue.component("moment-date", require('./components/MomentJs.vue').default);
 Vue.component("star-rating", Raters.StarRating);
 
 /**

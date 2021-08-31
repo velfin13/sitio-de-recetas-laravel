@@ -35,6 +35,9 @@
     <link rel="stylesheet" href="{{asset('plugins/magnific-popup/dist/magnific-popup.css')}}">
     <script src="{{asset('plugins/magnific-popup/dist/jquery.magnific-popup.js')}}"></script>
 
+    <!-- MOMENT JS -->
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+
     <!-- APP JS and CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>

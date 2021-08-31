@@ -38,6 +38,7 @@ div#recipe-detail {
         padding: 20px;
         margin-bottom: 25px;
     }
+
 }
 
 div#recipe-detail #multimedia {
@@ -142,6 +143,12 @@ div#recipe-detail #comments #comment-list {
         padding: 30px;
         // margin-bottom: 20px;
         border-top: 1px #F0F0F0 solid;
+
+        // @media (max-width: 800px) {
+        //     .flex-container {
+               
+        //     }
+        // }
 
         .left {
             // background-color: purple;
