@@ -3,22 +3,22 @@
 @section('content')
     <div class="container-fluid">
         <!-- <section id="profile">
-                                        <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
-                                        <hr class="divider">
+                                                    <h2 class="subtitle"><b>👋 Hola {{ $perfil->usuario->name }}! </b></h2>
+                                                    <hr class="divider">
 
-                                        <div class="row">
-                                            <div id="first" class="col-12 col-md-6 col-xl-6">
-                                                <h1>Nombre</h1>
-                                            </div>
-                                            <div id="second" class="col-12 col-md-6 col-xl-6">
-                                                @if ($perfil->imagen)
-                                                <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
+                                                    <div class="row">
+                                                        <div id="first" class="col-12 col-md-6 col-xl-6">
+                                                            <h1>Nombre</h1>
+                                                        </div>
+                                                        <div id="second" class="col-12 col-md-6 col-xl-6">
+                                                            @if ($perfil->imagen)
+                                                            <img class="rounded-circle" src="/storage/{{ $perfil->imagen }}" alt="img" style="width: 10rem;">
                 @else
-                                                <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </section> -->
+                                                            <img class="rounded-circle" src="{{ asset('images/noImage.jpg') }}" alt="img" style="width: 10rem;">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </section> -->
 
         <section id="profile">
             @auth
@@ -55,11 +55,19 @@
                     style="justify-content: center; align-items: center; align-content: center; display: flex;">
                     <div class="bio-wrapper"
                         style="background-color: #FAFAFA; width: 800px; min-width: 800px; padding: 30px; border: 1px #E5E5E5 solid;">
-                        @if ($perfil->biografia)
-                            <h5>{!! $perfil->biografia !!}</h5>
+                        @auth
+                            @if (Auth::user()->id == $perfil->user_id)
+                                @if ($perfil->biografia)
+                                    <h5>{!! $perfil->biografia !!}</h5>
+                                @else
+                                    <h5>"Aun no has añadido tu biografia"</h5>
+                                @endif
+                            @else
+                                <h5>"Este usuario aun no ha añadido una biografia"</h5>
+                            @endif
                         @else
-                            <h5>"Aun no has añadido tu biografia"</h5>
-                        @endif
+                            <h5>"Este usuario aun no ha añadido una biografia"</h5>
+                        @endauth
                     </div>
                 </div>
 
