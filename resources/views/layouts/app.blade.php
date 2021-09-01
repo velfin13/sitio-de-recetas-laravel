@@ -183,6 +183,7 @@
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     @foreach ($categorias as $categoria)
+                                    <!-- {{$categoria}} -->
                                     <li class="splide__slide" style="margin-left: 30px; margin-right: 30px;">
                                         <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
                                             <span class="category-card__icon">{!! $categoria->icono !!}</span>
