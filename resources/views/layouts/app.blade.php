@@ -50,11 +50,6 @@
 
     <script type="text/javascript">
         $(document).ready(function(e) {
-            // emoji picker
-            // $('#input-default').emojiPicker({
-            //     position: 'left',
-            // });
-            // emojionarea
             $("#emojion").emojioneArea();
         });
     </script>
