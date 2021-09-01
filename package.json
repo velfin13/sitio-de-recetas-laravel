@@ -41,8 +41,6 @@
         "sweetalert": "^2.1.2",
         "v-emoji-picker": "^2.3.3",
         "vue-dynamic-star-rating": "^1.0.8",
-        "vue-emoji-picker": "^1.0.3",
-        "vue-input-emoji": "^0.0.2",
         "vue-rate-it": "^2.1.0",
         "vue-star-rating": "^2.1.0",
         "vue-sweetalert2": "^5.0.2"

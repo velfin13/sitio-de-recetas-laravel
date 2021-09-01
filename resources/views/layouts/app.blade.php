@@ -43,15 +43,6 @@
     <link rel="stylesheet" href="{{asset('plugins/emoji-area/dist/emojionearea.min.css')}}">
     <script type="text/javascript" src="{{asset('plugins/emoji-area/dist/emojionearea.min.js')}}"></script>
 
-    <!-- EMOJI PICKER -->
-    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.css')}}">
-    <script type="text/javascript" src="{{asset('plugins/emoji-picker/js/jquery.emojipicker.js')}}"></script>
-
-    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.a.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.g.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.tw.css')}}">
-    <script type="text/javascript" src="{{asset('plugins/emoji-picker/js/jquery.emojis.js')}}"></script>
-
     <!-- APP JS and CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -188,7 +179,7 @@
                                         <a class="category-card" href="{{ route('categorias.show', ['categoriaReceta' => $categoria->id]) }}">
                                             <span class="category-card__icon">{!! $categoria->icono !!}</span>
                                             <span class="category-card__title"><b>{{ $categoria->nombre }}</b></span>
-                                            <span class="category-card__counter">10 Recetas</span>
+                                            <!-- <span class="category-card__counter">10 Recetas</span> -->
                                         </a>
                                     </li>
                                     @endforeach

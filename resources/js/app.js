@@ -20,7 +20,6 @@ require("datatables.net-responsive-bs4");
 var moment = require('moment');
 moment().format();
 
-window.emojioneVersion = "3.1.2";
 window.Vue = require("vue");
 window.$ = require("jquery");
 window.moment = require('moment');
@@ -58,11 +57,9 @@ Vue.component("input-emoji", require('./components/InputEmoji.vue').default);
  */
 
 import VueSplide from '@splidejs/vue-splide';
-import VEmojiPicker from 'v-emoji-picker';
 
-Vue.config.productionTip = false;
 Vue.use(VueSplide);
-Vue.use(VEmojiPicker);
+
 
 const app = new Vue({
     el: "#app"
