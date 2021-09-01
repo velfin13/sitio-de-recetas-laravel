@@ -14,6 +14,7 @@
 
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <!-- OWL CAROUSEL -->
     <link rel="stylesheet" href="{{ asset('plugins/owl-carousel/dist/assets/owl.carousel.min.css') }}">
@@ -42,9 +43,30 @@
     <link rel="stylesheet" href="{{asset('plugins/emoji-area/dist/emojionearea.min.css')}}">
     <script type="text/javascript" src="{{asset('plugins/emoji-area/dist/emojionearea.min.js')}}"></script>
 
+    <!-- EMOJI PICKER -->
+    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.css')}}">
+    <script type="text/javascript" src="{{asset('plugins/emoji-picker/js/jquery.emojipicker.js')}}"></script>
+
+    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.a.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.g.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/emoji-picker/css/jquery.emojipicker.tw.css')}}">
+    <script type="text/javascript" src="{{asset('plugins/emoji-picker/js/jquery.emojis.js')}}"></script>
+
     <!-- APP JS and CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            // emoji picker
+            // $('#input-default').emojiPicker({
+            //     position: 'left',
+            // });
+            // emojionarea
+            $("#emojion").emojioneArea();
+        });
+    </script>
     @yield('styles')
 </head>
 

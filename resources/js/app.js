@@ -49,6 +49,7 @@ Vue.component("all-categories", require("./components/AllCategories.vue").defaul
 Vue.component("video-receta-img", require('./components/ImagenVideoReceta.vue').default);
 Vue.component("local-date", require('./components/LocalDate.vue').default);
 Vue.component("star-rating", Raters.StarRating);
+Vue.component("input-emoji", require('./components/InputEmoji.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -57,7 +58,11 @@ Vue.component("star-rating", Raters.StarRating);
  */
 
 import VueSplide from '@splidejs/vue-splide';
+import VEmojiPicker from 'v-emoji-picker';
+
+Vue.config.productionTip = false;
 Vue.use(VueSplide);
+Vue.use(VEmojiPicker);
 
 const app = new Vue({
     el: "#app"
@@ -65,7 +70,6 @@ const app = new Vue({
 
 
 var $ = jQuery.noConflict();
-
 
 // splide
 document.addEventListener("DOMContentLoaded", function () {
@@ -400,12 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// emoji area
-// TEST
-$(document).ready(function () {
-
-    // $("#emojionearea1").emojioneArea({
-    //     pickerPosition: "right",
-    //     tonesStyle: "bullet"
-    // });
+// emoji picker
+document.addEventListener("DOMContentLoaded", function () {
+    // $('#question').emojiPicker('toggle');
 });

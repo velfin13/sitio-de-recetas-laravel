@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
-
-@section('styles')
-<link rel="stylesheet" href="{{asset('plugins/emoji-area/dist/emojionearea.min.css')}}">
-<script type="text/javascript" src="{{asset('plugins/emoji-area/dist/emojionearea.min.js')}}"></script>
-@endsection
-
 @section('content')
+
+@error('comentario')
+<div class="alert alert-danger alert-dismissible fixed-top" role="alert">
+    <strong>{{ $message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@enderror
+
+
 <div id="recipe-detail" class="container-fluid">
     <div class="title-and-like" style="display: flex;flex-direction: row; justify-content: space-between;">
         <h2 class="subtitle"><b>🧾 {{ Str::title($recetas->titulo) }}</b></h2>
@@ -98,19 +101,12 @@
                     <div class="left">
                         @auth
                         @csrf
-                        @error('comentario')
-                        <span class="invalid-feedback d-block" role="alert">
-                            <div class="alert alert-danger text-center" role="alert">
-                                {{ $message }}
-                            </div>
-                        </span>
-                        @enderror
 
                         <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
 
-                        <input id="comment-input" type="text" maxlength="200" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control question" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
-
+                        <input id="emojion" type="text" maxlength="200" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control question" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
+                        <!-- <input-emoji></input-emoji> -->
                         @else
                         <h1>Para comentar debes inciar sesion</h1>
                         @endauth
@@ -172,12 +168,4 @@
 
     <!-- <textarea id="example1"></textarea> -->
 </div>
-@endsection
-
-@section('scripts')
-<script type="text/javascript">
-    //   $(document).ready(function() {
-    //     $("#example1").emojioneArea();
-    //   });
-</script>
 @endsection

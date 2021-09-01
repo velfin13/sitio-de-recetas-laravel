@@ -91,7 +91,7 @@ div#recipe-detail #comments #comment-form {
     input,
     button {
         border-radius: 0px;
-        height: 45px;
+        // height: 45px;
         background-color: #F5F7F9 !important;
     }
 
@@ -108,7 +108,7 @@ div#recipe-detail #comments #comment-form {
         }
 
         .right {
-            flex: 1;
+            flex: 2;
         }
     }
 
@@ -131,8 +131,6 @@ div#recipe-detail #comments #comment-list {
     }
 
     .comment-item {
-        // background-color: red;
-        // background-color: white;
 
         // height: 140px;
         min-height: 120px;
@@ -198,7 +196,9 @@ div#recipe-detail #comments #comment-list {
                 flex-direction: column;
             }
 
-            .top,.body,.bottom {
+            .top,
+            .body,
+            .bottom {
                 padding-left: 10px;
             }
         }

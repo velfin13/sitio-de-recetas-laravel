@@ -53,21 +53,21 @@
                     <div class="input-group mb-3">
 
                         <input id="email" type="email" placeholder="ejemplo@dominio.com" class="form-control input_user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                        @error('email')
+                        <!-- @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
+                        @enderror -->
                     </div>
 
                     {{-- password --}}
                     <div class="input-group mb-2">
                         <input id="password" type="password" placeholder="Contraseña" class="form-control input_pass @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                        @error('password')
+                        <!-- @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
+                        @enderror -->
                     </div>
 
                     {{-- repeat password --}}
@@ -79,11 +79,11 @@
                     {{-- url --}}
                     <div class="input-group mb-3">
                         <input id="url" type="url" class="form-control input_user @error('url') is-invalid @enderror" placeholder="http://ejemplo.com" name="url" value="{{ old('url') }}" required autocomplete="url" autofocus>
-                        @error('url')
+                        <!-- @error('url')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
+                        @enderror -->
                     </div>
 
                     <div class="d-flex justify-content-center mt-3 login_container">

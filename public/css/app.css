@@ -15331,7 +15331,6 @@ div#recipe-detail #comments #comment-form {
 div#recipe-detail #comments #comment-form input,
 div#recipe-detail #comments #comment-form button {
   border-radius: 0px;
-  height: 45px;
   background-color: #F5F7F9 !important;
 }
 div#recipe-detail #comments #comment-form button {
@@ -15345,7 +15344,7 @@ div#recipe-detail #comments #comment-form .form-wrapper .left {
   flex: 40;
 }
 div#recipe-detail #comments #comment-form .form-wrapper .right {
-  flex: 1;
+  flex: 2;
 }
 div#recipe-detail #comments #comment-form .form-control {
   border: none;
@@ -15401,7 +15400,9 @@ div#recipe-detail #comments #comment-list .comment-item .right .bottom {
   display: flex;
   flex-direction: column;
 }
-div#recipe-detail #comments #comment-list .comment-item .right .top, div#recipe-detail #comments #comment-list .comment-item .right .body, div#recipe-detail #comments #comment-list .comment-item .right .bottom {
+div#recipe-detail #comments #comment-list .comment-item .right .top,
+div#recipe-detail #comments #comment-list .comment-item .right .body,
+div#recipe-detail #comments #comment-list .comment-item .right .bottom {
   padding-left: 10px;
 }
 
@@ -15788,4 +15789,11 @@ input.form-control.nav-search:focus {
   height: 200px;
   overflow-y: scroll;
   padding: 3px;
+}
+
+.emojionearea.emojionearea-inline > .emojionearea-button {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
