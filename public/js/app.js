@@ -11943,7 +11943,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
 /* harmony import */ var owl_carousel__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(owl_carousel__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @splidejs/vue-splide */ "./node_modules/@splidejs/vue-splide/src/js/index.js");
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -11970,6 +11970,7 @@ __webpack_require__(/*! datatables.net-responsive-bs4 */ "./node_modules/datatab
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 moment().format();
+window.emojioneVersion = "3.1.2";
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 window.moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
@@ -12006,7 +12007,8 @@ vue__WEBPACK_IMPORTED_MODULE_3__.default.component("star-rating", (vue_rate_it__
 vue__WEBPACK_IMPORTED_MODULE_3__.default.use(_splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_4__.default);
 var app = new vue__WEBPACK_IMPORTED_MODULE_3__.default({
   el: "#app"
-}); // splide
+});
+var $ = jQuery.noConflict(); // splide
 
 document.addEventListener("DOMContentLoaded", function () {
   for (var index = 0; index <= 1000; index++) {
@@ -12062,7 +12064,7 @@ document.addEventListener("DOMContentLoaded", function () {
       pagination: false,
       height: '27rem',
       autoWidth: true,
-      autoHeight: true,
+      // autoHeight: true,
       perPage: 5,
       breakpoints: {
         0: {
@@ -12340,6 +12342,13 @@ document.addEventListener("DOMContentLoaded", function () {
       reader.readAsDataURL(input.files[0]);
     }
   }
+}); // emoji area
+// TEST
+
+$(document).ready(function () {// $("#emojionearea1").emojioneArea({
+  //     pickerPosition: "right",
+  //     tonesStyle: "bullet"
+  // });
 });
 
 /***/ }),

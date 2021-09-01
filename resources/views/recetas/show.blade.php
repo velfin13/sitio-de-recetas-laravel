@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+
+@section('styles')
+<link rel="stylesheet" href="{{asset('plugins/emoji-area/dist/emojionearea.min.css')}}">
+<script type="text/javascript" src="{{asset('plugins/emoji-area/dist/emojionearea.min.js')}}"></script>
+@endsection
+
 @section('content')
 <div id="recipe-detail" class="container-fluid">
     <div class="title-and-like" style="display: flex;flex-direction: row; justify-content: space-between;">
@@ -103,7 +109,7 @@
                         <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
 
-                        <input type="text" maxlength="200" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
+                        <input id="comment-input" type="text" maxlength="200" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control question" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
 
                         @else
                         <h1>Para comentar debes inciar sesion</h1>
@@ -138,7 +144,9 @@
                             <span class="name">
                                 <comentario-nombre id-user={{ $item->user_id }}></comentario-nombre>
                             </span>
-                            <span style="display: flex; align-items: center;">{{ date('d-m-Y', strtotime($item->created_at)) }} <i class="fas fa-circle" style="font-size: 8px; margin-left: 5px; margin-right: 5px;"></i> <local-date date="{{$item->created_at}}"></local-date></span>
+                            <span style="display: flex; align-items: center;">{{ date('d-m-Y', strtotime($item->created_at)) }} <i class="fas fa-circle" style="font-size: 8px; margin-left: 5px; margin-right: 5px;"></i>
+                                <local-date date="{{$item->created_at}}"></local-date>
+                            </span>
                         </div>
                         <!-- BODY -->
                         <div class="body">
@@ -162,5 +170,14 @@
         <!-- END COMMENTS -->
     </section>
 
+    <!-- <textarea id="example1"></textarea> -->
 </div>
+@endsection
+
+@section('scripts')
+<script type="text/javascript">
+    //   $(document).ready(function() {
+    //     $("#example1").emojioneArea();
+    //   });
+</script>
 @endsection

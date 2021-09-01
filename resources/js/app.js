@@ -20,7 +20,7 @@ require("datatables.net-responsive-bs4");
 var moment = require('moment');
 moment().format();
 
-
+window.emojioneVersion = "3.1.2";
 window.Vue = require("vue");
 window.$ = require("jquery");
 window.moment = require('moment');
@@ -62,6 +62,10 @@ Vue.use(VueSplide);
 const app = new Vue({
     el: "#app"
 });
+
+
+var $ = jQuery.noConflict();
+
 
 // splide
 document.addEventListener("DOMContentLoaded", function () {
@@ -117,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pagination: false,
             height: '27rem',
             autoWidth: true,
-            autoHeight: true,
+            // autoHeight: true,
             perPage: 5,
             breakpoints: {
                 0: {
@@ -357,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
             $(".js-fullheight").css("height", $(window).height());
         });
     };
-    
+
     fullHeight();
 
     $("#sidebarCollapse").on("click", function () {
@@ -394,4 +398,14 @@ document.addEventListener("DOMContentLoaded", function () {
             reader.readAsDataURL(input.files[0]);
         }
     }
+});
+
+// emoji area
+// TEST
+$(document).ready(function () {
+
+    // $("#emojionearea1").emojioneArea({
+    //     pickerPosition: "right",
+    //     tonesStyle: "bullet"
+    // });
 });

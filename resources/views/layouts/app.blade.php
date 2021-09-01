@@ -38,6 +38,10 @@
     <!-- MOMENT JS -->
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
 
+    <!-- EMOJI AREA -->
+    <link rel="stylesheet" href="{{asset('plugins/emoji-area/dist/emojionearea.min.css')}}">
+    <script type="text/javascript" src="{{asset('plugins/emoji-area/dist/emojionearea.min.js')}}"></script>
+
     <!-- APP JS and CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -120,11 +124,11 @@
                         <a class="btn login-button" href="{{ route('login') }}">Iniciar Sesión</a>
                         @else
                         <a href="{{ route('perfiles.show', ['perfil' => Auth::user()->id]) }}">
-                        @if (!Auth::user()->perfil->imagen)
-                        <user-recetas user-image={{ asset('images/avatarEmpty.jpg') }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
-                        @else
-                        <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
-                        @endif
+                            @if (!Auth::user()->perfil->imagen)
+                            <user-recetas user-image={{ asset('images/avatarEmpty.jpg') }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                            @else
+                            <user-recetas user-image={{ asset('/storage/' . Auth::user()->perfil->imagen) }} user-name={{ Auth::user()->name }} user-id={{ Auth::user()->id }}></user-recetas>
+                            @endif
                         </a>
                         @endguest
                     </ul>
