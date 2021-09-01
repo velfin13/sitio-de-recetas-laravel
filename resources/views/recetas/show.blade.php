@@ -97,11 +97,12 @@
         <!-- FORM -->
         @auth
         <div id="comment-form">
-            <form action="{{ route('comment.store') }}" method="POST">
+            <form id="my-form" action="{{ route('comment.store') }}" method="POST">
                 <div class="form-wrapper">
                     <div class="left">
 
                         @csrf
+
                         <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
 
@@ -109,7 +110,8 @@
                     </div>
 
                     <div class="right">
-                        <button type="submit" class="btn btn-light"><i class="far fa-paper-plane"></i></button>
+                    <a onclick="document.getElementById('my-form').submit()"><i class="far fa-paper-plane"></i></a>
+                        <!-- <button type="submit" class="btn btn-light"><i class="far fa-paper-plane"></i></button> -->
                     </div>
                 </div>
             </form>

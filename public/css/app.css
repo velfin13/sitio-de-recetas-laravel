@@ -15331,6 +15331,7 @@ div#recipe-detail #comments #comment-form {
 div#recipe-detail #comments #comment-form input,
 div#recipe-detail #comments #comment-form button {
   border-radius: 0px;
+  height: 45px;
   background-color: #F5F7F9 !important;
 }
 div#recipe-detail #comments #comment-form button {
@@ -15345,6 +15346,16 @@ div#recipe-detail #comments #comment-form .form-wrapper .left {
 }
 div#recipe-detail #comments #comment-form .form-wrapper .right {
   flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#recipe-detail #comments #comment-form .form-wrapper .right a {
+  font-size: 18px;
+  padding: 4px 10px 4px;
+}
+div#recipe-detail #comments #comment-form .form-wrapper .right a:hover {
+  cursor: pointer;
 }
 div#recipe-detail #comments #comment-form .form-control {
   border: none;

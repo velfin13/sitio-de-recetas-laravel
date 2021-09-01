@@ -91,7 +91,7 @@ div#recipe-detail #comments #comment-form {
     input,
     button {
         border-radius: 0px;
-        // height: 45px;
+        height: 45px;
         background-color: #F5F7F9 !important;
     }
 
@@ -109,6 +109,37 @@ div#recipe-detail #comments #comment-form {
 
         .right {
             flex: 2;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                font-size: 18px;
+                // background-color: #FCFCFC;
+                // border: 1px #FCFCFC solid;
+                padding: 4px 10px 4px;
+            }
+
+            a:hover {
+                cursor: pointer;
+            }
+
+            // button:focus {
+            //     box-shadow: none;
+            //     border: none
+            // }
+
+            // button:focus {
+            //     box-shadow: none;
+            //     border: none
+            // }
+
+            // .btn-check:focus+.btn,
+            // .btn:focus {
+            //     box-shadow: none;
+            //     border: none
+            // }
         }
     }
 
