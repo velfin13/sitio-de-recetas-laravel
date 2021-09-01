@@ -3,7 +3,13 @@
 </template>
 <script>
 export default {
-    props: ["link"],
+    props: {
+        link:{
+            type:String,
+            default:"",
+            require:true,
+        }
+    },
     data: () => {
         return {
             link

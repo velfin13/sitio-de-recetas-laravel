@@ -11774,7 +11774,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ["link"],
+  props: {
+    link: {
+      type: String,
+      "default": "",
+      require: true
+    }
+  },
   data: function data() {
     return {
       link: link

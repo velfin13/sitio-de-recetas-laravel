@@ -95,21 +95,17 @@
         <hr class="divider" style="width: 200px;">
 
         <!-- FORM -->
+        @auth
         <div id="comment-form">
             <form action="{{ route('comment.store') }}" method="POST">
                 <div class="form-wrapper">
                     <div class="left">
-                        @auth
-                        @csrf
 
+                        @csrf
                         <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                         <input type="hidden" value="{{ $recetas->id }}" name="receta_id">
 
                         <input id="emojion" type="text" maxlength="200" rows="1" value="{{ old('comentario') }}" name="comentario" class="form-control question" placeholder="¿Que opinas acerca esta receta? 🤔"></input>
-                        <!-- <input-emoji></input-emoji> -->
-                        @else
-                        <h1>Para comentar debes inciar sesion</h1>
-                        @endauth
                     </div>
 
                     <div class="right">
@@ -117,9 +113,9 @@
                     </div>
                 </div>
             </form>
-
         </div>
         <!-- END FORM -->
+        @endauth
 
         <!-- COMMENTS -->
         <div id="comment-list" class="row">
