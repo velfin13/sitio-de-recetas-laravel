@@ -48,7 +48,6 @@ Vue.component("all-categories", require("./components/AllCategories.vue").defaul
 Vue.component("video-receta-img", require('./components/ImagenVideoReceta.vue').default);
 Vue.component("local-date", require('./components/LocalDate.vue').default);
 Vue.component("star-rating", Raters.StarRating);
-Vue.component("input-emoji", require('./components/InputEmoji.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

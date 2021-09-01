@@ -11996,7 +11996,6 @@ vue__WEBPACK_IMPORTED_MODULE_3__.default.component("all-categories", __webpack_r
 vue__WEBPACK_IMPORTED_MODULE_3__.default.component("video-receta-img", __webpack_require__(/*! ./components/ImagenVideoReceta.vue */ "./resources/js/components/ImagenVideoReceta.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_3__.default.component("local-date", __webpack_require__(/*! ./components/LocalDate.vue */ "./resources/js/components/LocalDate.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_3__.default.component("star-rating", (vue_rate_it__WEBPACK_IMPORTED_MODULE_0___default().StarRating));
-vue__WEBPACK_IMPORTED_MODULE_3__.default.component("input-emoji", Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/InputEmoji.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
