@@ -3,7 +3,6 @@
 -   Un servidor xamp con php 7.4
 -   Composer 2.1.5
 -   npm 6.14.14
--   Tener una cuenta en pusher
 -   git
 
 #Pasos a seguir
