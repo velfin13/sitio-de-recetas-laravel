@@ -1,3 +1,6 @@
+# Proyecto finalizado
+![image](https://raw.githubusercontent.com/velfin13/sitio-de-recetas-laravel/main/presentacion.gif)
+
 ### Requierimientos
 
 -   Un servidor xamp con php 7.4
@@ -13,7 +16,7 @@
 
 `$ git clone https://github.com/Velfin-Velasquez/sitio-de-recetas-laravel.git`
 
-### 3) Copiar el archivo .env.example y configurar tu entorno
+### 3) Copiar el archivo .env.example y pegarlo como .env y configurar tu base de datos local o remota
 
 ### 4) Una vez configurado ejecutamos
 
