@@ -41,3 +41,7 @@
 ### 9) Finalmente ejecutamos el servidos
 
 `$ php artisan serve`
+
+### Usuario por defecto
+- user: **prueba@gmail.com**
+- password: **12345678**
