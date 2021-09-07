@@ -8,7 +8,7 @@
 -   npm 6.14.14
 -   git
 
-#Pasos a seguir
+# Pasos a seguir
 
 ### 1) Previamente debes tener el servidor Apache y Mysql coriendo y definir php en las variables del sistema para poder usarlo en consola.
 
