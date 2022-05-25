@@ -10,7 +10,6 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.21.1",
         "cross-env": "^7.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.25",
@@ -27,6 +26,7 @@
         "@popperjs/core": "^2.9.3",
         "@splidejs/splide": "^2.4.21",
         "@splidejs/vue-splide": "^0.3.5",
+        "axios": "^0.27.2",
         "bootstrap": "^5.1.0",
         "datatables.net-autofill-bs4": "^2.3.9",
         "datatables.net-bs4": "^3.2.2",
